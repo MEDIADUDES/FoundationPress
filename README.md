@@ -1,15 +1,19 @@
 # FoundationPress
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/olefredrik/foundationpress?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-[![GitHub version](https://badge.fury.io/gh/olefredrik%2Ffoundationpress.svg)](https://github.com/olefredrik/FoundationPress/releases)
+[![GitHub version](https://badge.fury.io/gh/MEDIADUDES%2FFoundationPress.svg)](https://github.com/MEDIADUDES/FoundationPress/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Buy Me a Coffee at ko-fi.com](https://img.shields.io/badge/-Buy%20me%20a%20Coffee-orange.svg?colorB=593C1F&colorA=4e798d&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAVUlEQVR4AWNQtnJTQcZ%2Blb2fsWF0dQzYNRHWzIBdE2EDGGCaSNYI47x69fY%2FMRimnmiNyGqwavyflo6MaawRTTP1%2FIiM4dFBQBPl8UggyRHWSHYiBwCwA90T1NTlAQAAAABJRU5ErkJggg%3D%3D%0D%0A&logoWidth=14)](https://ko-fi.com/olefredrik)
+
+<p align="center">
+  <img width="400" src="screenshot.png">
+</p>
 
 This is a starter-theme for WordPress based on Zurb's [Foundation for Sites 6](https://foundation.zurb.com/sites.html), the most advanced responsive (mobile-first) framework in the world. The purpose of FoundationPress, is to act as a small and handy toolbox that contains the essentials needed to build any design. FoundationPress is meant to be a starting point, not the final product.
 
 Please fork, copy, modify, delete, share or do whatever you like with this.
 
 All contributions are welcome!
+
+Huge thanks to [olefredrik](https://github.com/olefredrik/FoundationPress) (and all contributors) to create the base of this starter theme.
 
 ## Requirements
 
@@ -26,7 +30,7 @@ If you have not worked with a Sass-based workflow before, I would recommend read
 ### 1. Clone the repository and install with npm
 ```bash
 $ cd my-wordpress-folder/wp-content/themes/
-$ git clone https://github.com/olefredrik/FoundationPress.git
+$ git clone https://github.com/MEDIADUDES/FoundationPress.git
 $ cd FoundationPress
 $ npm install
 ```
@@ -137,60 +141,12 @@ We recommend using one of the following setups for local WordPress development:
 * [Zurb Foundation Docs](http://foundation.zurb.com/docs/)
 * [WordPress Codex](http://codex.wordpress.org/)
 
-## Showcase
-
-* [Harvard Center for Green Buildings and Cities](http://www.harvardcgbc.org/)
-* [INTI International University & Colleges](http://international.newinti.edu.my/)
-* [Conservative Leadership Conference](http://civitasclc.com/)
-* [The New Tropic](http://thenewtropic.com/)
-* [Parent-Child Home Program](http://www.parent-child.org/)
-* [Hip and Healthy](http://hipandhealthy.com/)
-* [Threadbird blog](http://blog.threadbird.com/)
-* [Public House Wines](http://publichousewine.com/)
-* [Franchise Career Advisors](http://franchisecareeradvisors.com/)
-* [Le saint](http://www.lesaint.ca/)
-* [Help blog](http://help.com/blog/)
-* [Maren Schmidt](http://marenschmidt.com/)
-* [The Rainbow Venues](http://www.therainbowvenues.co.uk/)
-* [Ameronix](http://www.ameronix.com/)
-* [Finnerodja](http://www.finnerodja.se/)
-* [Glossop Cartons](http://www.glossopcartons.co.uk/)
-* [Ready4Work](http://www.ready4work.my/)
-* [Just Legal](http://www.justlegal.co.jp/en/)
-* [Vintage and Stuff](http://vintageandstuff.com/)
-* [Software for FM](http://softwareforfm.co.uk/)
-* [WP Diamonds](http://www.wpdiamonds.com/)
-* [Storm Arts](http://stormarts.fi/)
-* [USS Illinois](http://ussillinois.org/)
-* [OffGrid Magazine](https://offgridweb.com/)
-* [Axe](http://www.axe.be/)
-* [ProfitGym](http://profitgym.nl/)
-* [Dr Now](http://www.drnow.com/)
-* [Agritur Piasina](http://www.agriturpiasina.it/)
-* [Atomic Interactive](http://atomicinteractive.com/)
-* [Byington Vineyard & Winery](http://byington.com/)
-* [Philanthropy House](http://philanthropyhouse.eu/)
-* [TVA Group](http://www.groupe-tva.com/en/)
-* [Well Made Studio](http://wellmadestudio.com/)
-* [Show And Tell](http://www.showandtelluk.com/)
-* [Wahl + Case](https://www.wahlandcase.com/)
-* [Forefront Dermatology](https://forefrontdermatology.com/)
-* [Wirthschaftsjunioren](http://www.wirtschaftsjunioren.org/)
-* [Morgridge Institute for Research](https://morgridge.org)
-* [Impeach Trump Now](https://impeachdonaldtrumpnow.org/)
-* [La revanche des sites](https://www.la-revanche-des-sites.fr/)
-
-
->Credit goes to all the brilliant designers and developers out there. Have **you** made a site that should be on this list? [Please let me know](https://twitter.com/olefredrik)
-
 ## Contributing
 #### Here are ways to get involved:
 
-1. [Star](https://github.com/olefredrik/FoundationPress/stargazers) the project!
-2. Answer questions that come through [GitHub issues](https://github.com/olefredrik/FoundationPress/issues)
+1. [Star](https://github.com/MEDIADUDES/FoundationPress/stargazers) the project!
+2. Answer questions that come through [GitHub issues](https://github.com/MEDIADUDES/FoundationPress/issues)
 3. Report a bug that you find
-4. Share a theme you've built on top of FoundationPress
-5. [Tweet](https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Ffoundationpress.olefredrik.com%2F&text=Check%20out%20FoundationPress%2C%20the%20ultimate%20%23WordPress%20starter-theme%20built%20on%20%23Foundation%206&tw_p=tweetbutton&url=http%3A%2F%2Ffoundationpress.olefredrik.com&via=olefredrik) and [blog](http://www.justinfriebel.com/my-first-experience-with-foundationpress-a-wordpress-starter-theme-106/) your experience of FoundationPress.
 
 #### Pull Requests
 

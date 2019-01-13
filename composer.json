@@ -1,5 +1,5 @@
 {
-    "name": "olefredrik/foundationpress",
+    "name": "MEDIADUDES/FoundationPress",
     "description": "FoundationPress is a WordPress starter theme based on Foundation 6 by Zurb",
     "type": "wordpress-theme",
     "minimum-stability" : "dev",
@@ -8,6 +8,10 @@
         {
             "name": "Ole Fredrik Lie",
             "email": "mail@olefredrik.com"
+        },
+        {
+            "name": "Simon Mayerhofer",
+            "email": "foundationpress@maysi.de"
         }
     ],
     "require": {

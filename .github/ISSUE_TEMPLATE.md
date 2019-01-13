@@ -1,8 +1,6 @@
 <!-- Found an error in FoundationPress? Great, please let us know! If you use this template and fill in the blanks in the form below, it will be easier to understand how the error can be fixed.
 
-Please note that issues regarding conflicts with third party WordPress plugins, are not supported in FoundationPress, and will be closed.
-
-For general questions about how to use FoundationPress, please use the Gitter chatroom: https://gitter.im/olefredrik/FoundationPress -->
+Please note that issues regarding conflicts with third party WordPress plugins, are not supported in FoundationPress, and will be closed. -->
 
 **How can this bug be reproduced?**
 

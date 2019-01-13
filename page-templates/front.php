@@ -9,12 +9,11 @@ get_header(); ?>
 		<div class="tagline">
 			<h1><?php bloginfo( 'name' ); ?></h1>
 			<h4 class="subheader"><?php bloginfo( 'description' ); ?></h4>
-			<a role="button" class="download large button sites-button hide-for-small-only" href="https://github.com/olefredrik/foundationpress">Download FoundationPress</a>
+			<a role="button" class="download large button sites-button hide-for-small-only" href="https://github.com/MEDIADUDES/FoundationPress">Download FoundationPress</a>
 		</div>
 
 		<div class="watch">
-			<span id="stargazers"><a href="https://github.com/olefredrik/foundationpress">1.5k stargazers</a></span>
-			<span id="twitter"><a href="https://twitter.com/olefredrik">@olefredrik</a></span>
+			<span id="stargazers"><a href="https://github.com/MEDIADUDES/FoundationPress">1.5k stargazers</a></span>
 		</div>
 	</div>
 
