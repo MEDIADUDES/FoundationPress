@@ -20,6 +20,7 @@ Frontend styles for gutenberg blocks
 	// add general foundation button styling
 	.wp-block-button__link {
 		@extend .button;
+
     @each $color, $code in $foundation-palette {
 
       &.has-#{$color}-background-color {

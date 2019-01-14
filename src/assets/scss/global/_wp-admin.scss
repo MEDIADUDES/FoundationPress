@@ -15,6 +15,7 @@ body.admin-bar {
   &.offcanvas {
     .off-canvas.is-open {
       top: rem-calc(46);
+
       @include breakpoint(783) {
         top: rem-calc(32);
       }

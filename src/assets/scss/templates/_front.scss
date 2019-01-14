@@ -45,8 +45,8 @@
     }
 
     #stargazers {
-      :before {
-        content: "\f09b";
+      ::before {
+        content: '\f09b';
         font-family: FontAwesome;
         font-style: normal;
         font-weight: normal;
@@ -57,8 +57,8 @@
     }
 
     #twitter {
-      :before {
-        content: "\f099";
+      ::before {
+        content: '\f099';
         font-family: FontAwesome;
         font-style: normal;
         font-weight: normal;
@@ -77,6 +77,7 @@
 
     @include breakpoint(medium) {
       @include xy-cell(5);
+
       padding-top: 6rem;
     }
   }
@@ -141,7 +142,9 @@
 
   hr {
     @include xy-cell(12);
+
     @extend .dotted;
+
     box-sizing: border-box;
   }
 }
@@ -150,6 +153,7 @@
 .benefits {
   @include xy-grid-container;
   @include xy-grid;
+
   text-align: center;
 
   header {
@@ -196,6 +200,7 @@
 
   .why-foundation {
     @include xy-cell(12);
+
     margin-top: 4rem;
   }
 }

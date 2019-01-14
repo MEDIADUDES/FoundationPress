@@ -24,6 +24,7 @@
 
   @include breakpoint(large) {
     @include xy-cell(3);
+
     display: block;
     float: right;
 

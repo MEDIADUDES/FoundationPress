@@ -4,6 +4,7 @@
 
 .main-grid {
   @include xy-grid();
+
   margin-top: 1rem;
 
   @include breakpoint(medium) {
@@ -14,12 +15,14 @@
     // Place the sidebar below main content on small screens ...
     @include breakpoint(small) {
       .main-content { order: 1; }
+
       .sidebar { order: 2; }
     }
 
     // ... and to the left on medium-up screens, when using the sidebar-left template
     @include breakpoint(medium) {
       .main-content { order: 2; }
+
       .sidebar { order: 1; }
     }
   }
@@ -47,6 +50,7 @@
 
     @include breakpoint(medium) {
       @include xy-cell(4);
+
       margin-top: 1rem;
     }
 

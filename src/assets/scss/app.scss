@@ -59,25 +59,25 @@
 */
 
 // Global
-@import "global/accessibility";
-@import "global/colors";
-@import "global/wp-admin";
-@import "global/wp-overrides";
-@import "global/gutenberg";
+@import 'global/accessibility';
+@import 'global/colors';
+@import 'global/wp-admin';
+@import 'global/wp-overrides';
+@import 'global/gutenberg';
 
 // Modules
-@import "modules/navigation";
-@import "modules/content";
-@import "modules/footer";
-@import "modules/editor-style";
+@import 'modules/navigation';
+@import 'modules/content';
+@import 'modules/footer';
+@import 'modules/editor-style';
 
 // Components
-@import "components/buttons";
-@import "components/cards";
-@import "components/featured-image";
-@import "components/dividers";
-@import "components/links";
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/featured-image';
+@import 'components/dividers';
+@import 'components/links';
 
 // Templates
-@import "templates/front";
-@import "templates/kitchen-sink";
+@import 'templates/front';
+@import 'templates/kitchen-sink';
