@@ -53,6 +53,3 @@ require_once 'library/gutenberg.php';
 
 /** Load and save Advanced Custom Fields JSON files.  */
 require_once 'library/advanced-custom-fields.php';
-
-/** If your site requires protocol relative url's for theme assets, uncomment the line below */
-// require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );

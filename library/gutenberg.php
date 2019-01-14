@@ -1,4 +1,9 @@
 <?php
+/**
+ * Add theme support for Gutenberg editor.
+ *
+ * @package FoundationPress
+ */
 
 if ( ! function_exists( 'foundationpress_gutenberg_support' ) ) :
 	function foundationpress_gutenberg_support() {

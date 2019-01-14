@@ -37,7 +37,7 @@ if ( ! function_exists( 'foundationpress_pagination' ) ) :
 
 		// Display the pagination if more than one page is found.
 		if ( $paginate_links ) {
-			echo $paginate_links;
+			echo $paginate_links; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 endif;
@@ -61,9 +61,9 @@ if ( ! function_exists( 'foundationpress_get_the_comments_pagination' ) ) :
 		if ( $links ) {
 			$link_count       = count( $links );
 			$pagination_class = 'pagination';
-			if ( 'large' == $args['size'] ) {
+			if ( 'large' === $args['size'] ) {
 				$pagination_class .= ' pagination-lg';
-			} elseif ( 'small' == $args['size'] ) {
+			} elseif ( 'small' === $args['size'] ) {
 				$pagination_class .= ' pagination-sm';
 			}
 			$current     = get_query_var( 'cpage' ) ? intval( get_query_var( 'cpage' ) ) : 1;
@@ -73,9 +73,9 @@ if ( ! function_exists( 'foundationpress_get_the_comments_pagination' ) ) :
 				$navigation .= '<li class="page-item disabled">' . $args['prev_text'] . '</li>';
 			}
 			foreach ( $links as $index => $link ) {
-				if ( 0 == $index && 0 === strpos( $link, '<a class="prev' ) ) {
+				if ( 0 === $index && 0 === strpos( $link, '<a class="prev' ) ) {
 					$navigation .= '<li class="page-item">' . str_replace( 'prev page-numbers', 'page-link', $link ) . '</li>';
-				} elseif ( $link_count - 1 == $index && 0 === strpos( $link, '<a class="next' ) ) {
+				} elseif ( $link_count - 1 === $index && 0 === strpos( $link, '<a class="next' ) ) {
 					$navigation .= '<li class="page-item">' . str_replace( 'next page-numbers', 'page-link', $link ) . '</li>';
 				} else {
 					$link = preg_replace( "/(class|href)='(.*)'/U", '$1="$2"', $link );
@@ -88,7 +88,7 @@ if ( ! function_exists( 'foundationpress_get_the_comments_pagination' ) ) :
 					}
 				}
 			}
-			if ( $args['show_disabled'] && $current == $total ) {
+			if ( $args['show_disabled'] && $current === $total ) {
 				$navigation .= '<li class="page-item disabled">' . $args['next_text'] . '</li>';
 			}
 			$navigation .= '</ul>';
@@ -101,7 +101,7 @@ endif;
 // Custom Comments Pagination.
 if ( ! function_exists( 'foundationpress_the_comments_pagination' ) ) :
 	function foundationpress_the_comments_pagination( $args = array() ) {
-		echo foundationpress_get_the_comments_pagination( $args );
+		echo foundationpress_get_the_comments_pagination( $args );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 endif;
 
@@ -113,18 +113,22 @@ endif;
 if ( ! function_exists( 'foundationpress_menu_fallback' ) ) :
 	function foundationpress_menu_fallback() {
 		echo '<div class="alert-box secondary">';
-		/* translators: %1$s: link to menus, %2$s: link to customize. */
 		printf(
-			__( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'foundationpress' ),
-			/* translators: %s: menu url */
+			/* translators: %1$s: link to menus, %2$s: link to customize. */
+			esc_html__( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'foundationpress' ),
 			sprintf(
+				// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
+				/* translators: %s: menu url */
 				__( '<a href="%s">Menus</a>', 'foundationpress' ),
-				get_admin_url( get_current_blog_id(), 'nav-menus.php' )
+				// phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
+				esc_url( get_admin_url( get_current_blog_id(), 'nav-menus.php' ) )
 			),
-			/* translators: %s: customize url */
 			sprintf(
+				// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
+				/* translators: %s: customize url */
 				__( '<a href="%s">Customize</a>', 'foundationpress' ),
-				get_admin_url( get_current_blog_id(), 'customize.php' )
+				// phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
+				esc_url( get_admin_url( get_current_blog_id(), 'customize.php' ) )
 			)
 		);
 		echo '</div>';
@@ -134,7 +138,7 @@ endif;
 // Add Foundation 'is-active' class for the current menu item.
 if ( ! function_exists( 'foundationpress_active_nav_class' ) ) :
 	function foundationpress_active_nav_class( $classes, $item ) {
-		if ( $item->current == 1 || $item->current_item_ancestor == true ) {
+		if ( 1 === $item->current || $item->current_item_ancestor ) {
 			$classes[] = 'is-active';
 		}
 		return $classes;
@@ -206,8 +210,8 @@ if ( ! function_exists( 'foundationpress_gallery' ) ) :
 		}
 
 		// Allow plugins/themes to override the default gallery template.
-		$output = apply_filters( 'post_gallery', '', $attr, $instance );
-		if ( $output != '' ) {
+		$output = apply_filters( 'foundationpress_post_gallery', '', $attr, $instance );
+		if ( '' !== $output ) {
 			return $output;
 		}
 
@@ -320,7 +324,7 @@ if ( ! function_exists( 'foundationpress_gallery' ) ) :
 		foreach ( $attachments as $id => $attachment ) {
 
 			// Check if destination is file, nothing or attachment page.
-			if ( isset( $attr['link'] ) && $attr['link'] == 'file' ) {
+			if ( isset( $attr['link'] ) && 'file' === $attr['link'] ) {
 				$link = wp_get_attachment_link(
 					$id,
 					$size_class,
@@ -336,7 +340,7 @@ if ( ! function_exists( 'foundationpress_gallery' ) ) :
 				// Edit this line to implement your html params in <a> tag with use a custom lightbox plugin.
 				$link = str_replace( '<a href', '<a class="thumbnail fp-gallery-lightbox" data-gall="fp-gallery-' . $post->ID . '" data-title="' . wptexturize( $attachment->post_excerpt ) . '" title="' . wptexturize( $attachment->post_excerpt ) . '" href', $link );
 
-			} elseif ( isset( $attr['link'] ) && $attr['link'] == 'none' ) {
+			} elseif ( isset( $attr['link'] ) && 'none' === $attr['link'] ) {
 				$link = wp_get_attachment_image(
 					$id,
 					$size_class,
@@ -373,6 +377,7 @@ if ( ! function_exists( 'foundationpress_gallery' ) ) :
 		        </{$icon_tag}>";
 
 			// Uncomment if you wish to display captions inline on gallery.
+			// phpcs:ignore Squiz.PHP.CommentedOutCode.Found
 			/*
 			if ( $caption_tag && trim($attachment->post_excerpt) ) {
 				$output .= "

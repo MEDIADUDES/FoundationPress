@@ -1,7 +1,10 @@
 <?php
-/*
-Template Name: Full Width
-*/
+/**
+ * Template Name: Full Width
+ *
+ * @package FoundationPress
+ */
+
 get_header(); ?>
 
 <?php get_template_part( 'template-parts/featured-image' ); ?>

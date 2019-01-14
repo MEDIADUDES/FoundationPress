@@ -51,13 +51,13 @@ endif;
 	Prevent access to this file directly
 	*/
 
-	defined( 'ABSPATH' ) || die( __( 'Please do not load this page directly. Thanks!', 'foundationpress' ) );
+	defined( 'ABSPATH' ) || die( esc_html__( 'Please do not load this page directly. Thanks!', 'foundationpress' ) );
 
 if ( post_password_required() ) {
 	?>
 	<section id="comments">
 		<div class="notice">
-			<p class="bottom"><?php _e( 'This post is password protected. Enter the password to view comments.', 'foundationpress' ); ?></p>
+			<p class="bottom"><?php esc_html_e( 'This post is password protected. Enter the password to view comments.', 'foundationpress' ); ?></p>
 		</div>
 	</section>
 	<?php
