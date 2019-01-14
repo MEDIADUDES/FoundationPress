@@ -47,9 +47,10 @@
     #stargazers {
       ::before {
         content: '\f09b';
+        // stylelint-disable-next-line font-family-no-missing-generic-family-keyword
         font-family: FontAwesome;
         font-style: normal;
-        font-weight: normal;
+        font-weight: 400;
         text-decoration: inherit;
         color: #B4C9D1;
         margin-right: rem-calc(8);
@@ -59,9 +60,10 @@
     #twitter {
       ::before {
         content: '\f099';
+        // stylelint-disable-next-line font-family-no-missing-generic-family-keyword
         font-family: FontAwesome;
         font-style: normal;
-        font-weight: normal;
+        font-weight: 400;
         text-decoration: inherit;
         color: #B4C9D1;
         margin-right: rem-calc(8);

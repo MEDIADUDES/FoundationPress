@@ -37,7 +37,7 @@
       text-transform: uppercase;
       font-size: 0.75rem;
       color: $dark-gray;
-      font-weight: bold;
+      font-weight: 700;
       line-height: 1;
       padding-left: 0.9rem;
       margin-bottom: 0.5rem;
@@ -54,7 +54,7 @@
 
     .docs-toc .active {
       background: #2199e8;
-      color: white;
+      color: #fff;
     }
 
     .docs-toc .docs-sub-menu:first-child .docs-menu-title {
@@ -69,7 +69,7 @@
   .grid-x {
     background: #d6ecfa;
     font-size: 12px;
-    line-height: 2rem;
+    line-height: 32px;
     margin-bottom: 1.5rem;
     
     .cell,:nth-child(odd) {
