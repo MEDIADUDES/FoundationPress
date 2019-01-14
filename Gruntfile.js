@@ -49,7 +49,7 @@ module.exports = function(grunt) {
 					gruntfile: 'Gruntfile.js',
 				},
 				src: 'src/assets/js', // Development code
-				dest: 'dest/assets/js', // Production code
+				dest: 'dist/assets/js', // Production code
 				dist_file_name: 'app.js',
 				files_std: [
 					// Standard file match
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
 			// Sass assets
 			sass: {
 				src: 'src/assets/scss', // Source files dir
-				dest: 'dest/assets/css', // Compiled files dir
+				dest: 'dist/assets/css', // Compiled files dir
 				files_std: [
 					// Standard file match
 					'<%= paths.sass.src %>/**/*.scss',
@@ -74,7 +74,7 @@ module.exports = function(grunt) {
 
 			// CSS assets
 			css: {
-				src: 'dest/assets/css', // Source files dir
+				src: 'dist/assets/css', // Source files dir
 				files_std: [
 					// Standard file match
 					'<%= paths.css.src %>/*.css',
@@ -113,7 +113,7 @@ module.exports = function(grunt) {
 			img: {
 				ext: 'png,jpg,gif,svg,jpeg',
 				src: 'src/assets/images/**/*.{<%= paths.img.ext %>}', // Source files
-				dest: 'dest/assets/images', // destination files dir
+				dest: 'dist/assets/images', // destination files dir
 				files_std: [
 					// Standard file match
 					'<%= paths.img.src %>',
