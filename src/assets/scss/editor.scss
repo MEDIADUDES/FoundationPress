@@ -1,13 +1,12 @@
+@charset 'utf-8';
 /*!
  * Gutenberg Editor Styles
  */
 
 /** === Includes === */
 
-@charset 'utf-8';
-
 @import 'settings';
-@import 'foundation';
+@import '~foundation-sites/scss/foundation';
 
 @include foundation-typography;
 @include foundation-button;

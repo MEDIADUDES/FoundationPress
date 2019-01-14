@@ -11,7 +11,7 @@ module.exports = {
 
 	sass: {
 		files: ['<%= paths.sass.files_std %>'],
-		tasks: ['prettier', 'stylelint:fix', 'sass', 'postcss'],
+		tasks: ['prettier', 'stylelint:fix', 'webpack'],
 		options: {
 			livereload: false,
 		},

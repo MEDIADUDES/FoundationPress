@@ -1,13 +1,21 @@
 const path = require('path');
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable import/no-extraneous-dependencies */
 const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
 	build: {
-		entry: [`${path.resolve()}/<%= paths.js.src %>/app.js`],
+		mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+		entry: {
+			app: `${path.resolve()}/<%= paths.js.src %>/app.js`,
+			main: `${path.resolve()}/<%= paths.sass.src %>/main.scss`,
+			editor: `${path.resolve()}/<%= paths.sass.src %>/editor.scss`,
+		},
 		output: {
 			path: `${path.resolve()}/<%= paths.js.dest %>`,
-			filename: '<%= paths.js.dist_file_name %>',
+			filename: '[name].js',
 		},
 		stats: {
 			colors: true,
@@ -18,7 +26,7 @@ module.exports = {
 		progress: true,
 		failOnError: true,
 		watch: false,
-		devtool: 'source-map',
+		devtool: 'nosources-source-map',
 		plugins: [
 			new webpack.ProvidePlugin({
 				$: 'jquery',
@@ -26,6 +34,22 @@ module.exports = {
 				'window.jQuery': 'jquery',
 				'window.$': 'jquery',
 			}),
+			new webpack.LoaderOptionsPlugin({
+				options: {
+					postcss: [autoprefixer()],
+				},
+			}),
+			new MiniCssExtractPlugin({
+				// Options similar to the same options in webpackOptions.output
+				// both options are optional
+				filename: '../css/[name].css',
+			}),
+			new CopyWebpackPlugin([
+				{
+					from: `${path.resolve()}/src/assets/images`,
+					to: `${path.resolve()}/dist/assets/images`,
+				},
+			]),
 		],
 		module: {
 			rules: [
@@ -42,6 +66,35 @@ module.exports = {
 							],
 						},
 					},
+				},
+				{
+					test: /\.scss$/,
+					use: [
+						{
+							loader: MiniCssExtractPlugin.loader,
+						},
+						{
+							loader: 'css-loader?-url&sourceMap',
+						},
+						{
+							loader: 'postcss-loader',
+							options: {
+								parser: 'postcss-scss',
+								sourceMap: true,
+							},
+						},
+						{
+							loader: 'sass-loader',
+							query: {
+								outputStyle:
+									process.env.NODE_ENV === 'production'
+										? 'compressed'
+										: 'extended',
+								sourceMap: true,
+								sourceMapContents: false,
+							},
+						},
+					],
 				},
 			],
 		},
