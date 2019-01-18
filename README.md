@@ -17,9 +17,9 @@ Huge thanks to [olefredrik](https://github.com/olefredrik/FoundationPress) (and 
 
 ## Requirements
 
-**This project requires [Node.js](http://nodejs.org) v4.x.x to v6.11.x to be installed on your machine.** Please be aware that you might encounter problems with the installation if you are using the most current Node version (bleeding edge) with all the latest features.
+**This project requires [Node.js](http://nodejs.org) v8.x.x to be installed on your machine.** Please be aware that you might encounter problems with the installation if you are using the most current Node version (bleeding edge) with all the latest features.
 
-FoundationPress uses [Sass](http://Sass-lang.com/) (CSS with superpowers). In short, Sass is a CSS pre-processor that allows you to write styles more effectively and tidy.
+FoundationPress uses [Sass](http://Sass-lang.com/) (CSS with superpowers). In short, Sass is a CSS pre-processor that allows you to write styles more effectively and tidy. FoundationPress uses the SCSS syntax from Sass.
 
 The Sass is compiled using libsass, which requires the GCC to be installed on your machine. Windows users can install it through [MinGW](http://www.mingw.org/), and Mac users can install it through the [Xcode Command-line Tools](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/).
 
@@ -33,20 +33,14 @@ $ cd my-wordpress-folder/wp-content/themes/
 $ git clone https://github.com/MEDIADUDES/FoundationPress.git
 $ cd FoundationPress
 $ npm install
+$ composer install
+$ grunt
 ```
 
 ### 2. Configuration
 
-#### YAML config file
-FoundationPress includes a `config-default.yml` file. To make changes to the configuration, make a copy of `config-default.yml` and name it `config.yml` and make changes to that file. The `config.yml` file is ignored by git so that each environment can use a different configuration with the same git repo.
-
-At the start of the build process a check is done to see if a `config.yml` file exists. If `config.yml` exists, the configuration will be loaded from `config.yml`. If `config.yml` does not exist, `config-default.yml` will be used as a fallback.
-
-#### Browsersync setup
-If you want to take advantage of [Browsersync](https://www.browsersync.io/) (automatic browser refresh when a file is saved), simply open your `config.yml` file after creating it in the previous step, and put your local dev-server address and port (e.g http://localhost:8888) in the `url` property under the `BROWSERSYNC` object.
-
-#### Static asset hashing / cache breaker
-If you want to make sure your users see the latest changes after re-deploying your theme, you can enable static asset hashing. In your `config.yml`, set ``REVISIONING: true;``. Hashing will work on the ``npm run build`` and ``npm run dev`` commands. It will not be applied on the start command with browsersync. This is by design.  Hashing will only change if there are actual changes in the files.
+#### Livereload
+If you want to take advantage of automatic browser refresh when a file is saved, simply run the grunt watch task `grunt watch` after installing it in the previous steps. You just need to install e.g. the livereload extension for your browser or include the livereload script manually in your website. More infos can be found [here](http://livereload.com/).
 
 ### 3. Get started
 
@@ -62,7 +56,7 @@ When building for production, the CSS and JS will be minified. To minify the ass
 $ npm run build
 ```
 
-#### To create a .zip file of your theme, run:
+#### To create a .zip file of your theme, run: (TODO: implement with grund again. Currently not available.)
 
 ```
 $ npm run package
@@ -72,25 +66,26 @@ Running this command will build and minify the theme's assets and place a .zip a
 
 ### Project structure
 
-In the `/src` folder you will find the working files for all your assets. Every time you make a change to a file that is watched by Gulp, the output will be saved to the `/dist` folder. The contents of this folder is the compiled code that you should not touch (unless you have a good reason for it).
+In the `/src` folder you will find the working files for all your assets. Every time you make a change to a file that is watched by Grunt, the output will be saved to the `/dist` folder. The contents of this folder is the compiled code that you should not touch (unless you have a good reason for it).
 
 The `/page-templates` folder contains templates that can be selected in the Pages section of the WordPress admin panel. To create a new page-template, simply create a new file in this folder and make sure to give it a template name.
 
-I guess the rest is quite self explanatory. Feel free to ask if you feel stuck.
+The rest should be quite self explanatory. Feel free to ask if you feel stuck.
 
 ### Styles and Sass Compilation
 
- * `style.css`: Do not worry about this file. (For some reason) it's required by WordPress. All styling are handled in the Sass files described below
+ * `style.css`: Do not worry about this file. It's required by WordPress to make this theme work properly. All the styling inside this file won't be enqueued. All styling are handled in the Sass files described below:
 
- * `src/assets/scss/app.scss`: Make imports for all your styles here
- * `src/assets/scss/global/*.scss`: Global settings
- * `src/assets/scss/components/*.scss`: Buttons etc.
- * `src/assets/scss/modules/*.scss`: Topbar, footer etc.
- * `src/assets/scss/templates/*.scss`: Page template styling
+ * `src/assets/scss/main.scss`: Make imports for all your styles here
+ * `src/assets/scss/_settings.scss`: All Foundation component styles can be configured here.
+ * `src/assets/scss/global/*.scss`: Global settings. Define your custom variables here. E.g. colors.
+ * `src/assets/scss/components/*.scss`: Components like Buttons, Searchbars, Tabs, Accordions, etc. Components are reuseable elements, so design them in a way they can be used independently and in combination with other elements without affecting their appearance.
+ * `src/assets/scss/modules/*.scss`: Topbar, footer etc. This are more or less sections or combinations of different components and elements.
+ * `src/assets/scss/templates/*.scss`: Page template styling. Styles for individual pages especially the ones in `/page-templates`.
 
- * `dist/assets/css/app.css`: This file is loaded in the `<head>` section of your document, and contains the compiled styles for your project.
+ * `dist/assets/css/main.css`: This file is loaded in the `<head>` section of your document, and contains the compiled styles for your project.
 
-If you're new to Sass, please note that you need to have Gulp running in the background (``npm start``), for any changes in your scss files to be compiled to `app.css`.
+If you're new to Sass, please note that you need to have Grunt running in the background (`npm start`), for any changes in your scss files to be compiled to `main.css`.
 
 ### JavaScript Compilation
 
@@ -98,17 +93,17 @@ All JavaScript files, including Foundation's modules, are imported through the `
 
 If you're unfamiliar with modules and module bundling, check out [this resource for node style require/exports](http://openmymind.net/2012/2/3/Node-Require-and-Exports/) and [this resource to understand ES6 modules](http://exploringjs.com/es6/ch_modules.html).
 
-Foundation modules are loaded in the `src/assets/js/app.js` file. By default all components are loaded. You can also pick and choose which modules to include. Just follow the instructions in the file.
+Foundation modules are loaded in the `src/assets/js/lib/foundation.js` file. By default all components are loaded. You can also pick and choose which modules to include to decrease the JavaScript file size. Just comment out the modules you don't need and follow the instructions in the file.
 
 If you need to output additional JavaScript files separate from `app.js`, do the following:
-* Create new `custom.js` file in `src/assets/js/`. If you will be using jQuery, add `import $ from 'jquery';` at the top of the file.
-* In `config.yml`, add `src/assets/js/custom.js` to `PATHS.entries`.
+* Create new `custom.js` file in `src/assets/js/`. jQuery is automatically included if you use either `jQuery` or `$` variables in your code.
+* In `tasks/options/webpack.js`, add the new file as an entry analogous to the `app.js` file.
 * Build (`npm start`)
-* You will now have a `custom.js` file outputted to the `dist/assets/js/` directory.
+* You will now have a `custom.js` file outputted to the `dist/assets/js/` directory. Remember to enqueue it in `/library/enqueue-scripts.php`.
 
 ## Demo
 
-* [Clean FoundationPress install](http://foundationpress.olefredrik.com/)
+* [Clean FoundationPress install](https://github.com/MEDIADUDES/FoundationPress)
 * [FoundationPress Kitchen Sink - see every single element in action](http://foundationpress.olefredrik.com/kitchen-sink/)
 
 ## Local Development
