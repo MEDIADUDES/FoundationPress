@@ -13,7 +13,8 @@ if ( ! function_exists( 'foundationpress_theme_support' ) ) :
 
 		// Switch default core markup for search form, comment form, and comments to output valid HTML5
 		add_theme_support(
-			'html5', array(
+			'html5',
+			array(
 				'search-form',
 				'comment-form',
 				'comment-list',
@@ -47,7 +48,7 @@ if ( ! function_exists( 'foundationpress_theme_support' ) ) :
 		add_editor_style( get_stylesheet_directory_uri() . '/dist/assets/css/editor.css' );
 
 		// Add foundation.css as editor style https://codex.wordpress.org/Editor_Style
-		// add_editor_style( 'dist/assets/css/' . foundationpress_asset_path( 'editor.css' ) );
+		// add_editor_style( 'dist/assets/css/editor.css' );
 	}
 
 	add_action( 'after_setup_theme', 'foundationpress_theme_support' );

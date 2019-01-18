@@ -1,7 +1,13 @@
-import $ from 'jquery';
+// inspired by https://github.com/vue-foundation/vue-foundation/blob/master/src/foundation.js
+// jQuery is included with webpack.ProvidePlugin
+// Foundation core and utils - Best to import all of these
 import { Foundation } from 'foundation-sites/js/foundation.core';
-import { rtl, GetYoDigits, transitionend } from 'foundation-sites/js/foundation.util.core';
-import { Box } from 'foundation-sites/js/foundation.util.box'
+import {
+	rtl,
+	GetYoDigits,
+	transitionend,
+} from 'foundation-sites/js/foundation.core.utils';
+import { Box } from 'foundation-sites/js/foundation.util.box';
 import { onImagesLoaded } from 'foundation-sites/js/foundation.util.imageLoader';
 import { Keyboard } from 'foundation-sites/js/foundation.util.keyboard';
 import { MediaQuery } from 'foundation-sites/js/foundation.util.mediaQuery';
@@ -10,6 +16,11 @@ import { Nest } from 'foundation-sites/js/foundation.util.nest';
 import { Timer } from 'foundation-sites/js/foundation.util.timer';
 import { Touch } from 'foundation-sites/js/foundation.util.touch';
 import { Triggers } from 'foundation-sites/js/foundation.util.triggers';
+
+// Foundation plugins - Pick and choose your plugins here!
+// If you comment out a plugin you will need to comment out
+// the corresponding Foundation.plugin line also.
+// This is a template project so they have all been imported.
 import { Abide } from 'foundation-sites/js/foundation.abide';
 import { Accordion } from 'foundation-sites/js/foundation.accordion';
 import { AccordionMenu } from 'foundation-sites/js/foundation.accordionMenu';
@@ -32,6 +43,9 @@ import { Toggler } from 'foundation-sites/js/foundation.toggler';
 import { Tooltip } from 'foundation-sites/js/foundation.tooltip';
 import { ResponsiveAccordionTabs } from 'foundation-sites/js/foundation.responsiveAccordionTabs';
 
+// Require non-modular scripts
+require('motion-ui');
+require('what-input');
 
 Foundation.addToJquery($);
 
@@ -51,53 +65,38 @@ Foundation.Move = Move;
 Foundation.Nest = Nest;
 Foundation.Timer = Timer;
 
-// Touch and Triggers previously were almost purely sede effect driven,
+// Touch and Triggers previously were almost purely side effect driven,
 // so no // need to add it to Foundation, just init them.
 
 Touch.init($);
-
 Triggers.init($, Foundation);
 
+// both parameters are needed, otherwise webpack will remove the
+// plugin from the global namespace.
+// see https://github.com/zurb/foundation-sites/issues/10792
+
 Foundation.plugin(Abide, 'Abide');
-
 Foundation.plugin(Accordion, 'Accordion');
-
 Foundation.plugin(AccordionMenu, 'AccordionMenu');
-
 Foundation.plugin(Drilldown, 'Drilldown');
-
 Foundation.plugin(Dropdown, 'Dropdown');
-
 Foundation.plugin(DropdownMenu, 'DropdownMenu');
-
 Foundation.plugin(Equalizer, 'Equalizer');
-
 Foundation.plugin(Interchange, 'Interchange');
-
 Foundation.plugin(Magellan, 'Magellan');
-
 Foundation.plugin(OffCanvas, 'OffCanvas');
-
 Foundation.plugin(Orbit, 'Orbit');
-
+Foundation.plugin(ResponsiveAccordionTabs, 'ResponsiveAccordionTabs');
 Foundation.plugin(ResponsiveMenu, 'ResponsiveMenu');
-
 Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
-
 Foundation.plugin(Reveal, 'Reveal');
-
 Foundation.plugin(Slider, 'Slider');
-
 Foundation.plugin(SmoothScroll, 'SmoothScroll');
-
 Foundation.plugin(Sticky, 'Sticky');
-
 Foundation.plugin(Tabs, 'Tabs');
-
 Foundation.plugin(Toggler, 'Toggler');
-
 Foundation.plugin(Tooltip, 'Tooltip');
 
-Foundation.plugin(ResponsiveAccordionTabs, 'ResponsiveAccordionTabs');
+$(() => $(document).foundation());
 
-module.exports = Foundation;
+export default Foundation;

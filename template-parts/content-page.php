@@ -2,7 +2,6 @@
 /**
  * The default template for displaying page content
  *
- *
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
@@ -19,13 +18,17 @@
 	</div>
 	<footer>
 		<?php
-			wp_link_pages(
-				array(
-					'before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ),
-					'after'  => '</p></nav>',
-				)
-			);
+		wp_link_pages(
+			array(
+				'before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ),
+				'after'  => '</p></nav>',
+			)
+		);
+		if ( get_the_tags() ) {
+			?>
+			<p><?php the_tags(); ?></p>
+			<?php
+		}
 		?>
-		<?php $tag = get_the_tags(); if ( $tag ) { ?><p><?php the_tags(); ?></p><?php } ?>
 	</footer>
 </article>

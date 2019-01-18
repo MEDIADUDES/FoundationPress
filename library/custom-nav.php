@@ -6,12 +6,13 @@
  * @since FoundationPress 1.0.0
  */
 
-if ( ! function_exists( 'wpt_register_theme_customizer' ) ) :
-	function wpt_register_theme_customizer( $wp_customize ) {
+if ( ! function_exists( 'foundationpress_register_theme_customizer' ) ) :
+	function foundationpress_register_theme_customizer( $wp_customize ) {
 
 		// Create custom panels
 		$wp_customize->add_panel(
-			'mobile_menu_settings', array(
+			'mobile_menu_settings',
+			array(
 				'priority'       => 1000,
 				'theme_supports' => '',
 				'title'          => __( 'Mobile Menu Settings', 'foundationpress' ),
@@ -21,7 +22,8 @@ if ( ! function_exists( 'wpt_register_theme_customizer' ) ) :
 
 		// Create custom field for mobile navigation layout
 		$wp_customize->add_section(
-			'mobile_menu_layout', array(
+			'mobile_menu_layout',
+			array(
 				'title'    => __( 'Mobile navigation layout', 'foundationpress' ),
 				'panel'    => 'mobile_menu_settings',
 				'priority' => 1000,
@@ -30,7 +32,7 @@ if ( ! function_exists( 'wpt_register_theme_customizer' ) ) :
 
 		// Set default navigation layout
 		$wp_customize->add_setting(
-			'wpt_mobile_menu_layout',
+			'foundationpress_mobile_menu_layout',
 			array(
 				'default' => __( 'topbar', 'foundationpress' ),
 			)
@@ -44,7 +46,7 @@ if ( ! function_exists( 'wpt_register_theme_customizer' ) ) :
 				array(
 					'type'     => 'radio',
 					'section'  => 'mobile_menu_layout',
-					'settings' => 'wpt_mobile_menu_layout',
+					'settings' => 'foundationpress_mobile_menu_layout',
 					'choices'  => array(
 						'topbar'    => 'Topbar',
 						'offcanvas' => 'Offcanvas',
@@ -54,15 +56,16 @@ if ( ! function_exists( 'wpt_register_theme_customizer' ) ) :
 		);
 
 	}
+	add_action( 'customize_register', 'foundationpress_register_theme_customizer' );
+endif;
 
-	add_action( 'customize_register', 'wpt_register_theme_customizer' );
-
+if ( ! function_exists( 'foundationpress_mobile_nav_class' ) ) :
 	// Add class to body to help w/ CSS
-	add_filter( 'body_class', 'mobile_nav_class' );
-	function mobile_nav_class( $classes ) {
-		if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) :
+	add_filter( 'body_class', 'foundationpress_mobile_nav_class' );
+	function foundationpress_mobile_nav_class( $classes ) {
+		if ( ! get_theme_mod( 'foundationpress_mobile_menu_layout' ) || get_theme_mod( 'foundationpress_mobile_menu_layout' ) === 'topbar' ) :
 			$classes[] = 'topbar';
-		elseif ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) :
+		elseif ( get_theme_mod( 'foundationpress_mobile_menu_layout' ) === 'offcanvas' ) :
 			$classes[] = 'offcanvas';
 		endif;
 		return $classes;

@@ -1,9 +1,8 @@
 @charset 'utf-8';
 
-
 @import 'settings';
-@import 'foundation';
-@import 'motion-ui';
+@import '~foundation-sites/scss/foundation';
+@import '~motion-ui/motion-ui';
 
 @include foundation-global-styles;
 //@include foundation-grid;
@@ -50,34 +49,31 @@
 
 // @include foundation-prototype-classes;
 
-@include motion-ui-transitions;
-@include motion-ui-animations;
-
 /*
   My custom styles:
   Add your scss files below to structure your project styles
 */
 
 // Global
-@import "global/accessibility";
-@import "global/colors";
-@import "global/wp-admin";
-@import "global/wp-overrides";
-@import "global/gutenberg";
+@import 'global/accessibility';
+@import 'global/colors';
+@import 'global/wp-admin';
+@import 'global/wp-overrides';
+@import 'global/gutenberg';
 
 // Modules
-@import "modules/navigation";
-@import "modules/content";
-@import "modules/footer";
-@import "modules/editor-style";
+@import 'modules/navigation';
+@import 'modules/content';
+@import 'modules/footer';
+@import 'modules/editor-style';
 
 // Components
-@import "components/buttons";
-@import "components/cards";
-@import "components/featured-image";
-@import "components/dividers";
-@import "components/links";
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/featured-image';
+@import 'components/dividers';
+@import 'components/links';
 
 // Templates
-@import "templates/front";
-@import "templates/kitchen-sink";
+@import 'templates/front';
+@import 'templates/kitchen-sink';

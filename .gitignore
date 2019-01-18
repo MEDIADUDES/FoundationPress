@@ -1,11 +1,85 @@
-.DS_Store
+# Created with the help of https://www.gitignore.io/api/wordpress,sublimetext,grunt,sass,osx,git,tower
+
+### SublimeText ###
+# cache files for sublime text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+# workspace files are user-specific
+*.sublime-workspace
+
+# project files should be checked into the repository, unless a significant
+# proportion of contributors will probably not be using SublimeText
+# *.sublime-project
+
+# sftp configuration file
+sftp-config.json
+
+# Package control specific files
+Package Control.last-run
+Package Control.ca-list
+Package Control.ca-bundle
+Package Control.system-ca-bundle
+Package Control.cache/
+Package Control.ca-certs/
+bh_unicode_properties.cache
+
+# Sublime-github package stores a github token in this file
+# https://packagecontrol.io/packages/sublime-github
+GitHub.sublime-settings
+
+# Sublime-Grunt package cache file
+.sublime-grunt.cache
+
+# PHP Intel package
+.phpintel/
+
+### Grunt ###
+# Grunt usually compiles files inside this directory
+dist/
+build/
+
+# Grunt usually preprocesses files such as coffeescript, compass... inside the .tmp directory
+.tmp/
+
 node_modules
-npm-debug.log
-dist
-config.yml
-*.sass-cache*
-*.log
-.idea/
-*.swp
-packaged/
-wpcs/
+
+# SASS
+.sass-cache
+
+### macOS ###
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Others ###
+
+# generated of README.md
+README.html
+
+#Composer
+/vendor

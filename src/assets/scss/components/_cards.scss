@@ -1,21 +1,17 @@
 .cards-container {
+	@include xy-grid;
 
-  @include xy-grid;
+	.card {
+		@include breakpoint(small) {
+			@include xy-cell(12);
 
-  .card {
-    @include breakpoint(small) {
-      @include xy-cell(12);
+			.card-content {
+				padding: 1rem;
+			}
+		}
 
-      .card-content {
-        padding: 1rem;
-      }
-
-    }
-
-    @include breakpoint(medium) {
-      @include xy-cell(1 of 3, true, 0.7rem );
-
-    }
-
-  }
+		@include breakpoint(medium) {
+			@include xy-cell(1 of 3, true, 0.7rem);
+		}
+	}
 }

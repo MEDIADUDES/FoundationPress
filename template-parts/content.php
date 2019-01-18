@@ -13,11 +13,11 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header>
 	<?php
-		if ( is_single() ) {
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		} else {
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		}
+	if ( is_single() ) {
+		the_title( '<h1 class="entry-title">', '</h1>' );
+	} else {
+		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+	}
 	?>
 		<?php foundationpress_entry_meta(); ?>
 	</header>
@@ -27,13 +27,18 @@
 	</div>
 	<footer>
 		<?php
-			wp_link_pages(
-				array(
-					'before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ),
-					'after'  => '</p></nav>',
-				)
-			);
+		wp_link_pages(
+			array(
+				'before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ),
+				'after'  => '</p></nav>',
+			)
+		);
+
+		if ( get_the_tags() ) {
+			?>
+			<p><?php the_tags(); ?></p>
+			<?php
+		}
 		?>
-		<?php $tag = get_the_tags(); if ( $tag ) { ?><p><?php the_tags(); ?></p><?php } ?>
 	</footer>
 </article>

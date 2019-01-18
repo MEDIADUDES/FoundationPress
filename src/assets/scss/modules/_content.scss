@@ -1,54 +1,65 @@
 .main-container {
-  @include xy-grid-container;
+	@include xy-grid-container;
 }
 
 .main-grid {
-  @include xy-grid();
-  margin-top: 1rem;
+	@include xy-grid();
 
-  @include breakpoint(medium) {
-    margin-top: 3rem;
-  }
+	margin-top: 1rem;
 
-  &.sidebar-left {
-    // Place the sidebar below main content on small screens ...
-    @include breakpoint(small) {
-      .main-content { order: 1; }
-      .sidebar { order: 2; }
-    }
+	@include breakpoint(medium) {
+		margin-top: 3rem;
+	}
 
-    // ... and to the left on medium-up screens, when using the sidebar-left template
-    @include breakpoint(medium) {
-      .main-content { order: 2; }
-      .sidebar { order: 1; }
-    }
-  }
+	&.sidebar-left {
+		// Place the sidebar below main content on small screens ...
+		@include breakpoint(small) {
+			.main-content {
+				order: 1;
+			}
 
-  // Full width template
-  .main-content-full-width {
-    @include xy-cell(12);
-  }
+			.sidebar {
+				order: 2;
+			}
+		}
 
-  // Default template
-  .main-content {
-    @include breakpoint(small) {
-      @include xy-cell(12);
-    }
+		// ... and to the left on medium-up screens, when using the sidebar-left template
+		@include breakpoint(medium) {
+			.main-content {
+				order: 2;
+			}
 
-    @include breakpoint(medium) {
-      @include xy-cell(8);
-    }
-  }
+			.sidebar {
+				order: 1;
+			}
+		}
+	}
 
-  .sidebar {
-    @include breakpoint(small) {
-      @include xy-cell(12);
-    }
+	// Full width template
+	.main-content-full-width {
+		@include xy-cell(12);
+	}
 
-    @include breakpoint(medium) {
-      @include xy-cell(4);
-      margin-top: 1rem;
-    }
+	// Default template
+	.main-content {
+		@include breakpoint(small) {
+			@include xy-cell(12);
+		}
 
-  }
+		@include breakpoint(medium) {
+			@include xy-cell(8);
+		}
+	}
+
+	.sidebar {
+		@include breakpoint(small) {
+			@include xy-cell(12);
+		}
+
+		@include breakpoint(medium) {
+			@include xy-cell(4);
+
+			margin-top: 1rem;
+		}
+	}
 }
