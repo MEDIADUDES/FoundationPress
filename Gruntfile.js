@@ -38,6 +38,7 @@ module.exports = function(grunt) {
 					'<%= paths.js.files %>',
 					'<%= paths.sass.files %>',
 					'<%= paths.json.files %>',
+					'!node_modules/**',
 				],
 				files: '<%= paths.prettier.files_std %>', // Dynamic file match
 			},
