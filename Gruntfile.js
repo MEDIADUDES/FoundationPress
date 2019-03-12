@@ -25,8 +25,8 @@ module.exports = function(grunt) {
 				files_std: [
 					// Standard file match
 					'**/*.php',
-					'!node_modules/**',
-					'!vendor/**',
+					'!./node_modules/**/*.php',
+					'!./vendor/**/*.php',
 				],
 				files: '<%= paths.php.files_std %>', // Dynamic file match
 			},
@@ -38,7 +38,6 @@ module.exports = function(grunt) {
 					'<%= paths.js.files %>',
 					'<%= paths.sass.files %>',
 					'<%= paths.json.files %>',
-					'!node_modules/**',
 				],
 				files: '<%= paths.prettier.files_std %>', // Dynamic file match
 			},
@@ -89,11 +88,12 @@ module.exports = function(grunt) {
 				files_std: [
 					// Standard file match
 					'<%= paths.json.src %>/**/*.json',
-					'!node_modules/**',
-					'!vendor/**',
 					'.eslintrc',
 					'.prettierrc',
 					'.stylelintrc.json',
+					'!./package-lock.json',
+					'!./node_modules/**/*.json',
+					'!./vendor/**/*.json',
 				],
 				files: '<%= paths.json.files_std %>', // Dynamic file match
 			},
@@ -104,8 +104,8 @@ module.exports = function(grunt) {
 				files_std: [
 					// Standard file match
 					'<%= paths.html.src %>/**/*.{html,htm}',
-					'!node_modules/**',
-					'!vendor/**',
+					'!./node_modules/**/*.{html,htm}',
+					'!./vendor/**/*.{html,htm}',
 				],
 				files: '<%= paths.html.files_std %>', // Dynamic file match
 			},
