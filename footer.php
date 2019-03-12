@@ -11,10 +11,8 @@
 ?>
 
 <footer class="footer">
-	<div class="footer-container">
-		<div class="footer-grid">
-			<?php dynamic_sidebar( 'footer-widgets' ); ?>
-		</div>
+	<div class="footer-grid">
+		<?php dynamic_sidebar( 'footer-widgets' ); ?>
 	</div>
 </footer>
 
