@@ -53,9 +53,6 @@ if ( ! function_exists( 'foundationpress_cleanup_head' ) ) :
 		// Start link.
 		remove_action( 'wp_head', 'start_post_rel_link', 10 );
 
-		// Canonical.
-		remove_action( 'wp_head', 'rel_canonical', 10 );
-
 		// Shortlink.
 		remove_action( 'wp_head', 'wp_shortlink_wp_head', 10 );
 
