@@ -10,7 +10,11 @@
 		"no-console": 1,
 		"no-unused-vars": 1,
 		"prettier/prettier": 2,
-		"react/jsx-filename-extension": 0
+		"react/jsx-indent": [2, "tab"],
+		"react/jsx-indent-props": [2, "tab"],
+		"react/jsx-filename-extension": 0,
+		"no-prototype-builtins": 0,
+		"react/forbid-prop-types": 0
 	},
 	"parser": "babel-eslint",
 	"parserOptions": {
