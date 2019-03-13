@@ -18,6 +18,10 @@ function foundationpress_acf_not_installed_error() {
 
 	printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), esc_html( $message ) );
 }
+
+// needed for is_plugin_active function.
+require_once ABSPATH . 'wp-admin/includes/plugin.php';
+
 // Show admin notice if ACF Pro is not installed/active.
 if ( ! is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
 	add_action( 'admin_notices', 'foundationpress_acf_not_installed_error' );
