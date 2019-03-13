@@ -76,12 +76,14 @@ The rest should be quite self explanatory. Feel free to ask if you feel stuck.
 
  * `style.css`: Do not worry about this file. It's required by WordPress to make this theme work properly. All the styling inside this file won't be enqueued. All styling are handled in the Sass files described below:
 
- * `src/assets/scss/main.scss`: Make imports for all your styles here
- * `src/assets/scss/_settings.scss`: All Foundation component styles can be configured here.
- * `src/assets/scss/global/*.scss`: Global settings. Define your custom variables here. E.g. colors.
  * `src/assets/scss/components/*.scss`: Components like Buttons, Searchbars, Tabs, Accordions, etc. Components are reuseable elements, so design them in a way they can be used independently and in combination with other elements without affecting their appearance.
+ * `src/assets/scss/global/*.scss`: Global settings. Define your custom variables here. E.g. colors.
+ * `src/assets/scss/mixins/*.scss`: Put all your custom SCSS mixins here.
  * `src/assets/scss/modules/*.scss`: Topbar, footer etc. This are more or less sections or combinations of different components and elements.
  * `src/assets/scss/templates/*.scss`: Page template styling. Styles for individual pages especially the ones in `/page-templates`.
+ * `src/assets/scss/_foundation.scss`: All Foundation inclues. Uncomment unused styles to reduce filessize.
+ * `src/assets/scss/_settings.scss`: All Foundation component styles can be configured here.
+ * `src/assets/scss/main.scss`: Entrypoint for main styles.
 
  * `dist/assets/css/main.css`: This file is loaded in the `<head>` section of your document, and contains the compiled styles for your project.
 
