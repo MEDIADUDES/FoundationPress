@@ -41,6 +41,13 @@
 				"severity": "warning"
 			}
 		],
+		"value-keyword-case": [
+			"lower",
+			{
+				"ignoreKeywords": ["BlinkMacSystemFont"],
+				"severity": "warning"
+			}
+		],
 		"function-url-quotes": "always",
 		"no-descending-specificity": null
 	}

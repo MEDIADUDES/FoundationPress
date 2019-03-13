@@ -84,7 +84,6 @@ $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-// stylelint-disable-next-line value-keyword-case
 $body-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
 	'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
 	sans-serif;
@@ -138,8 +137,7 @@ $block-grid-max: 8;
 $header-font-family: $body-font-family;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
-// stylelint-disable-next-line value-keyword-case
-$font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
+$font-family-monospace: 'Consolas', 'Liberation Mono', 'Courier', monospace;
 $header-color: inherit;
 $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
