@@ -39,7 +39,7 @@ if ( ! class_exists( 'Foundationpress_Comments' ) ) :
 		/** START_LVL
 		 * Starts the list before the CHILD elements are added. */
 		public function start_lvl( &$output, $depth = 0, $args = array() ) {
-			$GLOBALS['comment_depth'] = $depth + 1; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.OverrideProhibited
+			$GLOBALS['comment_depth'] = $depth + 1; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 			?>
 
 					<ul class="children">
@@ -49,7 +49,7 @@ if ( ! class_exists( 'Foundationpress_Comments' ) ) :
 		/** END_LVL
 		 * Ends the children list of after the elements are added. */
 		public function end_lvl( &$output, $depth = 0, $args = array() ) {
-			$GLOBALS['comment_depth'] = $depth + 1; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.OverrideProhibited
+			$GLOBALS['comment_depth'] = $depth + 1; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 			?>
 
 			</ul><!-- /.children -->
@@ -60,8 +60,8 @@ if ( ! class_exists( 'Foundationpress_Comments' ) ) :
 		/** START_EL */
 		public function start_el( &$output, $comment, $depth = 0, $args = array(), $id = 0 ) {
 			$depth++;
-			$GLOBALS['comment_depth'] = $depth; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.OverrideProhibited
-			$GLOBALS['comment']       = $comment; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.OverrideProhibited
+			$GLOBALS['comment_depth'] = $depth; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+			$GLOBALS['comment']       = $comment; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 			$parent_class             = ( empty( $args['has_children'] ) ? '' : 'parent' );
 			?>
 
