@@ -1,79 +1,22 @@
 @charset 'utf-8';
 
+// Settings.
 @import 'settings';
-@import '~foundation-sites/scss/foundation';
-@import '~motion-ui/motion-ui';
 
-@include foundation-global-styles;
-//@include foundation-grid;
-//@include foundation-flex-grid;
+// All foundation styles and mixins.
+@import 'foundation';
 
-@include foundation-xy-grid-classes;
-@include foundation-typography;
-@include foundation-button;
-@include foundation-forms;
-// @include foundation-range-input;
-@include foundation-accordion;
-@include foundation-accordion-menu;
-@include foundation-badge;
-@include foundation-breadcrumbs;
-@include foundation-button-group;
-@include foundation-callout;
-@include foundation-card;
-@include foundation-close-button;
-@include foundation-menu;
-@include foundation-menu-icon;
-@include foundation-drilldown-menu;
-@include foundation-dropdown;
-@include foundation-dropdown-menu;
-@include foundation-responsive-embed;
-@include foundation-label;
-@include foundation-media-object;
-@include foundation-off-canvas;
-@include foundation-orbit;
-@include foundation-pagination;
-@include foundation-progress-bar;
-@include foundation-slider;
-@include foundation-sticky;
-@include foundation-reveal;
-@include foundation-switch;
-@include foundation-table;
-@include foundation-tabs;
-@include foundation-thumbnail;
-@include foundation-title-bar;
-@include foundation-tooltip;
-@include foundation-top-bar;
-@include foundation-visibility-classes;
-// @include foundation-float-classes;
-@include foundation-flex-classes;
+// All mixins.
+@import 'mixins/mixins';
 
-// @include foundation-prototype-classes;
+// Global styles.
+@import 'global/global';
 
-/*
-  My custom styles:
-  Add your scss files below to structure your project styles
-*/
+// Components.
+@import 'components/components';
 
-// Global
-@import 'global/accessibility';
-@import 'global/colors';
-@import 'global/wp-admin';
-@import 'global/wp-overrides';
-@import 'global/gutenberg';
+//  Modules like Footer, header, Sidebar, Contactform, Menu, etc.
+@import 'modules/modules';
 
-// Modules
-@import 'modules/navigation';
-@import 'modules/content';
-@import 'modules/footer';
-@import 'modules/editor-style';
-
-// Components
-@import 'components/buttons';
-@import 'components/cards';
-@import 'components/featured-image';
-@import 'components/dividers';
-@import 'components/links';
-
-// Templates
-@import 'templates/front';
-@import 'templates/kitchen-sink';
+// Page templates.
+@import 'templates/templates';
