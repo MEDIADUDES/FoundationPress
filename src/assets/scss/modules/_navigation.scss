@@ -14,11 +14,6 @@
 	font-weight: 700;
 }
 
-// Mobile menu
-.mobile-menu {
-	display: none; // prevents repaint caused by JS hiding menu onload
-}
-
 // WP post navigation
 .post-navigation {
 	@include clearfix;
