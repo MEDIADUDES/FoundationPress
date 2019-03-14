@@ -15,7 +15,7 @@ if ( ! function_exists( 'foundationpress_enqueue_scripts' ) ) :
 		// Enqueue the stylesheet.
 		wp_enqueue_style(
 			'foundationpress-styles',
-			get_stylesheet_uri() . '/dist/assets/css/main.css',
+			get_stylesheet_directory_uri() . '/dist/assets/css/main.css',
 			false,
 			filemtime( get_stylesheet_directory() . '/dist/assets/css/main.css' )
 		);
