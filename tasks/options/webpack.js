@@ -19,8 +19,6 @@ module.exports = {
 		},
 		stats: {
 			colors: true,
-			modules: true,
-			reasons: true,
 		},
 		storeStatsTo: 'webpackStats',
 		progress: true,
