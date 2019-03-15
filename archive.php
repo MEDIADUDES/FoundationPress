@@ -19,7 +19,7 @@ get_header(); ?>
 
 <div class="main-container">
 	<div class="main-grid">
-		<main class="main-content">
+		<main class="main-content main-content--with-sidebar">
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>

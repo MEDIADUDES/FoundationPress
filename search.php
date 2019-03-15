@@ -10,7 +10,7 @@ get_header(); ?>
 
 <div class="main-container">
 	<div class="main-grid">
-		<main id="search-results" class="main-content">
+		<main id="search-results" class="main-content main-content--with-sidebar">
 
 		<header>
 			<h1 class="entry-title"><?php esc_html_e( 'Search Results for', 'foundationpress' ); ?> "<?php echo get_search_query(); ?>"</h1>

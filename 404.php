@@ -10,7 +10,7 @@ get_header(); ?>
 
 <div class="main-container">
 	<div class="main-grid">
-		<main class="main-content">
+		<main class="main-content main-content--with-sidebar">
 			<article>
 				<header>
 					<h1 class="entry-title"><?php esc_html_e( 'File Not Found', 'foundationpress' ); ?></h1>
