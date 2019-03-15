@@ -25,9 +25,15 @@
 		@include breakpoint(medium) {
 			.main-content {
 				order: 2;
+
+				&--with-sidebar {
+					@include xy-cell(8, $gutter-position: left);
+				}
 			}
 
 			.sidebar {
+				@include xy-cell(4, $gutter-position: right);
+
 				order: 1;
 			}
 		}
