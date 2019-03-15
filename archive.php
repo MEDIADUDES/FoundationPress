@@ -20,23 +20,19 @@ get_header(); ?>
 <div class="main-container">
 	<div class="main-grid">
 		<main class="main-content main-content--with-sidebar">
-		<?php if ( have_posts() ) : ?>
-
-			<?php /* Start the Loop */ ?>
 			<?php
-			while ( have_posts() ) :
-				the_post();
-				?>
-				<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-			<?php endwhile; ?>
+			if ( have_posts() ) :
+				/* Start the Loop */
+				while ( have_posts() ) :
+					the_post();
+					get_template_part( 'template-parts/content', get_post_format() );
+				endwhile;
+			else :
+				get_template_part( 'template-parts/content', 'none' );
+			endif; // End have_posts() check.
 
-			<?php else : ?>
-				<?php get_template_part( 'template-parts/content', 'none' ); ?>
+			/* Display navigation to next/previous pages when applicable */
 
-			<?php endif; // End have_posts() check. ?>
-
-			<?php /* Display navigation to next/previous pages when applicable */ ?>
-			<?php
 			if ( function_exists( 'foundationpress_pagination' ) ) :
 				foundationpress_pagination();
 			elseif ( is_paged() ) :
@@ -46,10 +42,9 @@ get_header(); ?>
 					<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
 				</nav>
 			<?php endif; ?>
-
 		</main>
-		<?php get_sidebar(); ?>
 
+		<?php get_sidebar(); ?>
 	</div>
 </div>
 

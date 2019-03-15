@@ -9,11 +9,17 @@
  * @since FoundationPress 1.0.0
  */
 
+/*
+Do not delete these lines.
+Prevent access to this file directly
+*/
+
+defined( 'ABSPATH' ) || die( esc_html__( 'Please do not load this page directly. Thanks!', 'foundationpress' ) );
+
 if ( have_comments() ) :
 	?>
 	<section id="comments">
 		<?php
-
 		wp_list_comments(
 			array(
 				'walker'            => new Foundationpress_Comments(),
@@ -35,23 +41,11 @@ if ( have_comments() ) :
 			)
 		);
 
-		?>
-		<?php
-			foundationpress_the_comments_pagination();
+		foundationpress_the_comments_pagination();
 		?>
 	</section>
 	<?php
 endif;
-?>
-
-<?php
-
-	/*
-	Do not delete these lines.
-	Prevent access to this file directly
-	*/
-
-	defined( 'ABSPATH' ) || die( esc_html__( 'Please do not load this page directly. Thanks!', 'foundationpress' ) );
 
 if ( post_password_required() ) {
 	?>
@@ -63,19 +57,17 @@ if ( post_password_required() ) {
 	<?php
 	return;
 }
-?>
 
-<?php
 if ( comments_open() ) :
 	?>
-<section id="respond">
+	<section id="respond">
+		<?php
+			comment_form(
+				array(
+					'class_submit' => 'button',
+				)
+			);
+		?>
+	</section>
 	<?php
-		comment_form(
-			array(
-				'class_submit' => 'button',
-			)
-		);
-	?>
-</section>
-	<?php
-	endif; // If you delete this the sky will fall on your head.
+endif;
