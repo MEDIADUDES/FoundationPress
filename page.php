@@ -24,7 +24,6 @@ get_header(); ?>
 			endwhile;
 			?>
 		</main>
-		<?php get_sidebar(); ?>
 	</div>
 </div>
 
