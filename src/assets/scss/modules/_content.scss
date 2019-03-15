@@ -32,28 +32,28 @@
 			}
 		}
 	}
+}
 
-	.main-content {
-		&--with-sidebar {
-			@include breakpoint(small) {
-				@include xy-cell(full, $gutters: 0);
-			}
-
-			@include breakpoint(medium) {
-				@include xy-cell(8, $gutter-position: right);
-			}
-		}
-	}
-
-	.sidebar {
+.main-content {
+	&--with-sidebar {
 		@include breakpoint(small) {
 			@include xy-cell(full, $gutters: 0);
-
-			margin-top: 1rem;
 		}
 
 		@include breakpoint(medium) {
-			@include xy-cell(4, $gutter-position: left);
+			@include xy-cell(8, $gutter-position: right);
 		}
+	}
+}
+
+.sidebar {
+	@include breakpoint(small) {
+		@include xy-cell(full, $gutters: 0);
+
+		margin-top: 1rem;
+	}
+
+	@include breakpoint(medium) {
+		@include xy-cell(4, $gutter-position: left);
 	}
 }
