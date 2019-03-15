@@ -11,7 +11,7 @@
 get_header(); ?>
 
 <div class="main-container">
-	<div class="main-grid">
+	<div class="main-grid main-grid--sidebar-left">
 		<main class="main-content main-content--with-sidebar">
 			<?php woocommerce_content(); ?>
 		</main>
