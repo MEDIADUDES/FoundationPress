@@ -47,6 +47,10 @@ module.exports = {
 					from: `${path.resolve()}/src/assets/images`,
 					to: `${path.resolve()}/dist/assets/images`,
 				},
+				{
+					from: `${path.resolve()}/src/assets/fonts`,
+					to: `${path.resolve()}/dist/assets/fonts`,
+				},
 			]),
 		],
 		module: {
