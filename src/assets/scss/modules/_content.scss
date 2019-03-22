@@ -54,6 +54,11 @@
 	}
 }
 
+/* Use this class to wrap all content in a container of the site width. */
+.container {
+	@include xy-grid-container($global-width);
+}
+
 .sidebar {
 	@include breakpoint(small) {
 		@include xy-cell(full, $gutters: 0);
