@@ -41,6 +41,8 @@
 }
 
 .main-content {
+	@include xy-cell(full, $gutters: 0);
+
 	&--with-sidebar {
 		@include breakpoint(small) {
 			@include xy-cell(full, $gutters: 0);
