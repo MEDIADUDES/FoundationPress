@@ -11,45 +11,20 @@
  * @since FoundationPress 1.0.0
  */
 
-/** Various clean up functions */
-require_once 'library/cleanup.php';
+/**
+ * Requires all files recursively within given directory
+ *
+ * @param string $path path to directory which should be required recursively.
+ */
+function foundationpress_recursive_require_dir( $path ) {
+	$dir      = new RecursiveDirectoryIterator( $path );
+	$iterator = new RecursiveIteratorIterator( $dir );
+	foreach ( $iterator as $file ) {
+		$fname = $file->getFilename();
+		if ( preg_match( '%\.php$%', $fname ) ) {
+			require_once $file->getPathname();
+		}
+	}
+}
 
-/** Required for Foundation to work properly */
-require_once 'library/foundation.php';
-
-/** Format comments */
-require_once 'library/class-foundationpress-comments.php';
-
-/** Register all navigation menus */
-require_once 'library/navigation.php';
-
-/** Add menu walkers for top-bar and off-canvas */
-require_once 'library/class-foundationpress-top-bar-walker.php';
-require_once 'library/class-foundationpress-mobile-walker.php';
-
-/** Create widget areas in sidebar and footer */
-require_once 'library/widget-areas.php';
-
-/** Return entry meta information for posts */
-require_once 'library/entry-meta.php';
-
-/** Enqueue scripts */
-require_once 'library/enqueue-scripts.php';
-
-/** Add theme support */
-require_once 'library/theme-support.php';
-
-/** Add Nav Options to Customer */
-require_once 'library/custom-nav.php';
-
-/** Change WP's sticky post class */
-require_once 'library/sticky-posts.php';
-
-/** Configure responsive image sizes */
-require_once 'library/responsive-images.php';
-
-/** Gutenberg editor support */
-require_once 'library/gutenberg.php';
-
-/** Load and save Advanced Custom Fields JSON files.  */
-require_once 'library/advanced-custom-fields.php';
+foundationpress_recursive_require_dir( get_stylesheet_directory() . '/library' );
