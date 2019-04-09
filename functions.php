@@ -27,4 +27,4 @@ function foundationpress_recursive_require_dir( $path ) {
 	}
 }
 
-foundationpress_recursive_require_dir( get_stylesheet_directory() . '/library' );
+foundationpress_recursive_require_dir( get_stylesheet_directory() . '/inc' );
