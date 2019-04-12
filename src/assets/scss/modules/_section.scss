@@ -3,6 +3,7 @@ $section-top-bottom-padding: rem-calc(40);
 .section {
 	@include xy-grid-container($global-width);
 
+	position: relative;
 	padding-top: $section-top-bottom-padding;
 	padding-bottom: $section-top-bottom-padding;
 
