@@ -57,7 +57,10 @@ module.exports = {
 			rules: [
 				{
 					test: /\.js$/,
-					exclude: /(node_modules|vendor)/,
+					exclude:
+						process.env.NODE_ENV === 'production'
+							? /(vendor)/
+							: /(node_modules|vendor)/,
 					use: {
 						loader: 'babel-loader',
 						options: {
