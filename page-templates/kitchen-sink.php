@@ -976,6 +976,7 @@ while ( have_posts() ) :
 						<li><a href="#tooltip">Tooltip</a></li>
 						<li><a href="#top-bar">Top Bar</a></li>
 						<li><a href="#visibility-classes">Visibility Classes</a></li>
+						<li><a href="#sections">Sections</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -984,6 +985,125 @@ while ( have_posts() ) :
 			</div>
 		</div><!-- Close main-grid -->
 	</div><!-- Close main-container -->
+
+	<h2 class="docs-heading text-center" data-magellan-target="visibility-classes"><a href="#visibility-classes"></a>Full Width Template</h2>
+
+
+	<div class="main-container main-container--full-width">
+		<div class="main-grid">
+			<main class="main-content">
+				<!-- Sections -->
+				<h2 id="sections" class="docs-heading" data-magellan-target="visibility-classes"><a href="#visibility-classes"></a>Sections</h2>
+				<style>
+					.section:nth-child(even) { background-color: #ddd; }
+					.section:nth-child(odd) { background-color: #eee; }
+					.cell__inner, .section__inner { background-color: rgba(200,200,200,0.5); }
+					pre { display: block; }
+				</style>
+				<div class="section">
+<pre>
+&lt;div class="section"&gt;
+	// this code...
+&lt;/div&gt;
+</pre>
+Varius curabitur enim placerat gravida dictumst tempor ipsum lacus duis quis, magnis etiam congue convallis fermentum posuere sollicitudin tortor curae netus cum, vitae tristique inceptos himenaeos interdum hac volutpat donec ligula. Facilisi imperdiet taciti duis lectus cras senectus, volutpat leo hendrerit cum nam suspendisse donec, vivamus magnis tortor praesent lorem.
+				</div>
+
+				<div class="section section--full">
+<pre>
+&lt;div class="section section--full"&gt;
+	// this code...
+&lt;/div&gt;
+</pre>
+Tristique congue potenti id lacus facilisis eu ad, at elit fames sed aenean ligula ac, convallis eros nisi habitant et massa. Eros tempor neque nisi cras primis nostra curae himenaeos auctor, nullam nulla in nam per ut et enim.
+				</div>
+
+				<div class="section section--full">
+					<div class="section__inner">
+<pre>
+&lt;div class="section section--full"&gt;
+	&lt;div class="section__inner"&gt;
+		// this code...
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+Lorem et blandit rutrum iaculis velit ac urna cum odio nec fringilla, tincidunt sodales dolor litora montes ullamcorper pretium integer morbi. Ante potenti sociosqu ligula posuere pretium imperdiet ac cum conubia porta, commodo habitant porttitor tellus odio erat ultrices turpis.
+					</div>
+				</div>
+
+				<div class="section section--splitted">
+					<div class="cell">
+<pre>
+&lt;div class="section section--splitted"&gt;
+	&lt;div class="cell"&gt;&lt;/div&gt;
+	&lt;div class="cell"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+					</div>
+					<div class="cell"><strong>Note: </strong> No top and bottom paddings here! Platea arcu habitasse fringilla cursus aptent vivamus, ornare tincidunt cubilia orci montes vulputate, fermentum velit lobortis lacus turpis.</div>
+				</div>
+
+				<div class="section section--full section--splitted">
+					<div class="cell">
+<pre>
+&lt;div class="section section--full section--splitted"&gt;
+	&lt;div class="cell"&gt;&lt;/div&gt;
+	&lt;div class="cell"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+					</div>
+					<div class="cell"><strong>Note: </strong> No top and bottom paddings here! Etiam mi cursus habitasse suspendisse vivamus faucibus ad est lorem ornare nostra, euismod condimentum placerat ultrices turpis potenti adipiscing et eros. Tortor tempor magnis suspendisse lobortis diam mus pretium montes venenatis malesuada, bibendum lorem odio curabitur aptent dui imperdiet id consequat, hac condimentum quis convallis litora ullamcorper suscipit molestie sodales.<br></div>
+				</div>
+
+				<div class="section section--full section--splitted">
+					<div class="section__inner">
+						<div class="cell">
+<pre>
+&lt;div class="section section--full section--splitted"&gt;
+	&lt;div class="section__inner"&gt;
+		&lt;div class="cell"&gt;&lt;/div&gt;
+		&lt;div class="cell"&gt;&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+						</div>
+						<div class="cell"><strong>Note: </strong> No top and bottom paddings here!<br>
+						Lorem etiam litora ut interdum at ultricies aliquet enim senectus, urna ultrices integer ridiculus leo in purus lacinia natoque, netus viverra fermentum odio scelerisque hendrerit iaculis nisl. Adipiscing purus turpis tortor interdum ligula leo himenaeos ultricies cubilia, feugiat nulla netus ad nunc taciti non praesent consequat fringilla, tempus aliquet libero risus ante class cras lacinia.
+						</div>
+					</div>
+				</div>
+
+				<div class="section section--full section--splitted">
+					<div class="cell">
+						<div class="cell__inner">
+<pre>
+&lt;div class="section section--full section--splitted"&gt;
+	&lt;div class="cell"&gt;
+		&lt;div class="cell__inner"&gt;
+			// this code ...
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="cell" style="background: url(...);"&gt;
+		&lt;div class="cell__inner"&gt;
+			// Note...
+		&lt;/div&gt;
+		// lorem ipsum...
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+						</div>
+					</div>
+					<div class="cell" style="background: url('<?php echo esc_url( get_template_directory_uri() ); ?>/dist/assets/images/demo/hero-bg-foundation-6-small.svg') center">
+						<div class="cell__inner">
+							<strong>Note: </strong> Top and Bottom paddings are added to <code>.cell__inner</code>! It won't stretch the height.
+							This constellation is handy if you want to add a background to <code>.cell</code> but also want the text only go until the end of the content width (<code>$global-width</code>).
+						</div>
+						Lorem ipsum mauris elementum himenaeos natoque scelerisque eu enim dignissim varius. Congue nostra curae vestibulum cum mauris tempus rutrum bibendum, ipsum odio eleifend montes consequat massa quam, cubilia nam vel dui hendrerit sed aenean.
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
 <?php endwhile; ?>
 <?php
 get_footer();
