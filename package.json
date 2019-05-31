@@ -7,7 +7,8 @@
 	"license": "MIT",
 	"scripts": {
 		"start": "grunt",
-		"build": "cross-env NODE_ENV=production grunt build"
+		"build": "cross-env NODE_ENV=production grunt build",
+		"dev": "cross-env NODE_ENV=development grunt"
 	},
 	"dependencies": {
 		"@babel/polyfill": "7.4.3",

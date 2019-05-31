@@ -7,7 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
 	build: {
-		mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+		mode: process.env.NODE_ENV === 'development' ? 'development' : 'production',
 		entry: {
 			app: `${path.resolve()}/<%= paths.js.src %>/app.js`,
 			main: `${path.resolve()}/<%= paths.sass.src %>/main.scss`,
@@ -58,9 +58,9 @@ module.exports = {
 				{
 					test: /\.js$/,
 					exclude:
-						process.env.NODE_ENV === 'production'
-							? /(vendor)/
-							: /(node_modules|vendor)/,
+						process.env.NODE_ENV === 'development'
+							? /(node_modules|vendor)/
+							: /(vendor)/,
 					use: {
 						loader: 'babel-loader',
 						options: {
@@ -92,9 +92,9 @@ module.exports = {
 							loader: 'sass-loader',
 							query: {
 								outputStyle:
-									process.env.NODE_ENV === 'production'
-										? 'compressed'
-										: 'extended',
+									process.env.NODE_ENV === 'development'
+										? 'extended'
+										: 'compressed',
 								sourceMap: true,
 								sourceMapContents: false,
 							},
