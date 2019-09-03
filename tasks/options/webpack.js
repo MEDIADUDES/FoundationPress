@@ -91,12 +91,7 @@ module.exports = {
 						{
 							loader: 'sass-loader',
 							query: {
-								outputStyle:
-									process.env.NODE_ENV === 'development'
-										? 'extended'
-										: 'compressed',
 								sourceMap: true,
-								sourceMapContents: false,
 							},
 						},
 					],
