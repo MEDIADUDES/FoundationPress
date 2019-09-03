@@ -153,3 +153,6 @@ Pull requests are highly appreciated. Please follow these guidelines:
 2. Make sure that your code is bug-free and does not introduce new bugs
 3. Create a [pull request](https://help.github.com/articles/creating-a-pull-request)
 4. Verify that all the Travis-CI build checks have passed
+
+## Dev Notes
+Currently updated until [55d533f](https://github.com/olefredrik/FoundationPress/commit/55d533f6e5f95baa719bc05542da8f323fb8876d) from forked repository.
