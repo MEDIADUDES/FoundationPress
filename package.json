@@ -8,7 +8,8 @@
 	"scripts": {
 		"start": "grunt",
 		"build": "cross-env NODE_ENV=production grunt build",
-		"dev": "cross-env NODE_ENV=development grunt"
+		"dev": "cross-env NODE_ENV=development grunt",
+		"update": "grunt devUpdate:update"
 	},
 	"dependencies": {
 		"@babel/polyfill": "7.4.4",
