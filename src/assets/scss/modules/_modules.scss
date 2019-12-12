@@ -1,5 +1,21 @@
 //  Place things like: Footer, header, Sidebar, Contactform, Menu, etc. here.
-@import 'navigation';
 @import 'content';
 @import 'footer';
-@import 'editor-style';
+@import 'navigation';
+
+/* Sticky Footer */
+body,
+.off-canvas-content {
+	min-height: 100vh;
+}
+
+.off-canvas-content {
+	display: flex;
+	flex-direction: column;
+}
+
+.main-container {
+	width: 100%;
+	flex-grow: 1;
+	overflow: hidden;
+}

@@ -44,3 +44,17 @@ if ( ! function_exists( 'foundationpress_gutenberg_support' ) ) :
 
 	add_action( 'after_setup_theme', 'foundationpress_gutenberg_support' );
 endif;
+
+function foundationpress_block_categories( $categories, $post ) {
+	return array_merge(
+		$categories,
+		[
+			[
+				'slug'  => 'foundationpress',
+				'title' => 'FoundationPress',
+				'icon'  => 'art',
+			],
+		]
+	);
+}
+add_filter( 'block_categories', 'foundationpress_block_categories', 0, 2 );

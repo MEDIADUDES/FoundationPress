@@ -12,6 +12,7 @@ module.exports = {
 			app: `${path.resolve()}/<%= paths.js.src %>/app.js`,
 			main: `${path.resolve()}/<%= paths.sass.src %>/main.scss`,
 			editor: `${path.resolve()}/<%= paths.sass.src %>/editor.scss`,
+			admin: `${path.resolve()}/<%= paths.sass.src %>/admin.scss`,
 		},
 		output: {
 			path: `${path.resolve()}/<%= paths.js.dest %>`,

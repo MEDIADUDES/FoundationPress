@@ -1,0 +1,48 @@
+{
+	"key": "group_5dd1d877a905c",
+	"title": "Block: Shared Content",
+	"fields": [
+		{
+			"key": "field_5dd1d87d8b5f4",
+			"label": "Shared Content",
+			"name": "shared_content",
+			"type": "select",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"choices": {
+				"example-shared-content": "example-shared-content"
+			},
+			"default_value": [],
+			"allow_null": 1,
+			"multiple": 0,
+			"ui": 0,
+			"return_format": "value",
+			"ajax": 0,
+			"placeholder": ""
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/shared-content"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": 1,
+	"description": "",
+	"modified": 1574033633
+}

@@ -1,0 +1,43 @@
+{
+	"key": "group_5de0fcbb83cef",
+	"title": "Block: Template Section",
+	"fields": [
+		{
+			"key": "field_5de0fd3f06403",
+			"label": "Name",
+			"name": "name",
+			"type": "text",
+			"instructions": "Enter the name of the section from the template",
+			"required": 1,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/template-section"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": 1,
+	"description": "",
+	"modified": 1575026015
+}

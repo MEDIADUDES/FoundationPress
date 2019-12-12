@@ -1,0 +1,102 @@
+{
+	"key": "group_5dc2055e790d5",
+	"title": "Block: FAQ",
+	"fields": [
+		{
+			"key": "field_5dc2d2324709d",
+			"label": "Heading",
+			"name": "heading",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_5dc20661de4be",
+			"label": "FAQ",
+			"name": "faq",
+			"type": "repeater",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"collapsed": "field_5dc2069bde4bf",
+			"min": 0,
+			"max": 0,
+			"layout": "block",
+			"button_label": "",
+			"sub_fields": [
+				{
+					"key": "field_5dc2069bde4bf",
+					"label": "Frage",
+					"name": "question",
+					"type": "text",
+					"instructions": "",
+					"required": 1,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": "",
+					"maxlength": ""
+				},
+				{
+					"key": "field_5dc206a8de4c0",
+					"label": "Antwort",
+					"name": "answer",
+					"type": "textarea",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"maxlength": "",
+					"rows": 2,
+					"new_lines": "br"
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/faq"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": 1,
+	"description": "",
+	"modified": 1573048912
+}

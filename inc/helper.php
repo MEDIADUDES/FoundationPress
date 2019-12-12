@@ -74,6 +74,28 @@ function fp_generate_random_string( $length = 10 ) {
 }
 
 /**
+ * Get the name of the first block.
+ *
+ * @return bool|string If post has blocks: block name. Else: false.
+ */
+function fp_get_first_block_name() {
+	$post = get_post();
+
+	if ( ! empty( $post ) && has_blocks( $post->post_content ) ) {
+		$blocks = parse_blocks( $post->post_content );
+
+		if ( 'core/block' === $blocks[0]['blockName'] ) {
+			$block_content = parse_blocks( get_post( $blocks[0]['attrs']['ref'] )->post_content );
+			return $block_content[0]['blockName'];
+		} else {
+			return $blocks[0]['blockName'];
+		}
+	}
+
+	return false;
+}
+
+/**
  * Moves second half of the content into an accordion if <!--readmore--> tag found in the text.
  *
  * @param  string  $content the content to split.

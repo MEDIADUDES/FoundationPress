@@ -1,0 +1,30 @@
+.b-faq {
+	&__accordions {
+		@include xy-grid();
+
+		margin: 0 rem-calc(-10);
+	}
+
+	&.b-faq.b-faq .accordion {
+		@include xy-cell(50%);
+
+		margin-bottom: 0;
+
+		@include breakpoint(small only) {
+			@include xy-cell();
+		}
+
+		&-item {
+			margin-bottom: rem-calc(20);
+		}
+
+		&-title {
+			line-height: 1.2;
+		}
+
+		&-item:not(.is-active) > .accordion-title,
+		&-content {
+			border-bottom: 1px solid $light-gray;
+		}
+	}
+}

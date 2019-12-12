@@ -4,14 +4,29 @@
  * Gutenberg Editor Styles
  */
 
-/** === Includes === */
-
+// Settings.
 @import 'settings';
-@import '~foundation-sites/scss/foundation';
 
-@include foundation-typography;
-@include foundation-button;
-@include foundation-table;
+// All foundation styles and mixins.
+@import 'foundation';
+
+// All mixins.
+@import 'mixins/mixins';
+
+// Global styles.
+@import 'global/global';
+
+// Components.
+@import 'components/components';
+
+// Blocks.
+@import 'blocks/blocks';
+
+//  Modules like Footer, header, Sidebar, Contactform, Menu, etc.
+@import 'modules/modules';
+
+// Shared content.
+@import 'shared-content/shared-content';
 
 /** === Content Width === */
 .wp-block {
@@ -74,4 +89,18 @@ body {
 /** === Latest Posts grid view === */
 .wp-block-latest-posts.is-grid {
 	list-style: none;
+}
+
+.accordion-content.accordion-content.accordion-content {
+	display: block;
+}
+
+/** === Fix ACF Blocks Alignment === **/
+.wp-block[data-type^='acf/'][data-align] {
+	height: auto;
+
+	.editor-block-list__block-edit {
+		float: none;
+		margin: 0;
+	}
 }

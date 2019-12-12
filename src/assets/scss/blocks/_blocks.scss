@@ -1,0 +1,8 @@
+// All styles regarding gutenberg blocks.
+
+@import 'block-faq';
+
+// wordpress default block.
+.wp-block-columns {
+	@include xy-grid-container($global-width);
+}
