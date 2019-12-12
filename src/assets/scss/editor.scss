@@ -15,13 +15,7 @@
 
 /** === Content Width === */
 .wp-block {
-	width: calc(100vw - (2 * 10));
-
-	@each $breakpoint, $size in $grid-margin-gutters {
-		@include breakpoint($breakpoint) {
-			width: calc(100vw - ($size));
-		}
-	}
+	max-width: 90%;
 }
 
 /** === Base Typography === */
