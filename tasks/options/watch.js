@@ -36,4 +36,9 @@ module.exports = {
 		files: ['<%= paths.php.files_std %>'],
 		tasks: ['phplint', 'phpcbf', 'phpcs'],
 	},
+
+	images: {
+		files: ['<%= paths.img.files_std %>'],
+		tasks: ['webpack'],
+	},
 };
