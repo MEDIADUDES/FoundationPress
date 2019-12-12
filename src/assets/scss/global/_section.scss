@@ -1,5 +1,3 @@
-$section-top-bottom-padding: rem-calc(40);
-
 .section {
 	@include xy-grid-container($global-width);
 
@@ -13,9 +11,6 @@ $section-top-bottom-padding: rem-calc(40);
 
 	&__inner {
 		@include xy-grid-container($global-width, $padding: 0);
-		@include xy-grid();
-
-		width: 100%;
 
 		&--full {
 			@include xy-grid-container($padding: 0);
@@ -25,7 +20,12 @@ $section-top-bottom-padding: rem-calc(40);
 	&--splitted {
 		padding: 0;
 
-		@include xy-grid();
+		&,
+		.section__inner {
+			@include xy-grid();
+
+			width: 100%; /* stretch to container width. still has max-width set! */
+		}
 
 		.cell {
 			@include breakpoint(medium) {
@@ -42,7 +42,7 @@ $section-top-bottom-padding: rem-calc(40);
 
 			&__inner {
 				max-width: $global-width / 2;
-				padding: $section-top-bottom-padding rem-calc(10);
+				padding: $section-top-bottom-padding $global-padding;
 			}
 
 			&:first-child .cell__inner {
@@ -50,5 +50,10 @@ $section-top-bottom-padding: rem-calc(40);
 				margin-right: 0;
 			}
 		}
+	}
+
+	> h2:first-child,
+	&__inner > h2:first-child {
+		margin-top: 0;
 	}
 }

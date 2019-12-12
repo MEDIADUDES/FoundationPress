@@ -102,6 +102,7 @@ $global-prototype-breakpoints: false;
 $global-button-cursor: auto;
 $global-color-pick-contrast-tolerance: 0;
 $print-transparent-backgrounds: true;
+$section-top-bottom-padding: rem-calc(40);
 
 @include add-foundation-colors;
 
