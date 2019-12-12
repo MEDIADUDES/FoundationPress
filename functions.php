@@ -11,6 +11,9 @@
  * @since FoundationPress 1.0.0
  */
 
+// composer autoload.
+require_once __DIR__ . '/vendor/autoload.php';
+
 /**
  * Requires all files recursively within given directory
  *
