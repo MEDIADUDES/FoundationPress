@@ -1,0 +1,52 @@
+.accordion {
+
+	/* text only accordion. e.g. used for the read more text. */
+	&--text {
+		background: none;
+
+		&,
+		.accordion-item {
+			display: inline;
+		}
+
+		.accordion-content {
+			padding: 0;
+			border: none;
+			color: inherit;
+			font-size: inherit;
+			background: none;
+		}
+
+		.accordion-title.accordion-title {
+			position: relative;
+			display: inline-block;
+			border: 0;
+			padding: 0;
+			margin: 0;
+			background: none;
+			font-size: inherit;
+			font-weight: 600;
+			color: inherit;
+			text-decoration: underline;
+
+			.accordion-title__expanded {
+				display: none;
+			}
+
+			&[aria-expanded='true'] {
+				.accordion-title__expanded {
+					display: inline;
+				}
+
+				.accordion-title__closed {
+					display: none;
+				}
+			}
+
+			// hide icon.
+			&::before {
+				display: none;
+			}
+		}
+	}
+}

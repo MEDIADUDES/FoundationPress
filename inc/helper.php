@@ -72,3 +72,54 @@ function fp_generate_random_string( $length = 10 ) {
 	$x = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	return substr( str_shuffle( str_repeat( $x, ceil( $length / strlen( $x ) ) ) ), 1, $length );
 }
+
+/**
+ * Moves second half of the content into an accordion if <!--readmore--> tag found in the text.
+ *
+ * @param  string  $content the content to split.
+ * @param  array   $args array with 'more_text' and 'less_text' keys. Use these to customize the more and less text.
+ * @param  boolean $echo whether to echo the content or not. defaults to true.
+ * @return void|string
+ */
+function fp_read_more( $content, $args = [], $echo = true ) {
+	if ( empty( $args ) ) {
+		$args = [];
+	}
+
+	$args = array_merge(
+		[
+			'more_text' => __( 'Weiterlesen', 'foundationpress' ),
+			'less_text' => __( 'Weniger anzeigen', 'foundationpress' ),
+		],
+		$args
+	);
+
+	$content = explode( '<!--readmore-->', $content );
+
+	ob_start();
+
+	echo wp_kses_post( $content[0] );
+
+	if ( count( $content ) > 1 ) {
+		?>
+		<div class="accordion accordion--text" data-accordion data-allow-all-closed="true">
+			<div class="accordion-item" data-accordion-item>
+				<div class="accordion-content" data-tab-content>
+					<?php echo wp_kses_post( $content[1] ); ?>
+				</div>
+
+				<a href="#" class="accordion-title">
+					<span class="accordion-title__closed"><?php echo esc_html( $args['more_text'], 'foundationpress' ); ?></span>
+					<span class="accordion-title__expanded"><?php echo esc_html( $args['less_text'], 'foundationpress' ); ?></span>
+				</a>
+			</div>
+		</div>
+		<?php
+	}
+
+	if ( $echo ) {
+		echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	} else {
+		return ob_get_clean();
+	}
+}
