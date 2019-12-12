@@ -49,5 +49,7 @@
 		<properties>
 			<property name="is_theme" value="true"/>
 		</properties>
+
+		<exclude-pattern>/inc/*</exclude-pattern>
 	</rule>
 </ruleset>
