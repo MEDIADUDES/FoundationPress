@@ -60,3 +60,19 @@ To enable saving them as json files set FP_ACF_SAVE_JSON to true in your wp-conf
 if ( defined( 'FP_ACF_SAVE_JSON' ) && FP_ACF_SAVE_JSON ) {
 	add_filter( 'acf/settings/save_json', 'foundationpress_acf_json_save_point' );
 }
+
+/**
+ * Add ACF option pages to the backend.
+ */
+function foundationpress_add_option_pages() {
+	acf_add_options_page(
+		[
+			'page_title' => 'Theme Einstellungen',
+			'menu_title' => 'Theme Einstellungen',
+			'menu_slug'  => 'theme-settings',
+			'redirect'   => false,
+			'autoload'   => true,
+		]
+	);
+}
+add_action( 'acf/init', 'foundationpress_add_option_pages' );
