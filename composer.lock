@@ -1,11 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "3ecdc154349e86898c5897a22538b9de",
-    "content-hash": "b87bde0fb53e778e2d7c7c36ac78d106",
+    "content-hash": "6af76817add0253b2d951512b26fe4d3",
     "packages": [],
     "packages-dev": [
         {
@@ -57,7 +56,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2018-12-19 23:57:18"
+            "time": "2018-12-19T23:57:18+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -102,7 +101,7 @@
                 "standards",
                 "wordpress"
             ],
-            "time": "2019-01-16 10:13:16"
+            "time": "2019-01-16T10:13:16+00:00"
         }
     ],
     "aliases": [],
