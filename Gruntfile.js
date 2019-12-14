@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 				files: '<%= paths.php.files_std %>', // Dynamic file match
 			},
 
-			// Files which should be prettyfied with Prettier.
+			// Files which should be prettified with Prettier.
 			prettier: {
 				files_std: [
 					// Standard file match
@@ -84,16 +84,15 @@ module.exports = function(grunt) {
 
 			// JSON assets
 			json: {
-				src: '.', // Source files dir
 				files_std: [
 					// Standard file match
-					'<%= paths.json.src %>/**/*.json',
+					'**/*.json',
 					'.eslintrc',
 					'.prettierrc',
 					'.stylelintrc.json',
-					'!./package-lock.json',
-					'!./node_modules/**/*.json',
-					'!./vendor/**/*.json',
+					'!package-lock.json',
+					'!node_modules/**/*.json',
+					'!vendor/**/*.json',
 				],
 				files: '<%= paths.json.files_std %>', // Dynamic file match
 			},
