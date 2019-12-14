@@ -13,7 +13,7 @@
 	},
 	"dependencies": {
 		"@babel/polyfill": "7.7.0",
-		"foundation-sites": "6.6.0",
+		"foundation-sites": "6.6.1",
 		"jquery": "3.4.1",
 		"motion-ui": "2.0.3",
 		"prop-types": "15.7.2",
@@ -33,7 +33,7 @@
 		"babel-plugin-transform-class-properties": "6.24.1",
 		"copy-webpack-plugin": "5.1.1",
 		"cross-env": "6.0.3",
-		"css-loader": "3.3.0",
+		"css-loader": "3.3.2",
 		"eslint": "6.7.2",
 		"eslint-config-airbnb": "18.0.1",
 		"eslint-config-prettier": "6.7.0",
