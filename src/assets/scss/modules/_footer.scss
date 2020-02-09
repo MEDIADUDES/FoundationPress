@@ -1,5 +1,5 @@
-.footer-container {
-	@include xy-grid-container;
+.footer {
+	@include xy-grid-container($global-width);
 
 	border-top: 1px solid $medium-gray;
 	margin-top: rem-calc(60);
