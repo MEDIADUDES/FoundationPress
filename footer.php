@@ -14,6 +14,10 @@
 		<div class="footer-grid">
 			<?php dynamic_sidebar( 'footer-widgets' ); ?>
 		</div>
+
+		<nav class="legal-navigation" role="navigation">
+			<?php foundationpress_footer_legal_nav(); ?>
+		</nav>
 	</footer>
 
 	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>

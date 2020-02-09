@@ -9,8 +9,9 @@
 
 register_nav_menus(
 	array(
-		'top-bar-r'  => esc_html__( 'Right Top Bar', 'foundationpress' ),
-		'mobile-nav' => esc_html__( 'Mobile', 'foundationpress' ),
+		'top-bar-r'        => esc_html__( 'Right Top Bar', 'foundationpress' ),
+		'mobile-nav'       => esc_html__( 'Mobile', 'foundationpress' ),
+		'footer-legal-nav' => esc_html__( 'Footer: Rechtliche Seiten', 'foundationpress' ),
 	)
 );
 
@@ -51,6 +52,26 @@ if ( ! function_exists( 'foundationpress_mobile_nav' ) ) {
 				'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu data-submenu-toggle="true">%3$s</ul>',
 				'fallback_cb'    => false,
 				'walker'         => new Foundationpress_Mobile_Walker(),
+			)
+		);
+	}
+}
+
+
+/**
+ * Menu for legal navigation in the footer.
+ */
+if ( ! function_exists( 'foundationpress_footer_legal_nav' ) ) {
+	function foundationpress_footer_legal_nav() {
+		wp_nav_menu(
+			array(
+				'container'      => false, // Remove nav container
+				'menu'           => __( 'footer-legal-nav', 'foundationpress' ),
+				'menu_class'     => 'menu legal-navigation__menu',
+				'theme_location' => 'footer-legal-nav',
+				'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+				'fallback_cb'    => false,
+				'depth'          => 1,
 			)
 		);
 	}

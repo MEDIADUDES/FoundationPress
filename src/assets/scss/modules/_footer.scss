@@ -24,3 +24,38 @@
 		padding: 0;
 	}
 }
+
+.legal-navigation {
+	text-align: center;
+
+	&__menu {
+		display: inline;
+		text-align: center;
+		line-height: 1;
+	}
+
+	.menu-item {
+		display: inline;
+		line-height: 1;
+		font-size: rem-calc(14);
+
+		&:not(:first-child)::before {
+			content: '';
+			display: inline-block;
+			height: 10px;
+			width: 1px;
+			background: $dark-gray;
+			margin-left: -2px;
+		}
+	}
+
+	a {
+		display: inline-block;
+		padding: 0.7rem 0.5rem;
+
+		&:hover,
+		a:focus {
+			text-decoration: underline;
+		}
+	}
+}
