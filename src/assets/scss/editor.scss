@@ -45,6 +45,13 @@ body {
 	@extend h1;
 }
 
+.full-width {
+	position: static;
+	left: 0;
+	width: 100%;
+	margin-left: 0;
+}
+
 /** === Button === */
 .wp-block-button {
 	// add general foundation button styling to button in editor
