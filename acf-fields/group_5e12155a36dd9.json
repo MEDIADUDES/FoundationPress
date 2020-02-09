@@ -1,0 +1,43 @@
+{
+	"key": "group_5e12155a36dd9",
+	"title": "Page Settings",
+	"fields": [
+		{
+			"key": "field_5e1215608928d",
+			"label": "Titel ausblenden?",
+			"name": "hide_title",
+			"type": "true_false",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"message": "",
+			"default_value": 0,
+			"ui": 0,
+			"ui_on_text": "",
+			"ui_off_text": ""
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "post_type",
+				"operator": "==",
+				"value": "page"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "side",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": 1,
+	"description": "",
+	"modified": 1578339062
+}
