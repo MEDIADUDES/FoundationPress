@@ -6,3 +6,96 @@
 	border-radius: 3px;
 	border: none;
 }
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	position: relative;
+	font-weight: 700;
+	line-height: 1.4;
+	transition: color 0.2s, background 0.2s, border 0.2s;
+
+	&.hollow {
+		border-width: rem-calc(2);
+	}
+
+	& &__icon {
+		color: inherit;
+		font-size: 1.5em;
+		width: 1em;
+		height: 1em;
+		border-radius: 1em;
+		margin-left: 0.3em;
+		transition: color 0.2s, background 0.2s;
+	}
+
+	&--icon-left &__icon {
+		order: -1;
+		margin-left: 0;
+		margin-right: 0.3em;
+	}
+
+	&--white {
+		background: $white;
+		color: $primary-color;
+		border: rem-calc(2) solid $white;
+
+		.button__icon {
+			background: $primary-color;
+			color: $white;
+		}
+
+		&.hollow {
+			color: $white;
+			border-color: $white;
+
+			.button__icon {
+				background: $white;
+				color: $primary-color;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			background: transparent;
+			color: $white;
+
+			&.hollow {
+				background: $white;
+				border-color: $white;
+				color: $primary-color;
+
+				.button__icon {
+					background: $primary-color;
+					color: $white;
+				}
+			}
+
+			.button__icon {
+				background: $white;
+				color: $primary-color;
+			}
+		}
+	}
+
+	&--medium {
+		font-size: rem-calc(18);
+
+		@include breakpoint(medium down) {
+			font-size: rem-calc(16);
+		}
+	}
+
+	&--large {
+		font-size: rem-calc(24);
+
+		@include breakpoint(medium down) {
+			font-size: rem-calc(20);
+		}
+	}
+
+	&--full {
+		width: 100%;
+		justify-content: center;
+	}
+}

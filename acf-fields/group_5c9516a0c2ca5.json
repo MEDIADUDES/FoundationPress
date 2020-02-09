@@ -1,0 +1,205 @@
+{
+	"key": "group_5c9516a0c2ca5",
+	"title": "Component: Button",
+	"fields": [
+		{
+			"key": "field_5c9516c320900",
+			"label": "Button",
+			"name": "button",
+			"type": "group",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"layout": "block",
+			"sub_fields": [
+				{
+					"key": "field_5c9516d620901",
+					"label": "Beschriftung",
+					"name": "title",
+					"type": "text",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "50",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": "",
+					"maxlength": ""
+				},
+				{
+					"key": "field_5c95176220903",
+					"label": "Eigener Link?",
+					"name": "is_custom_link",
+					"type": "true_false",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "33",
+						"class": "",
+						"id": ""
+					},
+					"message": "Eigenen Link verwenden?",
+					"default_value": 0,
+					"ui": 0,
+					"ui_on_text": "",
+					"ui_off_text": ""
+				},
+				{
+					"key": "field_5c9517b920904",
+					"label": "Seite",
+					"name": "page",
+					"type": "page_link",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": [
+						[
+							{
+								"field": "field_5c95176220903",
+								"operator": "!=",
+								"value": "1"
+							}
+						]
+					],
+					"wrapper": {
+						"width": "33",
+						"class": "",
+						"id": ""
+					},
+					"post_type": "",
+					"taxonomy": "",
+					"allow_null": 0,
+					"allow_archives": 1,
+					"multiple": 0
+				},
+				{
+					"key": "field_5c9517fb20905",
+					"label": "Eigener Link",
+					"name": "custom_link",
+					"type": "text",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": [
+						[
+							{
+								"field": "field_5c95176220903",
+								"operator": "==",
+								"value": "1"
+							}
+						]
+					],
+					"wrapper": {
+						"width": "33",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": "",
+					"maxlength": ""
+				},
+				{
+					"key": "field_5cb43b38cdba9",
+					"label": "Ziel",
+					"name": "target",
+					"type": "select",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "33",
+						"class": "",
+						"id": ""
+					},
+					"choices": {
+						"_self": "aktueller Tab",
+						"_blank": "neuer Tab"
+					},
+					"default_value": [],
+					"allow_null": 0,
+					"multiple": 0,
+					"ui": 0,
+					"return_format": "value",
+					"ajax": 0,
+					"placeholder": ""
+				},
+				{
+					"key": "field_5e13a4e80748a",
+					"label": "Modifier",
+					"name": "modifier",
+					"type": "checkbox",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "50",
+						"class": "",
+						"id": ""
+					},
+					"choices": {
+						"hollow": "Hollow",
+						"icon-left": "Left Icon",
+						"white": "White",
+						"medium": "Medium",
+						"large": "Large",
+						"full": "Full-Width"
+					},
+					"allow_custom": 0,
+					"default_value": [],
+					"layout": "horizontal",
+					"toggle": 0,
+					"return_format": "value",
+					"save_custom": 0
+				},
+				{
+					"key": "field_5e13a9f62dafe",
+					"label": "Icon",
+					"name": "icon",
+					"type": "text",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "50",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": "",
+					"maxlength": ""
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "post_type",
+				"operator": "==",
+				"value": "post"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": 0,
+	"description": "",
+	"modified": 1578347195
+}
