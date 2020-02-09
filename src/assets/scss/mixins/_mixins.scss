@@ -1,5 +1,12 @@
 @import 'family';
 
+@mixin full-width {
+	position: relative;
+	left: 50%;
+	width: 100vw;
+	margin-left: -50vw;
+}
+
 @mixin ie-only {
 	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 		@content;

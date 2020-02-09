@@ -8,3 +8,7 @@
 @import 'wp-overrides';
 @import 'gutenberg';
 @import 'section';
+
+.full-width {
+	@include full-width;
+}
