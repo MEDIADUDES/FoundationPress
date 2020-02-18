@@ -1,12 +1,12 @@
 {
 	"key": "group_5dc2055e790d5",
-	"title": "Block: FAQ",
+	"title": "Block: Accordion",
 	"fields": [
 		{
-			"key": "field_5dc2d2324709d",
-			"label": "Heading",
-			"name": "heading",
-			"type": "text",
+			"key": "field_5e4c213c8f190",
+			"label": "2 Columns?",
+			"name": "two_columns",
+			"type": "true_false",
 			"instructions": "",
 			"required": 0,
 			"conditional_logic": 0,
@@ -15,16 +15,16 @@
 				"class": "",
 				"id": ""
 			},
-			"default_value": "",
-			"placeholder": "",
-			"prepend": "",
-			"append": "",
-			"maxlength": ""
+			"message": "",
+			"default_value": 0,
+			"ui": 0,
+			"ui_on_text": "",
+			"ui_off_text": ""
 		},
 		{
 			"key": "field_5dc20661de4be",
-			"label": "FAQ",
-			"name": "faq",
+			"label": "Accordion",
+			"name": "accordion",
 			"type": "repeater",
 			"instructions": "",
 			"required": 0,
@@ -42,8 +42,8 @@
 			"sub_fields": [
 				{
 					"key": "field_5dc2069bde4bf",
-					"label": "Frage",
-					"name": "question",
+					"label": "Titel",
+					"name": "title",
 					"type": "text",
 					"instructions": "",
 					"required": 1,
@@ -61,9 +61,9 @@
 				},
 				{
 					"key": "field_5dc206a8de4c0",
-					"label": "Antwort",
-					"name": "answer",
-					"type": "textarea",
+					"label": "Inhalt",
+					"name": "content",
+					"type": "wysiwyg",
 					"instructions": "",
 					"required": 0,
 					"conditional_logic": 0,
@@ -73,10 +73,10 @@
 						"id": ""
 					},
 					"default_value": "",
-					"placeholder": "",
-					"maxlength": "",
-					"rows": 2,
-					"new_lines": "br"
+					"tabs": "all",
+					"toolbar": "basic",
+					"media_upload": 1,
+					"delay": 1
 				}
 			]
 		}
@@ -86,7 +86,7 @@
 			{
 				"param": "block",
 				"operator": "==",
-				"value": "acf/faq"
+				"value": "acf/accordion"
 			}
 		]
 	],
@@ -98,5 +98,5 @@
 	"hide_on_screen": "",
 	"active": 1,
 	"description": "",
-	"modified": 1573048912
+	"modified": 1582048419
 }

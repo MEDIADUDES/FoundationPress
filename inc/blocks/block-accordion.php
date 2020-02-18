@@ -1,26 +1,26 @@
 <?php
 /**
- * Gutenberg FAQ Block
+ * Gutenberg Accordion Block
  *
  * @package FoundationPress
  */
 
 namespace FoundationPress\Blocks;
 
-class Block_FAQ extends Block {
+class Block_Accordion extends Block {
 	public static function get_name(): string {
-		return 'faq';
+		return 'accordion';
 	}
 
 	public static function register_block_type(): void {
 		acf_register_block_type(
 			[
 				'name'            => self::get_name(),
-				'title'           => __( 'FAQ', 'foundationpress' ),
-				'render_template' => 'template-parts/blocks/faq.php',
+				'title'           => __( 'Accordion', 'foundationpress' ),
+				'render_template' => 'template-parts/blocks/accordion.php',
 				'category'        => 'foundationpress',
 				'icon'            => 'editor-help',
-				'keywords'        => [ 'fragen', 'questions' ],
+				'keywords'        => [ 'accordion', 'faq', 'akkordion' ],
 				'supports'        => [
 					'align'  => false,
 					'anchor' => true,
@@ -30,4 +30,4 @@ class Block_FAQ extends Block {
 	}
 }
 
-Block_FAQ::init();
+Block_Accordion::init();

@@ -1,6 +1,6 @@
 <?php
 /**
- * FAQ Block Template.
+ * Accordion Block Template.
  *
  * @param   array $block The block settings and attributes.
  * @param   string $content The block inner HTML (empty).
@@ -13,56 +13,58 @@
 // phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 // phpcs:disable WordPress.WP.GlobalVariablesOverride.Prohibited
 
-use FoundationPress\Blocks\Block_FAQ;
+use FoundationPress\Blocks\Block_Accordion;
 
 $settings = $block;
-$block    = new Block_FAQ( $settings );
+$block    = new Block_Accordion( $settings );
 
 $id          = $block->get_anchor();
 $class_names = $block->get_class_names();
 
-$faq = get_field( 'faq' ) ?: ( true === $is_preview ? [
+$accordion = get_field( 'accordion' ) ?: ( true === $is_preview ? [
 	[
-		'question' => 'Your question here...',
-		'answer'   => 'Your answer here...',
+		'title'   => 'Your title here...',
+		'content' => 'Your content here...',
 	],
 	[
-		'question' => 'Your question here...',
-		'answer'   => 'Your answer here...',
+		'title'   => 'Your title here...',
+		'content' => 'Your content here...',
 	],
 ] : false );
 
-$heading = get_field( 'heading' );
+$two_columns = get_field( 'two_columns' ) ?: false;
 
-if ( ! $faq ) {
+if ( ! $accordion ) {
 	// important: reset $block variable to initial value.
 	$block = $settings;
 	return;
 }
 
-// split the questions in 2 pieces.
-$len        = count( $faq );
-$firsthalf  = array_slice( $faq, 0, ceil( $len / 2 ) );
-$secondhalf = array_slice( $faq, ceil( $len / 2 ) );
-$faq        = [$firsthalf, $secondhalf];
+// split the accordion items in 2 pieces.
+if ( true === $two_columns ) {
+	$class_names .= ' b-accordion--two-columns';
+
+	$len        = count( $accordion );
+	$firsthalf  = array_slice( $accordion, 0, ceil( $len / 2 ) );
+	$secondhalf = array_slice( $accordion, ceil( $len / 2 ) );
+	$accordion  = [$firsthalf, $secondhalf];
+} else {
+	$accordion = [$accordion, []];
+}
 ?>
 
-<section id="<?php echo esc_attr( $id ); ?>" class="section b-faq <?php echo esc_attr( $class_names ); ?>">
-	<?php if ( $heading ) : ?>
-		<h2 class="b-faq__heading"><?php echo esc_html( $heading ); ?></h2>
-	<?php endif; ?>
-
-	<div class="b-faq__accordions">
-		<?php foreach ( $faq as $half ) : ?>
+<section id="<?php echo esc_attr( $id ); ?>" class="section b-accordion <?php echo esc_attr( $class_names ); ?>">
+	<div class="b-accordion__inner">
+		<?php foreach ( $accordion as $half ) : ?>
 			<ul class="accordion" data-accordion data-allow-all-closed="true">
 				<?php foreach ( $half as $item ) : ?>
 					<li class="accordion-item" data-accordion-item>
 						<a href="#" class="accordion-title">
-							<?php echo esc_html( $item['question'] ); ?>
+							<?php echo esc_html( $item['title'] ); ?>
 						</a>
 
 						<div class="accordion-content" data-tab-content>
-							<?php echo wp_kses_post( $item['answer'] ); ?>
+							<?php echo wp_kses_post( $item['content'] ); ?>
 						</div>
 					</li>
 				<?php endforeach; ?>

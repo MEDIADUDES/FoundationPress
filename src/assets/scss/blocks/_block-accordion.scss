@@ -1,0 +1,42 @@
+.b-accordion {
+	&__inner {
+		@include xy-grid();
+
+		margin: 0 -#{$global-margin / 2};
+	}
+
+	&.b-accordion.b-accordion {
+		.accordion {
+			@include xy-cell($gutters: 0);
+
+			&-item {
+				margin-bottom: 0;
+			}
+
+			&-title {
+				line-height: 1.2;
+			}
+
+			&-item:not(.is-active) > .accordion-title,
+			&-content {
+				border-bottom: 1px solid $light-gray;
+			}
+		}
+
+		&--two-columns .accordion {
+			@include xy-cell($gutters: 0);
+
+			@include breakpoint(medium) {
+				@include xy-cell(50%);
+
+				&:first-child() {
+					margin-left: 0;
+				}
+
+				&:last-child() {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
