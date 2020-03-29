@@ -6,20 +6,48 @@
  * @since FoundationPress 1.0.0
  */
 
-// Pagination.
+/**
+ * Pagination.
+ *
+ * To use the pagination for custom loops:
+ * 1) pass paged argument to it:
+ *   $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+ *   $loop  = new WP_Query(
+ *       [
+ *           'paged'          => $paged,
+ *           'post_type'      => 'my_cpt',
+ *           'posts_per_page' => 10,
+ *       ]
+ *   );
+ *
+ * 2) display pagination after your while loop:
+ *   foundationpress_pagination( $paged, $loop->max_num_pages );
+ *
+ * @param string $paged
+ * @param string $max_page
+ * @return void
+ */
 if ( ! function_exists( 'foundationpress_pagination' ) ) :
-	function foundationpress_pagination() {
+	function foundationpress_pagination( $paged = '', $max_page = '' ) {
 		global $wp_query;
 
 		$big = 999999999; // This needs to be an unlikely integer
+
+		if ( ! $paged ) {
+			$paged = get_query_var( 'paged' );
+		}
+		if ( ! $max_page ) {
+			$max_page = $wp_query->max_num_pages;
+		}
 
 		// For more options and info view the docs for paginate_links()
 		// http://codex.wordpress.org/Function_Reference/paginate_links
 		$paginate_links = paginate_links(
 			array(
 				'base'      => str_replace( $big, '%#%', html_entity_decode( get_pagenum_link( $big ) ) ),
-				'current'   => max( 1, get_query_var( 'paged' ) ),
-				'total'     => $wp_query->max_num_pages,
+				'format'    => '?paged=%#%',
+				'current'   => max( 1, $paged ),
+				'total'     => $max_page,
 				'mid_size'  => 5,
 				'prev_next' => true,
 				'prev_text' => '',
