@@ -27,12 +27,15 @@ function fp_button( $args, $modifier = [], $icon = '' ) {
 		$button = get_field( $button );
 	}
 
+	// abort if field not found.
 	if ( ! $button ) {
 		return;
 	}
 
+	// remove empty array keys.
 	$button = array_filter( $button );
 
+	// abort if array is empty now, because no data is available.
 	if ( ! $button ) {
 		return;
 	}
@@ -45,6 +48,7 @@ function fp_button( $args, $modifier = [], $icon = '' ) {
 	$modifier       = array_key_exists( 'modifier', $button ) ? array_merge( $button['modifier'], $modifier ) : $modifier;
 	$icon           = array_key_exists( 'icon', $button ) ? $button['icon'] : $icon;
 
+	// title is mandatory for a button.
 	if ( ! $title ) {
 		return;
 	}
