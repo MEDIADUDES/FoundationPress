@@ -5,6 +5,11 @@
 	"description": "FoundationPress is a WordPress starter theme based on Foundation 6 by Zurb (forked from https://github.com/olefredrik/FoundationPress)",
 	"homepage": "https://github.com/MEDIADUDES/FoundationPress",
 	"license": "MIT",
+	"browserslist": [
+		"last 3 versions",
+		"> 1%",
+		"IE 11"
+	],
 	"scripts": {
 		"start": "grunt",
 		"build": "cross-env NODE_ENV=production grunt build",

@@ -33,11 +33,6 @@ module.exports = {
 				'window.jQuery': 'jquery',
 				'window.$': 'jquery',
 			}),
-			new webpack.LoaderOptionsPlugin({
-				options: {
-					postcss: [autoprefixer()],
-				},
-			}),
 			new MiniCssExtractPlugin({
 				// Options similar to the same options in webpackOptions.output
 				// both options are optional
@@ -87,6 +82,7 @@ module.exports = {
 							options: {
 								parser: 'postcss-scss',
 								sourceMap: true,
+								plugins: [autoprefixer],
 							},
 						},
 						{
