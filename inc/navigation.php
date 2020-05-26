@@ -11,7 +11,7 @@ register_nav_menus(
 	array(
 		'top-bar-r'        => esc_html__( 'Right Top Bar', 'foundationpress' ),
 		'mobile-nav'       => esc_html__( 'Mobile', 'foundationpress' ),
-		'footer-legal-nav' => esc_html__( 'Footer: Rechtliche Seiten', 'foundationpress' ),
+		'footer-legal-nav' => esc_html__( 'Footer Bottom Navigation', 'foundationpress' ),
 	)
 );
 
