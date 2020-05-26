@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FoundationPress v5.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-26T12:18:35+00:00\n"
-"PO-Revision-Date: 2020-05-26 12:21+0000\n"
+"POT-Creation-Date: 2020-05-26T12:42:12+00:00\n"
+"PO-Revision-Date: 2020-05-26 12:46+0000\n"
 "Last-Translator: \n"
 "Language-Team: German (Formal)\n"
 "Language: de_DE_formal\n"
@@ -39,29 +39,20 @@ msgid ""
 msgstr ""
 
 #: 404.php:16
-msgid "File Not Found"
-msgstr "Datei nicht gefunden"
+msgid "Page not found"
+msgstr "Seite nicht gefunden"
 
 #: 404.php:21
 msgid ""
 "The page you are looking for might have been removed, had its name changed, "
 "or is temporarily unavailable."
 msgstr ""
-"Die Seite, die du suchst, wurde möglicherweise entfernt oder umbenannt, oder "
-"ist vorübergehend nicht verfügbar."
+"Die Seite, die Sie suchen, wurde möglicherweise entfernt, umbenannt oder ist "
+"vorübergehend nicht verfügbar."
 
-#: 404.php:24
-msgid "Please try the following:"
-msgstr "Bitte versuche folgendes:"
-
-#: 404.php:28
-msgid "Check your spelling"
-msgstr "Überprüfe deine Eingabe"
-
-#. translators: %s: home page url
-#: 404.php:36
-msgid "Return to the <a href=\"%s\">home page</a>"
-msgstr "Zurück zur <a href=\"%s\">Startseite</a>"
+#: 404.php:25
+msgid "Return to the homepage"
+msgstr "Zurück zur Startseite"
 
 #: archive.php:41 index.php:38 search.php:35
 msgid "&larr; Older posts"
@@ -77,16 +68,16 @@ msgstr "Bitte diese Seite nicht direkt laden. Vielen Dank!"
 
 #: comments.php:31
 msgid "Reply"
-msgstr ""
+msgstr "Antworten"
 
 #: comments.php:40 inc/class-foundationpress-comments.php:97
 msgid "Your comment is awaiting moderation."
-msgstr "Dein Kommentar wartet auf Freischaltung."
+msgstr "Ihr Kommentar wartet auf Freischaltung."
 
 #: comments.php:54
 msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
-"Dieser Beitrag ist passwortgeschützt. Um die Kommentare zu sehen, musst du "
+"Dieser Beitrag ist passwortgeschützt. Um die Kommentare zu sehen, müssen Sie "
 "das Passwort eingeben."
 
 #: header.php:28
@@ -326,21 +317,17 @@ msgstr ""
 "geht's los</a>"
 
 #: template-parts/content-none.php:34
-#| "Sorry, but nothing matched your search terms. Please try again with some "
-#| "different keywords."
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different \tkeywords."
 msgstr ""
 "Es tut uns leid, aber es konnten keine Übereinstimmungen gefunden werden. "
-"Bitte versuche es mit einigen anderen Suchbegriffen erneut."
+"Bitte versuchen Sie es mit einigen anderen Suchbegriffen erneut."
 
 #: template-parts/content-none.php:39
-#| "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-#| "searching can help."
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can \thelp."
 msgstr ""
-"Leider konnten wir die angefragte Seite nicht finden. Vielleicht hilft dir "
+"Leider konnten wir die angefragte Seite nicht finden. Vielleicht hilft Ihnen "
 "die Suchfunktion weiter."
