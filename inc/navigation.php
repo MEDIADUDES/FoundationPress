@@ -46,7 +46,7 @@ if ( ! function_exists( 'foundationpress_mobile_nav' ) ) {
 		wp_nav_menu(
 			array(
 				'container'      => false,                         // Remove nav container
-				'menu'           => __( 'mobile-nav', 'foundationpress' ),
+				'menu'           => 'mobile-nav',
 				'menu_class'     => 'vertical menu',
 				'theme_location' => 'mobile-nav',
 				'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu data-submenu-toggle="true">%3$s</ul>',
@@ -66,7 +66,7 @@ if ( ! function_exists( 'foundationpress_footer_legal_nav' ) ) {
 		wp_nav_menu(
 			array(
 				'container'      => false, // Remove nav container
-				'menu'           => __( 'footer-legal-nav', 'foundationpress' ),
+				'menu'           => 'footer-legal-nav',
 				'menu_class'     => 'menu legal-navigation__menu',
 				'theme_location' => 'footer-legal-nav',
 				'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
