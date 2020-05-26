@@ -110,8 +110,8 @@ function fp_read_more( $content, $args = [], $echo = true ) {
 
 	$args = array_merge(
 		[
-			'more_text' => __( 'Weiterlesen', 'foundationpress' ),
-			'less_text' => __( 'Weniger anzeigen', 'foundationpress' ),
+			'more_text' => __( 'Read more', 'foundationpress' ),
+			'less_text' => __( 'Show less', 'foundationpress' ),
 		],
 		$args
 	);

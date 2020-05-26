@@ -11,7 +11,7 @@
 function fp_register_shared_content_cpt() {
 	$args = [
 		'label'              => __( 'Shared Content', 'foundationpress' ),
-		'description'        => __( 'Wird genutzt, um geteilte Inhalte auf verschiedenen Seiten zentral zu verwalten. ', 'foundationpress' ),
+		'description'        => __( 'Used to manage shared content from different pages on a central place.', 'foundationpress' ),
 		'labels'             => [
 			'name' => _x( 'Shared Content', 'Post Type General Name', 'foundationpress' ),
 		],
@@ -36,6 +36,6 @@ function fp_shared_content_info_after_title() {
 		return;
 	}
 
-	esc_html_e( 'Felder mit Advanced Custom Fields hinzufügen, um geteilten Inhalt zu verwenden.', 'foundationpress' );
+	esc_html_e( 'Add fields with Advanced Custom Fields to use shared content.', 'foundationpress' );
 }
 add_action( 'edit_form_after_title', 'fp_shared_content_info_after_title' );
