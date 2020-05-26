@@ -13,17 +13,15 @@ Please fork, copy, modify, delete, share or do whatever you like with this.
 
 All contributions are welcome!
 
-Huge thanks to [olefredrik](https://github.com/olefredrik/FoundationPress) (and all contributors) to create the base of this starter theme.
+Huge thanks to [olefredrik](https://github.com/olefredrik/FoundationPress) (and all contributors) to create the base this starter theme is forked from.
 
 ## Requirements
 
-**This project requires [Node.js](http://nodejs.org) v8.x.x to be installed on your machine.** Please be aware that you might encounter problems with the installation if you are using the most current Node version (bleeding edge) with all the latest features.
+**This project requires [Node.js](http://nodejs.org) v10.x.x to be installed on your machine.** Please be aware that you might encounter problems with the installation if you are using the most current Node version (bleeding edge) with all the latest features.
 
 FoundationPress uses [Sass](http://Sass-lang.com/) (CSS with superpowers). In short, Sass is a CSS pre-processor that allows you to write styles more effectively and tidy. FoundationPress uses the SCSS syntax from Sass.
 
 The Sass is compiled using libsass, which requires the GCC to be installed on your machine. Windows users can install it through [MinGW](http://www.mingw.org/), and Mac users can install it through the [Xcode Command-line Tools](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/).
-
-If you have not worked with a Sass-based workflow before, I would recommend reading [FoundationPress for beginners](https://foundationpress.olefredrik.com/posts/tutorials/foundationpress-for-beginners), a short blog post that explains what you need to know.
 
 ## Quickstart
 
@@ -56,7 +54,7 @@ When building for production, the CSS and JS will be minified. To minify the ass
 $ npm run build
 ```
 
-#### To create a .zip file of your theme, run: (TODO: implement with grund again. Currently not available.)
+#### To create a .zip file of your theme, run: (TODO: implement with Grunt again. Currently not available.)
 
 ```
 $ npm run package
@@ -103,10 +101,11 @@ If you need to output additional JavaScript files separate from `app.js`, do the
 * Build (`npm start`)
 * You will now have a `custom.js` file outputted to the `dist/assets/js/` directory. Remember to enqueue it in `/library/enqueue-scripts.php`.
 
-## Demo
+### Translations
 
-* [Clean FoundationPress install](https://github.com/MEDIADUDES/FoundationPress)
-* [FoundationPress Kitchen Sink - see every single element in action](http://foundationpress.olefredrik.com/kitchen-sink/)
+To update the `languages/FoundationPress.pot` file for translations install the [WP-CLI](https://make.wordpress.org/cli/handbook/installing/) and run `npm run make-pot`.
+
+To update the `.mo` &  `.po` files for the different languages have a look at [Loco Translate](https://wordpress.org/plugins/loco-translate/).
 
 ## Local Development
 We recommend using one of the following setups for local WordPress development:
@@ -125,10 +124,8 @@ We recommend using one of the following setups for local WordPress development:
 * [Foundation UI Kit for Photoshop](https://gumroad.com/l/foundation-ui-kit-psd)
 * [Foundation 6 Shortcodes for Visual Composer](https://www.402websites.com/downloads/foundation-6-shortcodes-visual-composer/?ref=2&campaign=Foundation6ShortcodesforVisualComposer)
 
-
 ## Tutorials
 
-* [FoundationPress for beginners](https://foundationpress.olefredrik.com/posts/tutorials/foundationpress-for-beginners/)
 * [Responsive images in WordPress with Interchange](http://rachievee.com/responsive-images-in-wordpress/)
 * [Learn to use the _settings file to change almost every aspect of a Foundation site](http://zurb.com/university/lessons/66)
 * [Other lessons from Zurb University](http://zurb.com/university/past-lessons)
@@ -152,7 +149,4 @@ Pull requests are highly appreciated. Please follow these guidelines:
 1. Solve a problem. Features are great, but even better is cleaning-up and fixing issues in the code that you discover
 2. Make sure that your code is bug-free and does not introduce new bugs
 3. Create a [pull request](https://help.github.com/articles/creating-a-pull-request)
-4. Verify that all the Travis-CI build checks have passed
-
-## Dev Notes
-Currently updated until [55d533f](https://github.com/olefredrik/FoundationPress/commit/55d533f6e5f95baa719bc05542da8f323fb8876d) from forked repository.
+4. Verify that all build checks have passed
