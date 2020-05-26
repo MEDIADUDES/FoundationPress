@@ -39,13 +39,6 @@ get_header(); ?>
 							);
 							?>
 						</li>
-
-						<li>
-							<?php
-							// phpcs:ignore WordPress.Security.EscapeOutput.UnsafePrintingFunction
-							_e( 'Click the <a href="javascript:history.back()">Back</a> button', 'foundationpress' );
-							?>
-						</li>
 					</ul>
 				</div>
 			</article>
