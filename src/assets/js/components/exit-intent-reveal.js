@@ -19,8 +19,8 @@
 export default class ExitIntentReveal {
 	constructor($reveal, topSensitivity = 10, delaySensitivity = 350) {
 		this.$reveal = $reveal;
-		this.topSensitivity = topSensitivity;
-		this.delaySensitivity = delaySensitivity;
+		this.topSensitivity = topSensitivity; // distance to viewport top when the Reveal should show.
+		this.delaySensitivity = delaySensitivity; // time after exit intent when the Reveal should show.
 		this.sensitivityDelayTimeout = null; // Stores the timeout used for sensitivity delay.
 
 		$(document).on('mouseleave', this.mouseleave.bind(this));
@@ -37,12 +37,12 @@ export default class ExitIntentReveal {
 		}
 
 		this.sensitivityDelayTimeout = setTimeout(() => {
-			// If the popup is already open return.
+			// If the popup is already open abort
 			if (this.$reveal.is(':visible')) {
 				return;
 			}
 
-			// TODO: If cookie exists or conditions fail return.
+			// If cookie exists and is valid abort
 			const revealId = this.$reveal.attr('id');
 			const shouldOpen =
 				ExitIntentReveal.getCookie(`disableExitIntent_${revealId}`) !== 'true';
@@ -50,8 +50,7 @@ export default class ExitIntentReveal {
 				this.$reveal.foundation('open');
 			}
 
-			// only show once.
-			// this.sensitivityDelayTimeout = null;
+			this.sensitivityDelayTimeout = null;
 		}, this.delaySensitivity);
 	}
 
@@ -76,7 +75,7 @@ export default class ExitIntentReveal {
 	}
 
 	/**
-	 * Add a cookie when the Reveal is closed and only opens it again if it is expired.
+	 * Add a cookie when the Reveal is closed and only open it again if the cookie has expired.
 	 *
 	 * @param {int} maxAge time in seconds when the cookie should expire. 0 for session cookie.
 	 */
