@@ -38,16 +38,18 @@ module.exports = {
 				// both options are optional
 				filename: '../css/[name].css',
 			}),
-			new CopyWebpackPlugin([
-				{
-					from: `${path.resolve()}/src/assets/images`,
-					to: `${path.resolve()}/dist/assets/images`,
-				},
-				{
-					from: `${path.resolve()}/src/assets/fonts`,
-					to: `${path.resolve()}/dist/assets/fonts`,
-				},
-			]),
+			new CopyWebpackPlugin({
+				patterns: [
+					{
+						from: `${path.resolve()}/src/assets/images`,
+						to: `${path.resolve()}/dist/assets/images`,
+					},
+					{
+						from: `${path.resolve()}/src/assets/fonts`,
+						to: `${path.resolve()}/dist/assets/fonts`,
+					},
+				],
+			}),
 		],
 		module: {
 			rules: [
