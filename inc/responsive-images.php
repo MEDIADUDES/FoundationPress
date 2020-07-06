@@ -30,12 +30,12 @@ add_image_size( 'fp-xlarge', 1920 );
 function foundationpress_custom_sizes( $sizes ) {
 	return array_merge(
 		$sizes,
-		array(
+		[
 			'fp-small'  => __( 'FP Small', 'foundationpress' ),
 			'fp-medium' => __( 'FP Medium', 'foundationpress' ),
 			'fp-large'  => __( 'FP Large', 'foundationpress' ),
 			'fp-xlarge' => __( 'FP XLarge', 'foundationpress' ),
-		)
+		]
 	);
 }
 add_filter( 'image_size_names_choose', 'foundationpress_custom_sizes' );

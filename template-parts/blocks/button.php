@@ -23,7 +23,7 @@ $class_names = $block->get_class_names();
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="b-button <?php echo esc_attr( $class_names ); ?>">
-	<?php fp_button( 'button' ); ?>
+	<?php fopr_button( 'button' ); ?>
 </div>
 
 <?php

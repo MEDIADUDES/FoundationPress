@@ -9,7 +9,7 @@
 if ( ! function_exists( 'foundationpress_sidebar_widgets' ) ) :
 	function foundationpress_sidebar_widgets() {
 		register_sidebar(
-			array(
+			[
 				'id'            => 'sidebar-widgets',
 				'name'          => __( 'Sidebar widgets', 'foundationpress' ),
 				'description'   => __( 'Drag widgets to this sidebar container.', 'foundationpress' ),
@@ -17,11 +17,11 @@ if ( ! function_exists( 'foundationpress_sidebar_widgets' ) ) :
 				'after_widget'  => '</section>',
 				'before_title'  => '<h6>',
 				'after_title'   => '</h6>',
-			)
+			]
 		);
 
 		register_sidebar(
-			array(
+			[
 				'id'            => 'footer-widgets',
 				'name'          => __( 'Footer widgets', 'foundationpress' ),
 				'description'   => __( 'Drag widgets to this footer container', 'foundationpress' ),
@@ -29,7 +29,7 @@ if ( ! function_exists( 'foundationpress_sidebar_widgets' ) ) :
 				'after_widget'  => '</section>',
 				'before_title'  => '<h6>',
 				'after_title'   => '</h6>',
-			)
+			]
 		);
 	}
 

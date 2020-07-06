@@ -20,10 +20,10 @@ if ( ! class_exists( 'Foundationpress_Comments' ) ) :
 		 *
 		 * @var array
 		 */
-		public $db_fields = array(
+		public $db_fields = [
 			'parent' => 'comment_parent',
 			'id'     => 'comment_ID',
-		);
+		];
 
 		/** CONSTRUCTOR
 		 * You'll have to use this if you plan to get to the top of the comments list, as
@@ -38,7 +38,7 @@ if ( ! class_exists( 'Foundationpress_Comments' ) ) :
 
 		/** START_LVL
 		 * Starts the list before the CHILD elements are added. */
-		public function start_lvl( &$output, $depth = 0, $args = array() ) {
+		public function start_lvl( &$output, $depth = 0, $args = [] ) {
 			$GLOBALS['comment_depth'] = $depth + 1; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 			?>
 
@@ -48,7 +48,7 @@ if ( ! class_exists( 'Foundationpress_Comments' ) ) :
 
 		/** END_LVL
 		 * Ends the children list of after the elements are added. */
-		public function end_lvl( &$output, $depth = 0, $args = array() ) {
+		public function end_lvl( &$output, $depth = 0, $args = [] ) {
 			$GLOBALS['comment_depth'] = $depth + 1; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 			?>
 
@@ -58,7 +58,7 @@ if ( ! class_exists( 'Foundationpress_Comments' ) ) :
 		}
 
 		/** START_EL */
-		public function start_el( &$output, $comment, $depth = 0, $args = array(), $id = 0 ) {
+		public function start_el( &$output, $comment, $depth = 0, $args = [], $id = 0 ) {
 			$depth++;
 			$GLOBALS['comment_depth'] = $depth; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 			$GLOBALS['comment']       = $comment; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
@@ -80,7 +80,7 @@ if ( ! class_exists( 'Foundationpress_Comments' ) ) :
 				printf(
 					// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
 					// translators: %s: comment author link
-					__( '<cite class="fn">%s</cite>', 'foundationpress' ),
+					'<cite class="fn">%s</cite>',
 					// phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
 					get_comment_author_link()
 				);
@@ -109,10 +109,10 @@ if ( ! class_exists( 'Foundationpress_Comments' ) ) :
 
 				<div class="reply">
 					<?php
-					$reply_args = array(
+					$reply_args = [
 						'depth'     => $depth,
 						'max_depth' => $args['max_depth'],
-					);
+					];
 
 						comment_reply_link( array_merge( $args, $reply_args ) );
 					?>
@@ -122,7 +122,7 @@ if ( ! class_exists( 'Foundationpress_Comments' ) ) :
 			<?php
 		}
 
-		public function end_el( & $output, $comment, $depth = 0, $args = array() ) {
+		public function end_el( &$output, $comment, $depth = 0, $args = [] ) {
 			?>
 
 			</li><!-- /#comment-' . get_comment_ID() . ' -->

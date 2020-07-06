@@ -6,11 +6,11 @@
  * @since FoundationPress 1.0.0
  */
 
-$fp_hide_title = get_field( 'hide_title' ) ?: false;
+$fopr_hide_title = get_field( 'hide_title' ) ?: false;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if ( true !== $fp_hide_title ) : ?>
+	<?php if ( true !== $fopr_hide_title ) : ?>
 		<header>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 		</header>
@@ -23,10 +23,10 @@ $fp_hide_title = get_field( 'hide_title' ) ?: false;
 	<footer>
 		<?php
 		wp_link_pages(
-			array(
+			[
 				'before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ),
 				'after'  => '</p></nav>',
-			)
+			]
 		);
 		if ( get_the_tags() ) {
 			?>

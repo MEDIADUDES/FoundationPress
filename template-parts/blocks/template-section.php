@@ -23,8 +23,8 @@ $class_names = $block->get_class_names();
 
 $name = get_field( 'name' ) ?: false;
 
-if ( function_exists( 'fp_template_section' ) && $name ) {
-	fp_template_section( $name );
+if ( function_exists( 'fopr_template_section' ) && $name ) {
+	fopr_template_section( $name );
 }
 
 // important: reset $block variable to initial value.

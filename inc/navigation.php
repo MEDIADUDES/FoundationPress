@@ -8,11 +8,11 @@
  */
 
 register_nav_menus(
-	array(
+	[
 		'top-bar-r'        => esc_html__( 'Right Top Bar', 'foundationpress' ),
 		'mobile-nav'       => esc_html__( 'Mobile', 'foundationpress' ),
 		'footer-legal-nav' => esc_html__( 'Footer Bottom Navigation', 'foundationpress' ),
-	)
+	]
 );
 
 
@@ -24,7 +24,7 @@ register_nav_menus(
 if ( ! function_exists( 'foundationpress_top_bar_r' ) ) {
 	function foundationpress_top_bar_r() {
 		wp_nav_menu(
-			array(
+			[
 				'container'      => false,
 				'menu_class'     => 'dropdown menu desktop-menu',
 				'items_wrap'     => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
@@ -32,7 +32,7 @@ if ( ! function_exists( 'foundationpress_top_bar_r' ) ) {
 				'depth'          => 3,
 				'fallback_cb'    => false,
 				'walker'         => new Foundationpress_Top_Bar_Walker(),
-			)
+			]
 		);
 	}
 }
@@ -44,7 +44,7 @@ if ( ! function_exists( 'foundationpress_top_bar_r' ) ) {
 if ( ! function_exists( 'foundationpress_mobile_nav' ) ) {
 	function foundationpress_mobile_nav() {
 		wp_nav_menu(
-			array(
+			[
 				'container'      => false,                         // Remove nav container
 				'menu'           => 'mobile-nav',
 				'menu_class'     => 'vertical menu',
@@ -52,7 +52,7 @@ if ( ! function_exists( 'foundationpress_mobile_nav' ) ) {
 				'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu data-submenu-toggle="true">%3$s</ul>',
 				'fallback_cb'    => false,
 				'walker'         => new Foundationpress_Mobile_Walker(),
-			)
+			]
 		);
 	}
 }
@@ -64,7 +64,7 @@ if ( ! function_exists( 'foundationpress_mobile_nav' ) ) {
 if ( ! function_exists( 'foundationpress_footer_legal_nav' ) ) {
 	function foundationpress_footer_legal_nav() {
 		wp_nav_menu(
-			array(
+			[
 				'container'      => false, // Remove nav container
 				'menu'           => 'footer-legal-nav',
 				'menu_class'     => 'menu legal-navigation__menu',
@@ -72,7 +72,7 @@ if ( ! function_exists( 'foundationpress_footer_legal_nav' ) ) {
 				'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 				'fallback_cb'    => false,
 				'depth'          => 1,
-			)
+			]
 		);
 	}
 }
@@ -87,8 +87,8 @@ if ( ! function_exists( 'foundationpress_footer_legal_nav' ) ) {
 */
 if ( ! function_exists( 'foundationpress_add_menuclass' ) ) {
 	function foundationpress_add_menuclass( $ulclass ) {
-		$find    = array( '/<a rel="button"/', '/<a title=".*?" rel="button"/' );
-		$replace = array( '<a rel="button" class="button"', '<a rel="button" class="button"' );
+		$find    = [ '/<a rel="button"/', '/<a title=".*?" rel="button"/' ];
+		$replace = [ '<a rel="button" class="button"', '<a rel="button" class="button"' ];
 
 		return preg_replace( $find, $replace, $ulclass, 1 );
 	}

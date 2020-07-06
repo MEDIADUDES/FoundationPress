@@ -39,7 +39,7 @@ if ( ! function_exists( 'foundationpress_enqueue_scripts' ) ) :
 	add_action( 'wp_enqueue_scripts', 'foundationpress_enqueue_scripts' );
 endif;
 
-function fp_admin_enqueue_scripts() {
+function fopr_admin_enqueue_scripts() {
 	// Enqueue the stylesheet.
 	wp_enqueue_style(
 		'foundationpress-admin-styles',
@@ -48,4 +48,4 @@ function fp_admin_enqueue_scripts() {
 		filemtime( get_stylesheet_directory() . '/dist/assets/css/admin.css' )
 	);
 }
-add_action( 'admin_enqueue_scripts', 'fp_admin_enqueue_scripts' );
+add_action( 'admin_enqueue_scripts', 'fopr_admin_enqueue_scripts' );

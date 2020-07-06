@@ -97,7 +97,7 @@ msgid "Template Section"
 msgstr ""
 
 #: inc/blocks/block-template-section.php:20
-msgid "Displays specific section of the current template. Template needs to define a fp_template_section function."
+msgid "Displays specific section of the current template. Template needs to define a fopr_template_section function."
 msgstr ""
 
 #: inc/class-foundationpress-comments.php:33

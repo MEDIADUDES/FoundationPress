@@ -12,7 +12,7 @@
  *
  * @param string $name name of the section.
  */
-function fp_template_section( $name ) {
+function fopr_template_section( $name ) {
 	$id = get_the_ID();
 	switch ( $name ) {
 		case 'example-template-section':

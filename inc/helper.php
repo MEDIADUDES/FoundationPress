@@ -10,7 +10,7 @@
  *
  * @param boolean $echo whether to echo the URI.
  */
-function fp_assets_uri( $echo = true ) {
+function fopr_assets_uri( $echo = true ) {
 	$uri = get_template_directory_uri() . '/dist/assets';
 	if ( $echo ) {
 		echo esc_url( $uri );
@@ -26,7 +26,7 @@ function fp_assets_uri( $echo = true ) {
  *
  * @see https://www.advancedcustomfields.com/resources/get_field/
  */
-function fp_acf_bg_img( $field, $post_id = false ) {
+function fopr_acf_bg_img( $field, $post_id = false ) {
 	$bg = $field;
 	if ( is_string( $bg ) ) {
 		$bg = get_field( $bg, $post_id );
@@ -48,7 +48,7 @@ function fp_acf_bg_img( $field, $post_id = false ) {
  * @param array  $args additional arguments to pass to the get_pages function.
  * @return array list of pages. see https://codex.wordpress.org/Function_Reference/get_pages.
  */
-function fp_get_pages_by_template( $template = '', $args = [] ) {
+function fopr_get_pages_by_template( $template = '', $args = [] ) {
 	if ( empty( $template ) ) {
 		return false;
 	}
@@ -68,7 +68,7 @@ function fp_get_pages_by_template( $template = '', $args = [] ) {
  * @param integer $length lenght of the string.
  * @return string the generated string.
  */
-function fp_generate_random_string( $length = 10 ) {
+function fopr_generate_random_string( $length = 10 ) {
 	$x = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	return substr( str_shuffle( str_repeat( $x, ceil( $length / strlen( $x ) ) ) ), 1, $length );
 }
@@ -78,7 +78,7 @@ function fp_generate_random_string( $length = 10 ) {
  *
  * @return bool|string If post has blocks: block name. Else: false.
  */
-function fp_get_first_block_name() {
+function fopr_get_first_block_name() {
 	$post = get_post();
 
 	if ( ! empty( $post ) && has_blocks( $post->post_content ) ) {
@@ -103,7 +103,7 @@ function fp_get_first_block_name() {
  * @param  boolean $echo whether to echo the content or not. defaults to true.
  * @return void|string
  */
-function fp_read_more( $content, $args = [], $echo = true ) {
+function fopr_read_more( $content, $args = [], $echo = true ) {
 	if ( empty( $args ) ) {
 		$args = [];
 	}
@@ -131,8 +131,8 @@ function fp_read_more( $content, $args = [], $echo = true ) {
 				</div>
 
 				<a href="#" class="accordion-title">
-					<span class="accordion-title__closed"><?php echo esc_html( $args['more_text'], 'foundationpress' ); ?></span>
-					<span class="accordion-title__expanded"><?php echo esc_html( $args['less_text'], 'foundationpress' ); ?></span>
+					<span class="accordion-title__closed"><?php echo esc_html( $args['more_text'] ); ?></span>
+					<span class="accordion-title__expanded"><?php echo esc_html( $args['less_text'] ); ?></span>
 				</a>
 			</div>
 		</div>

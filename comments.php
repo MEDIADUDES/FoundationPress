@@ -21,7 +21,7 @@ if ( have_comments() ) :
 	<section id="comments">
 		<?php
 		wp_list_comments(
-			array(
+			[
 				'walker'            => new Foundationpress_Comments(),
 				'max_depth'         => '',
 				'style'             => 'ol',
@@ -38,7 +38,7 @@ if ( have_comments() ) :
 				'short_ping'        => false,
 				'echo'              => true,
 				'moderation'        => __( 'Your comment is awaiting moderation.', 'foundationpress' ),
-			)
+			]
 		);
 
 		foundationpress_the_comments_pagination();
@@ -63,9 +63,9 @@ if ( comments_open() ) :
 	<section id="respond">
 		<?php
 			comment_form(
-				array(
+				[
 					'class_submit' => 'button',
-				)
+				]
 			);
 		?>
 	</section>

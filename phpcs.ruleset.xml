@@ -17,7 +17,12 @@
 		<exclude name="WordPress.Arrays.ArrayDeclaration.NoSpaceAfterOpenParenthesis" />
 		<exclude name="WordPress.Arrays.ArrayDeclarationSpacing.NoSpaceAfterArrayOpener" />
 		<exclude name="WordPress.Arrays.ArrayDeclarationSpacing.NoSpaceBeforeArrayCloser" />
+
+		<exclude name="WordPress.PHP.DisallowShortTernary.Found" />
+		<exclude name="Generic.Arrays.DisallowShortArraySyntax" />
 	</rule>
+
+	<rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
 
 	<!--
 		Add additional word deliniter to allow ACF hook names.
@@ -40,7 +45,7 @@
 		<properties>
 			<property name="prefixes" type="array">
 				<element value="foundationpress"/>
-				<element value="fp"/>
+				<element value="fopr"/>
 			</property>
 		</properties>
 	</rule>

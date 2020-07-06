@@ -14,13 +14,13 @@ if ( ! function_exists( 'foundationpress_theme_support' ) ) :
 		// Switch default core markup for search form, comment form, and comments to output valid HTML5
 		add_theme_support(
 			'html5',
-			array(
+			[
 				'search-form',
 				'comment-form',
 				'comment-list',
 				'gallery',
 				'caption',
-			)
+			]
 		);
 
 		// Add menu support
@@ -36,7 +36,7 @@ if ( ! function_exists( 'foundationpress_theme_support' ) ) :
 		add_theme_support( 'automatic-feed-links' );
 
 		// Add post formats support: http://codex.wordpress.org/Post_Formats
-		add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
+		add_theme_support( 'post-formats', [ 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ] );
 
 		// Additional theme support for woocommerce 3.0.+
 		add_theme_support( 'wc-product-gallery-zoom' );

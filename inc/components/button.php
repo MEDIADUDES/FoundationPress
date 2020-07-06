@@ -21,7 +21,7 @@
  * 'page'           => string - URL of a page,
  * 'target'         => link target.
  */
-function fp_button( $args, $modifier = [], $icon = '' ) {
+function fopr_button( $args, $modifier = [], $icon = '' ) {
 	$button = $args;
 	if ( is_string( $button ) ) {
 		$button = get_field( $button );

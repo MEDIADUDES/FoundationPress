@@ -43,7 +43,7 @@ if ( ! function_exists( 'foundationpress_pagination' ) ) :
 		// For more options and info view the docs for paginate_links()
 		// http://codex.wordpress.org/Function_Reference/paginate_links
 		$paginate_links = paginate_links(
-			array(
+			[
 				'base'      => str_replace( $big, '%#%', html_entity_decode( get_pagenum_link( $big ) ) ),
 				'format'    => '?paged=%#%',
 				'current'   => max( 1, $paged ),
@@ -53,7 +53,7 @@ if ( ! function_exists( 'foundationpress_pagination' ) ) :
 				'prev_text' => '',
 				'next_text' => '',
 				'type'      => 'list',
-			)
+			]
 		);
 
 		// Display the pagination if more than one page is found.
@@ -103,16 +103,16 @@ endif;
 
 // Custom Comments Pagination.
 if ( ! function_exists( 'foundationpress_get_the_comments_pagination' ) ) :
-	function foundationpress_get_the_comments_pagination( $args = array() ) {
+	function foundationpress_get_the_comments_pagination( $args = [] ) {
 		$navigation   = '';
 		$args         = wp_parse_args(
 			$args,
-			array(
+			[
 				'prev_text'     => __( '&laquo;', 'foundationpress' ),
 				'next_text'     => __( '&raquo;', 'foundationpress' ),
 				'size'          => 'default',
 				'show_disabled' => true,
-			)
+			]
 		);
 		$args['type'] = 'array';
 		$args['echo'] = false;
@@ -139,9 +139,9 @@ if ( ! function_exists( 'foundationpress_get_the_comments_pagination' ) ) :
 				} else {
 					$link = preg_replace( "/(class|href)='(.*)'/U", '$1="$2"', $link );
 					if ( 0 === strpos( $link, '<span class="page-numbers current' ) ) {
-						$navigation .= '<li class="page-item active">' . str_replace( array( '<span class="page-numbers current">', '</span>' ), array( '<a class="page-link" href="#">', '</a>' ), $link ) . '</li>';
+						$navigation .= '<li class="page-item active">' . str_replace( [ '<span class="page-numbers current">', '</span>' ], [ '<a class="page-link" href="#">', '</a>' ], $link ) . '</li>';
 					} elseif ( 0 === strpos( $link, '<span class="page-numbers dots' ) ) {
-						$navigation .= '<li class="page-item disabled">' . str_replace( array( '<span class="page-numbers dots">', '</span>' ), array( '<a class="page-link" href="#">', '</a>' ), $link ) . '</li>';
+						$navigation .= '<li class="page-item disabled">' . str_replace( [ '<span class="page-numbers dots">', '</span>' ], [ '<a class="page-link" href="#">', '</a>' ], $link ) . '</li>';
 					} else {
 						$navigation .= '<li class="page-item">' . str_replace( 'class="page-numbers', 'class="page-link', $link ) . '</li>';
 					}
@@ -159,7 +159,7 @@ endif;
 
 // Custom Comments Pagination.
 if ( ! function_exists( 'foundationpress_the_comments_pagination' ) ) :
-	function foundationpress_the_comments_pagination( $args = array() ) {
+	function foundationpress_the_comments_pagination( $args = [] ) {
 		echo foundationpress_get_the_comments_pagination( $args );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 endif;
@@ -283,7 +283,7 @@ if ( ! function_exists( 'foundationpress_gallery' ) ) :
 		}
 
 		$atts = shortcode_atts(
-			array(
+			[
 				'order'          => 'ASC',
 				'orderby'        => 'menu_order ID',
 				'id'             => $post ? $post->ID : 0,
@@ -296,7 +296,7 @@ if ( ! function_exists( 'foundationpress_gallery' ) ) :
 				'size'           => 'thumbnail',
 				'include'        => '',
 				'exclude'        => '',
-			),
+			],
 			$attr,
 			'gallery'
 		);
@@ -305,23 +305,23 @@ if ( ! function_exists( 'foundationpress_gallery' ) ) :
 
 		if ( ! empty( $atts['include'] ) ) {
 			$_attachments = get_posts(
-				array(
+				[
 					'include'        => $atts['include'],
 					'post_status'    => 'inherit',
 					'post_type'      => 'attachment',
 					'post_mime_type' => 'image',
 					'order'          => $atts['order'],
 					'orderby'        => $atts['orderby'],
-				)
+				]
 			);
 
-			$attachments = array();
+			$attachments = [];
 			foreach ( $_attachments as $key => $val ) {
 				$attachments[ $val->ID ] = $_attachments[ $key ];
 			}
 		} elseif ( ! empty( $atts['exclude'] ) ) {
 			$attachments = get_children(
-				array(
+				[
 					'post_parent'    => $id,
 					'exclude'        => $atts['exclude'],
 					'post_status'    => 'inherit',
@@ -329,18 +329,18 @@ if ( ! function_exists( 'foundationpress_gallery' ) ) :
 					'post_mime_type' => 'image',
 					'order'          => $atts['order'],
 					'orderby'        => $atts['orderby'],
-				)
+				]
 			);
 		} else {
 			$attachments = get_children(
-				array(
+				[
 					'post_parent'    => $id,
 					'post_status'    => 'inherit',
 					'post_type'      => 'attachment',
 					'post_mime_type' => 'image',
 					'order'          => $atts['order'],
 					'orderby'        => $atts['orderby'],
-				)
+				]
 			);
 		}
 
@@ -390,10 +390,10 @@ if ( ! function_exists( 'foundationpress_gallery' ) ) :
 					false,
 					false,
 					false,
-					array(
+					[
 						'class' => '',
 						'id'    => "imageid-$id",
-					)
+					]
 				);
 
 				// Edit this line to implement your html params in <a> tag with use a custom lightbox plugin.
@@ -404,10 +404,10 @@ if ( ! function_exists( 'foundationpress_gallery' ) ) :
 					$id,
 					$size_class,
 					false,
-					array(
+					[
 						'class' => "thumbnail attachment-$size_class size-$size_class",
 						'id'    => "imageid-$id",
-					)
+					]
 				);
 			} else {
 				$link = wp_get_attachment_link(
@@ -416,10 +416,10 @@ if ( ! function_exists( 'foundationpress_gallery' ) ) :
 					true,
 					false,
 					false,
-					array(
+					[
 						'class' => '',
 						'id'    => "imageid-$id",
-					)
+					]
 				);
 				$link = str_replace( '<a href', '<a class="thumbnail" title="' . wptexturize( $attachment->post_excerpt ) . '" href', $link );
 			}

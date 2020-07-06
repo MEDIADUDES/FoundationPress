@@ -8,7 +8,7 @@
 /**
  * Register Shared Content CPT.
  */
-function fp_register_shared_content_cpt() {
+function fopr_register_shared_content_cpt() {
 	$args = [
 		'label'              => __( 'Shared Content', 'foundationpress' ),
 		'description'        => __( 'Used to manage shared content from different pages on a central place.', 'foundationpress' ),
@@ -27,10 +27,10 @@ function fp_register_shared_content_cpt() {
 	register_post_type( 'shared_content', $args );
 
 }
-add_action( 'init', 'fp_register_shared_content_cpt', 0 );
+add_action( 'init', 'fopr_register_shared_content_cpt', 0 );
 
 
-function fp_shared_content_info_after_title() {
+function fopr_shared_content_info_after_title() {
 	$current_screen = get_current_screen();
 	if ( 'shared_content' !== $current_screen->id ) {
 		return;
@@ -38,4 +38,4 @@ function fp_shared_content_info_after_title() {
 
 	esc_html_e( 'Add fields with Advanced Custom Fields to use shared content.', 'foundationpress' );
 }
-add_action( 'edit_form_after_title', 'fp_shared_content_info_after_title' );
+add_action( 'edit_form_after_title', 'fopr_shared_content_info_after_title' );

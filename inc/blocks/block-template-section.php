@@ -17,7 +17,7 @@ class Block_Template_Section extends Block {
 			[
 				'name'            => self::get_name(),
 				'title'           => __( 'Template Section', 'foundationpress' ),
-				'description'     => __( 'Displays specific section of the current template. Template needs to define a fp_template_section function.', 'foundationpress' ),
+				'description'     => __( 'Displays specific section of the current template. Template needs to define a fopr_template_section function.', 'foundationpress' ),
 				'render_template' => 'template-parts/blocks/template-section.php',
 				'category'        => 'foundationpress',
 				'icon'            => 'admin-tools',
