@@ -1,14 +1,14 @@
 /* eslint import/no-dynamic-require:0 */
 /* eslint global-require:0 */
 /* eslint-disable-next-line func-names */
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 	// Utility to load the different option files
 	// based on their names
 	function loadConfig(path) {
 		const glob = require('glob');
 		const object = {};
 		let key;
-		glob.sync('*', { cwd: path }).forEach(option => {
+		glob.sync('*', { cwd: path }).forEach((option) => {
 			key = option.replace(/\.js$/, '');
 			object[key] = require(path + option);
 		});

@@ -80,7 +80,7 @@ export default class ExitIntentReveal {
 	 * @param {int} maxAge time in seconds when the cookie should expire. 0 for session cookie.
 	 */
 	useCookieOnClose(maxAge = 0) {
-		$(document).on('closed.zf.reveal', e => {
+		$(document).on('closed.zf.reveal', (e) => {
 			if (e.target === this.$reveal.get(0)) {
 				const revealId = this.$reveal.attr('id');
 				if (maxAge === 0) {
