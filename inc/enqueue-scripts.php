@@ -15,17 +15,17 @@ if ( ! function_exists( 'foundationpress_enqueue_scripts' ) ) :
 		// Enqueue the stylesheet.
 		wp_enqueue_style(
 			'foundationpress-styles',
-			get_stylesheet_directory_uri() . '/dist/assets/css/main.css',
+			get_template_directory_uri() . '/dist/assets/css/main.css',
 			false,
-			filemtime( get_stylesheet_directory() . '/dist/assets/css/main.css' )
+			filemtime( get_template_directory() . '/dist/assets/css/main.css' )
 		);
 
 		// Enqueue the scripts.
 		wp_enqueue_script(
 			'foundationpress-scripts',
-			get_stylesheet_directory_uri() . '/dist/assets/js/app.js',
+			get_template_directory_uri() . '/dist/assets/js/app.js',
 			false,
-			filemtime( get_stylesheet_directory() . '/dist/assets/js/app.js' ),
+			filemtime( get_template_directory() . '/dist/assets/js/app.js' ),
 			true
 		);
 
@@ -43,9 +43,9 @@ function fopr_admin_enqueue_scripts() {
 	// Enqueue the stylesheet.
 	wp_enqueue_style(
 		'foundationpress-admin-styles',
-		get_stylesheet_directory_uri() . '/dist/assets/css/admin.css',
+		get_template_directory_uri() . '/dist/assets/css/admin.css',
 		false,
-		filemtime( get_stylesheet_directory() . '/dist/assets/css/admin.css' )
+		filemtime( get_template_directory() . '/dist/assets/css/admin.css' )
 	);
 }
 add_action( 'admin_enqueue_scripts', 'fopr_admin_enqueue_scripts' );

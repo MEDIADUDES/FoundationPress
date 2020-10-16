@@ -35,7 +35,7 @@ if ( ! is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
  */
 function foundationpress_acf_json_load_point( $paths ) {
 	// append path.
-	$paths[] = get_stylesheet_directory() . '/acf-fields';
+	$paths[] = get_template_directory() . '/acf-fields';
 
 	return $paths;
 }
@@ -50,7 +50,7 @@ add_filter( 'acf/settings/load_json', 'foundationpress_acf_json_load_point' );
  */
 function foundationpress_acf_json_save_point( $path ) {
 	// set path.
-	$path = get_stylesheet_directory() . '/acf-fields';
+	$path = get_template_directory() . '/acf-fields';
 	return $path;
 }
 /*

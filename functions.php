@@ -30,4 +30,4 @@ function foundationpress_recursive_require_dir( $path ) {
 	}
 }
 
-foundationpress_recursive_require_dir( get_stylesheet_directory() . '/inc' );
+foundationpress_recursive_require_dir( get_template_directory() . '/inc' );
