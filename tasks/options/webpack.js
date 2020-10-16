@@ -24,7 +24,10 @@ module.exports = {
 		progress: true,
 		failOnError: true,
 		watch: false,
-		devtool: 'nosources-source-map',
+		devtool:
+			process.env.NODE_ENV === 'development'
+				? 'inline-cheap-module-source-map' // fix FF wrong line numbers while developing
+				: 'nosources-source-map',
 		plugins: [
 			new webpack.ProvidePlugin({
 				$: 'jquery',
@@ -76,7 +79,11 @@ module.exports = {
 							loader: MiniCssExtractPlugin.loader,
 						},
 						{
-							loader: 'css-loader?-url&sourceMap',
+							loader: 'css-loader',
+							options: {
+								url: false,
+								sourceMap: true,
+							},
 						},
 						{
 							loader: 'postcss-loader',
