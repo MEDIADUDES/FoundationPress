@@ -90,7 +90,7 @@ module.exports = {
 						},
 						{
 							loader: 'sass-loader',
-							query: {
+							options: {
 								sourceMap: true,
 							},
 						},
