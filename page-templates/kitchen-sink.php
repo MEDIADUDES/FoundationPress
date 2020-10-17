@@ -224,6 +224,10 @@ while ( have_posts() ) :
 							<a class="button">Two</a>
 							<a class="button">Three</a>
 						</div>
+
+						<br />
+						<a class="button">With Icon <i class="fas fa-arrow-circle-right button__icon"></i></a>
+						<a class="button button--icon-left">With Left Icon <i class="fas fa-arrow-circle-right button__icon"></i></a>
 					<hr>
 
 					<!-- Callout -->
