@@ -94,14 +94,14 @@
 	"browserslist": ["last 3 versions", "> 1%", "IE 11"],
 	"release-it": {
 		"git": {
-			"changelog": "auto-changelog --stdout --commit-limit false --unreleased --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs",
+			"changelog": "auto-changelog --stdout --commit-limit false --sort-commits date-desc --unreleased --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs",
 			"requireBranch": "master"
 		},
 		"hooks": {
 			"after:bump": [
 				"npm run autofix",
 				"npm run build",
-				"auto-changelog -p --commit-limit false --starting-version v2.12.0"
+				"auto-changelog -p --commit-limit false --hide-credit --sort-commits date-desc --starting-version v2.12.0"
 			],
 			"after:git:release": "echo After git push, before github release",
 			"after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
