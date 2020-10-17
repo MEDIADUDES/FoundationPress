@@ -1,17 +1,24 @@
 {
 	"name": "@mediadudes/foundationpress",
 	"title": "FoundationPress",
-	"version": "2.10.4",
+	"version": "2.12.0",
 	"description": "FoundationPress is a WordPress starter theme based on Foundation 6 by Zurb (forked from https://github.com/olefredrik/FoundationPress)",
 	"homepage": "https://github.com/MEDIADUDES/FoundationPress",
 	"license": "MIT",
-	"browserslist": ["last 3 versions", "> 1%", "IE 11"],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/MEDIADUDES/FoundationPress.git"
+	},
+	"bugs": {
+		"url": "https://github.com/MEDIADUDES/FoundationPress/issues"
+	},
 	"scripts": {
 		"start": "grunt",
 		"build": "cross-env NODE_ENV=production grunt build",
 		"dev": "cross-env NODE_ENV=development grunt",
 		"update": "grunt devUpdate:update",
-		"make-pot": "wp i18n make-pot . languages/FoundationPress.pot --domain=foundationpress"
+		"make-pot": "wp i18n make-pot . languages/FoundationPress.pot --domain=foundationpress",
+		"release": "release-it"
 	},
 	"dependencies": {
 		"@babel/polyfill": "7.12.1",
@@ -31,6 +38,8 @@
 		"@babel/plugin-proposal-object-rest-spread": "7.12.1",
 		"@babel/preset-env": "7.12.1",
 		"@babel/preset-react": "7.12.1",
+		"@release-it/bumper": "2.0.0",
+		"auto-changelog": "2.2.1",
 		"autoprefixer": "10.0.1",
 		"babel-eslint": "10.1.0",
 		"babel-loader": "8.1.0",
@@ -67,6 +76,7 @@
 		"postcss-loader": "4.0.4",
 		"postcss-scss": "3.0.2",
 		"prettier": "2.1.2",
+		"release-it": "14.1.0",
 		"sass": "1.27.0",
 		"sass-loader": "10.0.3",
 		"style-loader": "2.0.0",
@@ -77,14 +87,33 @@
 		"stylelint-scss": "3.18.0",
 		"webpack": "5.1.3"
 	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/MEDIADUDES/FoundationPress.git"
-	},
-	"bugs": {
-		"url": "https://github.com/MEDIADUDES/FoundationPress/issues"
-	},
 	"babel": {
 		"presets": ["@babel/env"]
+	},
+	"browserslist": ["last 3 versions", "> 1%", "IE 11"],
+	"release-it": {
+		"git": {
+			"changelog": "auto-changelog --stdout --commit-limit false --unreleased --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs",
+			"requireBranch": "master"
+		},
+		"hooks": {
+			"after:bump": [
+				"npm run build",
+				"auto-changelog -p --commit-limit false --starting-version v2.12.0"
+			],
+			"after:git:release": "echo After git push, before github release",
+			"after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
+		},
+		"github": {
+			"release": true
+		},
+		"npm": {
+			"publish": false
+		},
+		"plugins": {
+			"@release-it/bumper": {
+				"out": ["style.css"]
+			}
+		}
 	}
 }
