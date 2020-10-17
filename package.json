@@ -15,6 +15,7 @@
 	"scripts": {
 		"start": "grunt",
 		"build": "cross-env NODE_ENV=production grunt build",
+		"autofix": "grunt autofix",
 		"dev": "cross-env NODE_ENV=development grunt",
 		"update": "grunt devUpdate:update",
 		"make-pot": "wp i18n make-pot . languages/FoundationPress.pot --domain=foundationpress",
@@ -98,6 +99,7 @@
 		},
 		"hooks": {
 			"after:bump": [
+				"npm run autofix",
 				"npm run build",
 				"auto-changelog -p --commit-limit false --starting-version v2.12.0"
 			],
