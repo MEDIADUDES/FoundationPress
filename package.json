@@ -16,6 +16,8 @@
 	},
 	"dependencies": {
 		"@babel/polyfill": "7.12.1",
+		"@fortawesome/fontawesome-svg-core": "1.2.32",
+		"@fortawesome/free-solid-svg-icons": "5.15.1",
 		"foundation-sites": "6.6.3",
 		"jquery": "3.5.1",
 		"motion-ui": "2.0.3",

@@ -13,5 +13,9 @@ if (
 import './lib/foundation';
 import './helper/exit-intent-reveal';
 
+// import FA last, to kick off the process of finding <i> tags and
+// replacing with <svg> tags, after importing all components.
+import './lib/FontAwesome';
+
 // because jQuery is included with webpack.ProvidePlugin we can
 // just use jQuery and $ variables without importing it again.
