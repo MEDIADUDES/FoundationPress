@@ -10,7 +10,6 @@
 		"start": "grunt",
 		"build": "cross-env NODE_ENV=production grunt build",
 		"dev": "cross-env NODE_ENV=development grunt",
-		"dev:watch": "cross-env NODE_ENV=development grunt watch",
 		"update": "grunt devUpdate:update",
 		"make-pot": "wp i18n make-pot . languages/FoundationPress.pot --domain=foundationpress"
 	},
