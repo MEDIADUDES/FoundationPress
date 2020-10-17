@@ -552,6 +552,21 @@ while ( have_posts() ) :
 					</div>
 					<hr>
 
+
+					<!-- Iconlist -->
+					<h2 id="iconlist" class="docs-heading" data-magellan-target="iconlist"><a href="#iconlist"></a>Iconlist</h2>
+					<div class="kitchen-sink-iconlist">
+						<ul class="iconlist" data-iconlist data-icon="fas fa-arrow-circle-right">
+							<li>Pulvinar cum pellentesque</li>
+							<li>Dictum morbi</li>
+							<li>Arcu enim pharetra sit cubilia dolor enim pulvinar<br>sodales hendrerit ultrices augue</li>
+							<li>Condimentum cras Eros</li>
+							<li>Sollicitudin quis hac convallis</li>
+						</ul>
+					</div>
+					<hr>
+
+
 					<!-- Label -->
 					<h2 id="label" class="docs-heading" data-magellan-target="label"><a href="#label"></a>Label</h2>
 					<span class="secondary label">Secondary Label</span>
@@ -962,6 +977,7 @@ while ( have_posts() ) :
 						<li><a href="#flex-video">Flex Video</a></li>
 						<li><a href="#forms">Forms</a></li>
 						<li><a href="#grid">Grid</a></li>
+						<li><a href="#iconlist">Iconlist</a></li>
 						<li><a href="#label">Label</a></li>
 						<li><a href="#media-object">Media Object</a></li>
 						<li><a href="#menu">Menu</a></li>

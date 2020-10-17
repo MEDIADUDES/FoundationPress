@@ -11,7 +11,12 @@ if (
 /* eslint-enable no-underscore-dangle, global-require */
 
 import './lib/foundation';
+
+// helper
 import './helper/exit-intent-reveal';
+
+// components
+import './components/iconlist';
 
 // import FA last, to kick off the process of finding <i> tags and
 // replacing with <svg> tags, after importing all components.

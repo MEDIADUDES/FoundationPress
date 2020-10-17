@@ -1,0 +1,21 @@
+.iconlist {
+	list-style: none;
+	margin-left: 1.6em;
+
+	> li {
+		margin-left: -1.6em;
+		padding-left: 1.6em;
+		margin-bottom: 0.5em;
+	}
+
+	svg.iconlist__icon {
+		color: $primary-color;
+		margin-left: -1.6em;
+		display: inline-block;
+		width: 1em;
+		margin-right: 0.6em;
+		height: 1em;
+		margin-bottom: -0.15em;
+		vertical-align: baseline; /* reset fontawesome style */
+	}
+}
