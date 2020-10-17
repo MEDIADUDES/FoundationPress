@@ -1,7 +1,131 @@
-# Change Log
+<!-- auto-changelog-above -->
 
-## [v2.10.4](https://github.com/olefredrik/FoundationPress/tree/v2.10.4) (2017-10-11)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.10.3...v2.10.4)
+## [v2.11.0](https://github.com/MEDIADUDES/FoundationPress/compare/v2.10.4...v2.11.0) - 2019-01-10
+
+### Merged
+
+- Foundation 6.5.1 [`#1344`](https://github.com/olefredrik/FoundationPress/pull/1344)
+- Main file changed to gulpfile.babel.js [`#1342`](https://github.com/olefredrik/FoundationPress/pull/1342)
+- Sentence correction [`#1337`](https://github.com/olefredrik/FoundationPress/pull/1337)
+- Gutenberg Support [`#1331`](https://github.com/olefredrik/FoundationPress/pull/1331)
+- Update package.json [`#1327`](https://github.com/olefredrik/FoundationPress/pull/1327)
+- Comments template cleaned up and refactored [`#1296`](https://github.com/olefredrik/FoundationPress/pull/1296)
+- Wordpress gallery: Added css and custom markup [`#1234`](https://github.com/olefredrik/FoundationPress/pull/1234)
+- Add aria label to the search form to assist in accessibility [`#1308`](https://github.com/olefredrik/FoundationPress/pull/1308)
+- Add container to index.php to match other default page templates [`#1299`](https://github.com/olefredrik/FoundationPress/pull/1299)
+- Licence Badge Updated [`#1297`](https://github.com/olefredrik/FoundationPress/pull/1297)
+- Fix image watcher copying images + reloading browser. Bump gulp-imagemin to 4.1.0. [`#1287`](https://github.com/olefredrik/FoundationPress/pull/1287)
+- Watch task to handle SVG files [`#1281`](https://github.com/olefredrik/FoundationPress/pull/1281)
+- added russian language [`#1278`](https://github.com/olefredrik/FoundationPress/pull/1278)
+- Add La revanche des sites to showcase [`#1261`](https://github.com/olefredrik/FoundationPress/pull/1261)
+- use get_stylesheet_directory_uri to support usage as childtheme [`#1260`](https://github.com/olefredrik/FoundationPress/pull/1260)
+- Add default breakpoint for smaller screen sizes to footer widget area. #1251 [`#1255`](https://github.com/olefredrik/FoundationPress/pull/1255)
+- Replace deprecated log call [`#1257`](https://github.com/olefredrik/FoundationPress/pull/1257)
+- Code cleanup while loop page.php [`#1253`](https://github.com/olefredrik/FoundationPress/pull/1253)
+- translate(urdu): mo, po file [`#1226`](https://github.com/olefredrik/FoundationPress/pull/1226)
+- Update jQuery migrate to be compatible with jQuery v3.x and add option to enable jQuery migrate [`#1244`](https://github.com/olefredrik/FoundationPress/pull/1244)
+- fix: update webpack exclude rules for Windows compatibility [`#1250`](https://github.com/olefredrik/FoundationPress/pull/1250)
+- Fix image alignment bug discussed in #1237. [`#1239`](https://github.com/olefredrik/FoundationPress/pull/1239)
+- Update package-lock.json file to sync up with package.json . [`#1233`](https://github.com/olefredrik/FoundationPress/pull/1233)
+- Removed underscore from accessibility import in app.scss [`#1222`](https://github.com/olefredrik/FoundationPress/pull/1222)
+- Make topbar default if mobile nav setting isn't already defined [`#1220`](https://github.com/olefredrik/FoundationPress/pull/1220)
+- Remove reference to gutil in gulpfile [`#1213`](https://github.com/olefredrik/FoundationPress/pull/1213)
+- Adds Hungarian translation. [`#1201`](https://github.com/olefredrik/FoundationPress/pull/1201)
+- Replace deprecated gulp-util with ansi-colors and fancy-log [`#1212`](https://github.com/olefredrik/FoundationPress/pull/1212)
+- Added path for php and scss file changes/removals to console output. [`#1210`](https://github.com/olefredrik/FoundationPress/pull/1210)
+- Fix footer container.  #1180 [`#1189`](https://github.com/olefredrik/FoundationPress/pull/1189)
+- Refine Webpack watch + build functions [`#1205`](https://github.com/olefredrik/FoundationPress/pull/1205)
+- Bumped bablel-loader, webpack, and webpack-stream in package.json [`#1196`](https://github.com/olefredrik/FoundationPress/pull/1196)
+- Fix typo [`#1194`](https://github.com/olefredrik/FoundationPress/pull/1194)
+- Remove demosite script [`#1188`](https://github.com/olefredrik/FoundationPress/pull/1188)
+- Fix unclosed anchor tag in Dutch translation [`#1183`](https://github.com/olefredrik/FoundationPress/pull/1183)
+- Code cleanup [`#1178`](https://github.com/olefredrik/FoundationPress/pull/1178)
+- Optimize JavaScript tasks [`#1169`](https://github.com/olefredrik/FoundationPress/pull/1169)
+- Remove stray ‘[‘ and update single.php sidebar indentation [`#1176`](https://github.com/olefredrik/FoundationPress/pull/1176)
+- Update package-lock.json file with update to Foundation v6.4.3. [`#1175`](https://github.com/olefredrik/FoundationPress/pull/1175)
+- Improvements + Consistency updates in code indentation across multiple php files [`#1173`](https://github.com/olefredrik/FoundationPress/pull/1173)
+- Fix asset exclusion globbing pattern [`#1168`](https://github.com/olefredrik/FoundationPress/pull/1168)
+- Adding Icelandic localisation [`#1165`](https://github.com/olefredrik/FoundationPress/pull/1165)
+- Adding aria-label attribute to mobile menu hamburger button [`#1166`](https://github.com/olefredrik/FoundationPress/pull/1166)
+- Small fixes [`#1161`](https://github.com/olefredrik/FoundationPress/pull/1161)
+- Separate grid element from container [`#1159`](https://github.com/olefredrik/FoundationPress/pull/1159)
+- Revert style changes in 6.4.3 up-to-date [`#1160`](https://github.com/olefredrik/FoundationPress/pull/1160)
+- Tiny update gulpfile.babel.js [`#1155`](https://github.com/olefredrik/FoundationPress/pull/1155)
+- Revert style changes in 6.4.3 up-to-date [`#1158`](https://github.com/olefredrik/FoundationPress/pull/1158)
+- Update to Foundation for Sites 6.4.3 [`#1154`](https://github.com/olefredrik/FoundationPress/pull/1154)
+- Change the full-width template class to .main-content-full-width [`#1149`](https://github.com/olefredrik/FoundationPress/pull/1149)
+- Add Impeach Trump Now site to the showcase [`#1139`](https://github.com/olefredrik/FoundationPress/pull/1139)
+- Reintroduce WPCS without Travis [`#1131`](https://github.com/olefredrik/FoundationPress/pull/1131)
+- Reintroduce package task [`#1130`](https://github.com/olefredrik/FoundationPress/pull/1130)
+- Fix php error in asset_path function [`#1129`](https://github.com/olefredrik/FoundationPress/pull/1129)
+- Combine asset path function. Much prettier. [`#1126`](https://github.com/olefredrik/FoundationPress/pull/1126)
+
+### Fixed
+
+- update jqmigrate to be compatible with jquery version used [`#1243`](https://github.com/olefredrik/FoundationPress/issues/1243)
+- Bump gulp-sass to 3.1.0 [`#1148`](https://github.com/olefredrik/FoundationPress/issues/1148)
+- Bumped bablel-loader, webpack, and webpack-stream in package.json [`#1192`](https://github.com/olefredrik/FoundationPress/issues/1192)
+
+### Commits
+
+- npm audit fix [`b28db36`](https://github.com/MEDIADUDES/FoundationPress/commit/b28db367cd208736990e0d9db538f6df823ff749)
+- Bump gulp-imagemin up to 4.1.0 [`ff63245`](https://github.com/MEDIADUDES/FoundationPress/commit/ff63245a4869e6af9841e1afacb99077187315d4)
+- Cleanup code indentation - keep consistent across template [`2d4ba0a`](https://github.com/MEDIADUDES/FoundationPress/commit/2d4ba0a39a922f6ad9e60402d02e71b93033a461)
+- Replaced deprecated gulp-util from dependencies with fancy-log and ansi-colors [`21aed70`](https://github.com/MEDIADUDES/FoundationPress/commit/21aed700a8e4979454c261968958c9f4d5cd6dcf)
+- Installed gulp-zip and updated package-lock.json [`79d6614`](https://github.com/MEDIADUDES/FoundationPress/commit/79d661448fa5eadb39072d868644d12d1cc68463)
+- Reintroduced WordPress Coding Standards for local Code Sniffing [`0fbdfd1`](https://github.com/MEDIADUDES/FoundationPress/commit/0fbdfd163c4456af07d93cf90cfdd2d3cba3f641)
+- gutenberg editor styles [`7f71b08`](https://github.com/MEDIADUDES/FoundationPress/commit/7f71b08294181a0c91993a861c3a43b1434f203c)
+- Added custom markup for wordpress gallery [`4a91d2e`](https://github.com/MEDIADUDES/FoundationPress/commit/4a91d2ebbc5fbc8efbcee6810fc70bc2ab49c08a)
+- Add separate editor stylesheet [`70af4ce`](https://github.com/MEDIADUDES/FoundationPress/commit/70af4ce85c1a759e10a9216568af623163cd5668)
+- hardcoded comments form replaced with comment_form() template tag [`788a083`](https://github.com/MEDIADUDES/FoundationPress/commit/788a083f27c2bca629cc486a5fb4bdb362158115)
+- optimize javascript tasks [`7d6237e`](https://github.com/MEDIADUDES/FoundationPress/commit/7d6237e021f1ead616b351e4b5ae7dd8079f98f2)
+- Update Wordpress custom gallery with Foundation Block Grids markup [`f95251c`](https://github.com/MEDIADUDES/FoundationPress/commit/f95251c45e8a191cf269a7425577c69a1b92881a)
+- custom comments pagination function [`e17b7f6`](https://github.com/MEDIADUDES/FoundationPress/commit/e17b7f6f96f388a5fa0e12dbce74437f575476d8)
+- Update changelog [`27e18c3`](https://github.com/MEDIADUDES/FoundationPress/commit/27e18c3180e5002322c80b037fbf00e98946f51a)
+- Merge commit '3fa04098b1adc1dae3752bd8ef780dd0acc9352d' into gutenberg [`aafc19c`](https://github.com/MEDIADUDES/FoundationPress/commit/aafc19c64bb4b98d8fa1bb5555e7698edc3d709c)
+- Added container to index.php to match other default page templates [`9a69385`](https://github.com/MEDIADUDES/FoundationPress/commit/9a69385dff768804976a8670c84f531458951f5e)
+- Gutenberg block frontend styles [`39d47f0`](https://github.com/MEDIADUDES/FoundationPress/commit/39d47f0d63a3b404cc25e1d70f2e092075bde8ae)
+- Update package-lock.json file with updated Foundation version. [`7e06f53`](https://github.com/MEDIADUDES/FoundationPress/commit/7e06f53f779d7ae998c895486c341fd8d416d279)
+- color palette [`9051728`](https://github.com/MEDIADUDES/FoundationPress/commit/905172858f4ff4f9b146b37f298c7f1f763f1f5f)
+- Cleanup page.php indentation [`41688ea`](https://github.com/MEDIADUDES/FoundationPress/commit/41688ea5a02370186d30c6ca250e08b518ad2775)
+- comments added [`a0d6f94`](https://github.com/MEDIADUDES/FoundationPress/commit/a0d6f9453f805f37f3509adfd09bcb2e9eec82db)
+- Fix footer container. [`082ad20`](https://github.com/MEDIADUDES/FoundationPress/commit/082ad205be1e88606053d5fa9cba36b4d49b965b)
+- Add Webpack watch optimizations with error handling [`1f3f151`](https://github.com/MEDIADUDES/FoundationPress/commit/1f3f151aafe68049b7ba6e5761e00da08042af52)
+- Added package task back into gulp [`86912e9`](https://github.com/MEDIADUDES/FoundationPress/commit/86912e985a137d722ae56e371dd1b913b08cf542)
+- Added missing dateformat package [`be067dc`](https://github.com/MEDIADUDES/FoundationPress/commit/be067dc661e633d3d5bb8a7faa4c99819fc9250a)
+- Update ISSUE_TEMPLATE.md [`a34be14`](https://github.com/MEDIADUDES/FoundationPress/commit/a34be14bf8c2bbd7559f282940ec9b82bcd24be3)
+- Added package paths to config file [`39b168b`](https://github.com/MEDIADUDES/FoundationPress/commit/39b168b6ea22ab9102b33907a3165223513a268f)
+- Added styles for image gallery [`72583f1`](https://github.com/MEDIADUDES/FoundationPress/commit/72583f18d0f2f6ee746c54f35e71f981c9b7722d)
+- Remove an (fourth) unnecessary parameter in remove_action [`61ee4e2`](https://github.com/MEDIADUDES/FoundationPress/commit/61ee4e2620883b60835bc1af36795a76e9242a79)
+- Updated README with package task information [`12e5e76`](https://github.com/MEDIADUDES/FoundationPress/commit/12e5e76469e5d1b11cc4e45836f4d417b14310eb)
+- Update gulpfile.babel.js [`3b15f64`](https://github.com/MEDIADUDES/FoundationPress/commit/3b15f6474cc9e5d1844c5342b4bab739f0414fda)
+- Add missing translations [`8d5999d`](https://github.com/MEDIADUDES/FoundationPress/commit/8d5999dc69e99b6a7ad0a17ef650208f4e1fc56a)
+- Moving php tag to new line [`04f0165`](https://github.com/MEDIADUDES/FoundationPress/commit/04f0165c75d5e3bde6ef3d9330b8b55d2a54c667)
+- Add default breakpoint for smaller screen sizes to footer widget area. [`7ed71c9`](https://github.com/MEDIADUDES/FoundationPress/commit/7ed71c983776e9590e9245a262d33bb42213e976)
+- Code cleanup page.php [`6ad2ef7`](https://github.com/MEDIADUDES/FoundationPress/commit/6ad2ef7f84af7a81deb704b296bb1373bff4ecb5)
+- Var name change and formatting. [`09acefe`](https://github.com/MEDIADUDES/FoundationPress/commit/09acefe11dad1457924d642d5789f73dccaab5f1)
+- Create PULL_REQUEST_TEMPLATE.md [`0fada44`](https://github.com/MEDIADUDES/FoundationPress/commit/0fada44c55d1676a60288c6f3b6e392f2a139317)
+- Fix php error. [`8aee998`](https://github.com/MEDIADUDES/FoundationPress/commit/8aee998f4f5a93fd45d0790a5cbefb4c36d6e689)
+- Fix image watcher failing to copy images and reload browser. [`c2b7d02`](https://github.com/MEDIADUDES/FoundationPress/commit/c2b7d0242e77834908d072af979d2d7adddfe507)
+- Added package script to package.json [`d00d623`](https://github.com/MEDIADUDES/FoundationPress/commit/d00d623ec43ab3fb90e588218d13df88d9264156)
+- Update config-default.yml [`26c7596`](https://github.com/MEDIADUDES/FoundationPress/commit/26c7596ec130203c2cfaef111035749fefbca3ef)
+- Remove extra space [`10f20eb`](https://github.com/MEDIADUDES/FoundationPress/commit/10f20eb13ab1890c3f369ba55982c1f530c1bb27)
+- Correct images path in gulpfile.babel.js (Missed in #1155) [`75b4a7d`](https://github.com/MEDIADUDES/FoundationPress/commit/75b4a7d67cb48a75c912a9ee740a243880303d2f)
+- Remove demosite script reference [`cb309d6`](https://github.com/MEDIADUDES/FoundationPress/commit/cb309d616e32b741f46d474c9b69be20ea00cbd1)
+- Fix comment [`582f624`](https://github.com/MEDIADUDES/FoundationPress/commit/582f6246d2dd671b645c4e0b3c952c071b21dd64)
+- Remove an unnecessary echo. The "the_post_thumbnail_url" function already returned an echo. [`3dfbe95`](https://github.com/MEDIADUDES/FoundationPress/commit/3dfbe9508f4eb7d5b52a52174e450f3b35eb390a)
+- Updated config file to recursively ignore packaged directory [`7450bca`](https://github.com/MEDIADUDES/FoundationPress/commit/7450bcaeec8c33dd3d1d8ed513f1482321233381)
+- Remove reference to gutil [`6cc44c2`](https://github.com/MEDIADUDES/FoundationPress/commit/6cc44c20ac2151774082d504e434cf5d89632f0b)
+- Update licence badge img src [`7070c2d`](https://github.com/MEDIADUDES/FoundationPress/commit/7070c2d1ddfc019439d080035fb33c38a3616ba5)
+- Remove warning "no new line at the end of file" [`f16a8d3`](https://github.com/MEDIADUDES/FoundationPress/commit/f16a8d387913cc05a74a1f75d78a66862512c511)
+- remove commented out gutil import from top of gulpfile [`327596e`](https://github.com/MEDIADUDES/FoundationPress/commit/327596e9d9ab81a166f1c1826847417d0c1d5d7d)
+- Added packaged directory to gitigonre [`70c9755`](https://github.com/MEDIADUDES/FoundationPress/commit/70c975541db486912d3454ded5d3bc585d46c3d3)
+- Remove site from showcase [`9df4e5b`](https://github.com/MEDIADUDES/FoundationPress/commit/9df4e5bbb176a0e7c7fc5b8fc81c958fce54951a)
+- Watch task added to handle SVG files. [`8059155`](https://github.com/MEDIADUDES/FoundationPress/commit/80591555ee9128598a5c4502b5cbb440c027f2c3)
+- Remove unused images (missed in #784) [`4c5b783`](https://github.com/MEDIADUDES/FoundationPress/commit/4c5b7836f1eca43e5ef04b2a3cb037447f802acf)
+
+## [v2.10.4](https://github.com/MEDIADUDES/FoundationPress/tree/v2.10.4) (2017-10-11)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.10.3...v2.10.4)
 
 **Fixed bugs:**
 
@@ -67,8 +191,8 @@
 - Typo fixed [\#1065](https://github.com/olefredrik/FoundationPress/pull/1065) ([derweili](https://github.com/derweili))
 - Fixed kitchen sink grid update [\#1063](https://github.com/olefredrik/FoundationPress/pull/1063) ([colin-marshall](https://github.com/colin-marshall))
 
-## [v2.10.3](https://github.com/olefredrik/FoundationPress/tree/v2.10.3) (2017-08-29)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.10.2...v2.10.3)
+## [v2.10.3](https://github.com/MEDIADUDES/FoundationPress/tree/v2.10.3) (2017-08-29)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.10.2...v2.10.3)
 
 **Fixed bugs:**
 
@@ -118,8 +242,8 @@
 - Off canvas links [\#1038](https://github.com/olefredrik/FoundationPress/pull/1038) ([olefredrik](https://github.com/olefredrik))
 - de-queue FontAwesome CDN [\#1033](https://github.com/olefredrik/FoundationPress/pull/1033) ([linuxbastard](https://github.com/linuxbastard))
 
-## [v2.10.2](https://github.com/olefredrik/FoundationPress/tree/v2.10.2) (2017-08-08)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.10.1...v2.10.2)
+## [v2.10.2](https://github.com/MEDIADUDES/FoundationPress/tree/v2.10.2) (2017-08-08)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.10.1...v2.10.2)
 
 **Closed issues:**
 
@@ -149,15 +273,15 @@
 - Dependencies [\#1024](https://github.com/olefredrik/FoundationPress/pull/1024) ([olefredrik](https://github.com/olefredrik))
 - Woo 3 compatibility [\#1021](https://github.com/olefredrik/FoundationPress/pull/1021) ([linuxbastard](https://github.com/linuxbastard))
 
-## [v2.10.1](https://github.com/olefredrik/FoundationPress/tree/v2.10.1) (2017-08-05)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.10.0...v2.10.1)
+## [v2.10.1](https://github.com/MEDIADUDES/FoundationPress/tree/v2.10.1) (2017-08-05)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.10.0...v2.10.1)
 
 **Merged pull requests:**
 
 - Xy grid in footer [\#1023](https://github.com/olefredrik/FoundationPress/pull/1023) ([olefredrik](https://github.com/olefredrik))
 
-## [v2.10.0](https://github.com/olefredrik/FoundationPress/tree/v2.10.0) (2017-08-05)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.9.3...v2.10.0)
+## [v2.10.0](https://github.com/MEDIADUDES/FoundationPress/tree/v2.10.0) (2017-08-05)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.9.3...v2.10.0)
 
 **Closed issues:**
 
@@ -186,8 +310,8 @@
 
 - Foundation update [\#1022](https://github.com/olefredrik/FoundationPress/pull/1022) ([olefredrik](https://github.com/olefredrik))
 
-## [v2.9.3](https://github.com/olefredrik/FoundationPress/tree/v2.9.3) (2017-07-28)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.9.2...v2.9.3)
+## [v2.9.3](https://github.com/MEDIADUDES/FoundationPress/tree/v2.9.3) (2017-07-28)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.9.2...v2.9.3)
 
 **Fixed bugs:**
 
@@ -253,8 +377,8 @@
 - Changed search template to match default page mark up [\#963](https://github.com/olefredrik/FoundationPress/pull/963) ([GarySwift](https://github.com/GarySwift))
 - Update version number to 2.9.2 [\#962](https://github.com/olefredrik/FoundationPress/pull/962) ([jcallery](https://github.com/jcallery))
 
-## [v2.9.2](https://github.com/olefredrik/FoundationPress/tree/v2.9.2) (2017-03-17)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.9.1...v2.9.2)
+## [v2.9.2](https://github.com/MEDIADUDES/FoundationPress/tree/v2.9.2) (2017-03-17)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.9.1...v2.9.2)
 
 **Closed issues:**
 
@@ -266,8 +390,8 @@
 
 - Add PHP 5.6 and Nightly to Travis CI  [\#961](https://github.com/olefredrik/FoundationPress/pull/961) ([EricRihlmann](https://github.com/EricRihlmann))
 
-## [v2.9.1](https://github.com/olefredrik/FoundationPress/tree/v2.9.1) (2017-03-16)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.9.0...v2.9.1)
+## [v2.9.1](https://github.com/MEDIADUDES/FoundationPress/tree/v2.9.1) (2017-03-16)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.9.0...v2.9.1)
 
 **Closed issues:**
 
@@ -295,8 +419,8 @@
 - Remove to-be deprecated classes from flex-video example [\#928](https://github.com/olefredrik/FoundationPress/pull/928) ([conorbarclay](https://github.com/conorbarclay))
 - Clean up Gulp Copy task. [\#927](https://github.com/olefredrik/FoundationPress/pull/927) ([populationtwo](https://github.com/populationtwo))
 
-## [v2.9.0](https://github.com/olefredrik/FoundationPress/tree/v2.9.0) (2016-12-15)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.8.0...v2.9.0)
+## [v2.9.0](https://github.com/MEDIADUDES/FoundationPress/tree/v2.9.0) (2016-12-15)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.8.0...v2.9.0)
 
 **Closed issues:**
 
@@ -319,8 +443,8 @@
 - Order placeholders [\#913](https://github.com/olefredrik/FoundationPress/pull/913) ([olefredrik](https://github.com/olefredrik))
 - Update navigation.php [\#911](https://github.com/olefredrik/FoundationPress/pull/911) ([mrsWeasel](https://github.com/mrsWeasel))
 
-## [v2.8.0](https://github.com/olefredrik/FoundationPress/tree/v2.8.0) (2016-10-21)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.7.1...v2.8.0)
+## [v2.8.0](https://github.com/MEDIADUDES/FoundationPress/tree/v2.8.0) (2016-10-21)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.7.1...v2.8.0)
 
 **Closed issues:**
 
@@ -349,8 +473,8 @@
 -  Turkish language files added [\#891](https://github.com/olefredrik/FoundationPress/pull/891) ([nurdankiratlioglu](https://github.com/nurdankiratlioglu))
 - Updated README.md with info on packaging the theme to a zip file [\#864](https://github.com/olefredrik/FoundationPress/pull/864) ([colin-marshall](https://github.com/colin-marshall))
 
-## [v2.7.1](https://github.com/olefredrik/FoundationPress/tree/v2.7.1) (2016-09-07)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.7.0...v2.7.1)
+## [v2.7.1](https://github.com/MEDIADUDES/FoundationPress/tree/v2.7.1) (2016-09-07)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.7.0...v2.7.1)
 
 **Closed issues:**
 
@@ -364,8 +488,8 @@
 - Use System UI fonts [\#886](https://github.com/olefredrik/FoundationPress/pull/886) ([olefredrik](https://github.com/olefredrik))
 - Update cs\_CZ.po [\#883](https://github.com/olefredrik/FoundationPress/pull/883) ([vladodriver](https://github.com/vladodriver))
 
-## [v2.7.0](https://github.com/olefredrik/FoundationPress/tree/v2.7.0) (2016-09-04)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.6.2...v2.7.0)
+## [v2.7.0](https://github.com/MEDIADUDES/FoundationPress/tree/v2.7.0) (2016-09-04)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.6.2...v2.7.0)
 
 **Fixed bugs:**
 
@@ -422,8 +546,8 @@
 - Update theme-support.php [\#835](https://github.com/olefredrik/FoundationPress/pull/835) ([Gilmoursa](https://github.com/Gilmoursa))
 - Switch to gulp-clean-css from deprecated gulp-minify-css [\#824](https://github.com/olefredrik/FoundationPress/pull/824) ([jmbarlow](https://github.com/jmbarlow))
 
-## [v2.6.2](https://github.com/olefredrik/FoundationPress/tree/v2.6.2) (2016-06-09)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.6.1...v2.6.2)
+## [v2.6.2](https://github.com/MEDIADUDES/FoundationPress/tree/v2.6.2) (2016-06-09)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.6.1...v2.6.2)
 
 **Closed issues:**
 
@@ -483,8 +607,8 @@
 - No download historical file by Travis [\#770](https://github.com/olefredrik/FoundationPress/pull/770) ([mik-laj](https://github.com/mik-laj))
 - Portuguese update \(pt\_PT\) [\#768](https://github.com/olefredrik/FoundationPress/pull/768) ([pedro-mendonca](https://github.com/pedro-mendonca))
 
-## [v2.6.1](https://github.com/olefredrik/FoundationPress/tree/v2.6.1) (2016-03-10)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.6.0...v2.6.1)
+## [v2.6.1](https://github.com/MEDIADUDES/FoundationPress/tree/v2.6.1) (2016-03-10)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.6.0...v2.6.1)
 
 **Fixed bugs:**
 
@@ -500,8 +624,8 @@
 
 - Remove local server url from gulpfile [\#764](https://github.com/olefredrik/FoundationPress/pull/764) ([olefredrik](https://github.com/olefredrik))
 
-## [v2.6.0](https://github.com/olefredrik/FoundationPress/tree/v2.6.0) (2016-03-10)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.5.1...v2.6.0)
+## [v2.6.0](https://github.com/MEDIADUDES/FoundationPress/tree/v2.6.0) (2016-03-10)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.5.1...v2.6.0)
 
 **Closed issues:**
 
@@ -517,8 +641,8 @@
 - Add the new foundation color palette mixin [\#761](https://github.com/olefredrik/FoundationPress/pull/761) ([olefredrik](https://github.com/olefredrik))
 - Responsive images [\#657](https://github.com/olefredrik/FoundationPress/pull/657) ([olefredrik](https://github.com/olefredrik))
 
-## [v2.5.1](https://github.com/olefredrik/FoundationPress/tree/v2.5.1) (2016-03-08)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.5.0...v2.5.1)
+## [v2.5.1](https://github.com/MEDIADUDES/FoundationPress/tree/v2.5.1) (2016-03-08)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.5.0...v2.5.1)
 
 **Fixed bugs:**
 
@@ -546,8 +670,8 @@
 - Separate javascript files with semi-colon when concatenating [\#746](https://github.com/olefredrik/FoundationPress/pull/746) ([jontro](https://github.com/jontro))
 - Remove duplicate line from foundation.scss [\#743](https://github.com/olefredrik/FoundationPress/pull/743) ([fourhexagons](https://github.com/fourhexagons))
 
-## [v2.5.0](https://github.com/olefredrik/FoundationPress/tree/v2.5.0) (2016-03-02)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.4.0...v2.5.0)
+## [v2.5.0](https://github.com/MEDIADUDES/FoundationPress/tree/v2.5.0) (2016-03-02)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.4.0...v2.5.0)
 
 **Closed issues:**
 
@@ -568,8 +692,8 @@
 - Tethys Update \(Foundation 6.2\) [\#742](https://github.com/olefredrik/FoundationPress/pull/742) ([olefredrik](https://github.com/olefredrik))
 - Sticky posts bugfix [\#733](https://github.com/olefredrik/FoundationPress/pull/733) ([colin-marshall](https://github.com/colin-marshall))
 
-## [v2.4.0](https://github.com/olefredrik/FoundationPress/tree/v2.4.0) (2016-02-11)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.3.0...v2.4.0)
+## [v2.4.0](https://github.com/MEDIADUDES/FoundationPress/tree/v2.4.0) (2016-02-11)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.3.0...v2.4.0)
 
 **Fixed bugs:**
 
@@ -620,8 +744,8 @@
 - Added gulp clean tasks [\#681](https://github.com/olefredrik/FoundationPress/pull/681) ([colin-marshall](https://github.com/colin-marshall))
 - Remove this as we use CDN hosted jQuery [\#670](https://github.com/olefredrik/FoundationPress/pull/670) ([olefredrik](https://github.com/olefredrik))
 
-## [v2.3.0](https://github.com/olefredrik/FoundationPress/tree/v2.3.0) (2015-12-31)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.2.0...v2.3.0)
+## [v2.3.0](https://github.com/MEDIADUDES/FoundationPress/tree/v2.3.0) (2015-12-31)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.2.0...v2.3.0)
 
 **Fixed bugs:**
 
@@ -675,8 +799,8 @@
 - Remove duplicate class in single template [\#616](https://github.com/olefredrik/FoundationPress/pull/616) ([olefredrik](https://github.com/olefredrik))
 - Closing divs in footer [\#615](https://github.com/olefredrik/FoundationPress/pull/615) ([olefredrik](https://github.com/olefredrik))
 
-## [v2.2.0](https://github.com/olefredrik/FoundationPress/tree/v2.2.0) (2015-12-12)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.1.0...v2.2.0)
+## [v2.2.0](https://github.com/MEDIADUDES/FoundationPress/tree/v2.2.0) (2015-12-12)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.1.0...v2.2.0)
 
 **Fixed bugs:**
 
@@ -715,8 +839,8 @@
 - Made it easier to understand [\#584](https://github.com/olefredrik/FoundationPress/pull/584) ([alexbohariuc](https://github.com/alexbohariuc))
 - Added Size Class Back Into Image Tag Within Content Body [\#574](https://github.com/olefredrik/FoundationPress/pull/574) ([joshrathke](https://github.com/joshrathke))
 
-## [v2.1.0](https://github.com/olefredrik/FoundationPress/tree/v2.1.0) (2015-12-07)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v2.0.0...v2.1.0)
+## [v2.1.0](https://github.com/MEDIADUDES/FoundationPress/tree/v2.1.0) (2015-12-07)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v2.0.0...v2.1.0)
 
 **Closed issues:**
 
@@ -730,8 +854,8 @@
 - Adden Romanian language files [\#582](https://github.com/olefredrik/FoundationPress/pull/582) ([alexbohariuc](https://github.com/alexbohariuc))
 - Remove excess closing div [\#581](https://github.com/olefredrik/FoundationPress/pull/581) ([olefredrik](https://github.com/olefredrik))
 
-## [v2.0.0](https://github.com/olefredrik/FoundationPress/tree/v2.0.0) (2015-12-05)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v1.7.2...v2.0.0)
+## [v2.0.0](https://github.com/MEDIADUDES/FoundationPress/tree/v2.0.0) (2015-12-05)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v1.7.2...v2.0.0)
 
 **Fixed bugs:**
 
@@ -749,8 +873,8 @@
 - Remove string replace task [\#569](https://github.com/olefredrik/FoundationPress/pull/569) ([olefredrik](https://github.com/olefredrik))
 - Update changelog [\#565](https://github.com/olefredrik/FoundationPress/pull/565) ([olefredrik](https://github.com/olefredrik))
 
-## [v1.7.2](https://github.com/olefredrik/FoundationPress/tree/v1.7.2) (2015-11-20)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v1.7.1...v1.7.2)
+## [v1.7.2](https://github.com/MEDIADUDES/FoundationPress/tree/v1.7.2) (2015-11-20)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v1.7.1...v1.7.2)
 
 **Fixed bugs:**
 
@@ -760,8 +884,8 @@
 
 - Specify required version of Node.js [\#564](https://github.com/olefredrik/FoundationPress/pull/564) ([olefredrik](https://github.com/olefredrik))
 
-## [v1.7.1](https://github.com/olefredrik/FoundationPress/tree/v1.7.1) (2015-11-20)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v1.7.0...v1.7.1)
+## [v1.7.1](https://github.com/MEDIADUDES/FoundationPress/tree/v1.7.1) (2015-11-20)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v1.7.0...v1.7.1)
 
 **Fixed bugs:**
 
@@ -786,8 +910,8 @@
 - Portuguese \(pt\_PT\) translation update [\#549](https://github.com/olefredrik/FoundationPress/pull/549) ([pedro-mendonca](https://github.com/pedro-mendonca))
 - Update changelog [\#545](https://github.com/olefredrik/FoundationPress/pull/545) ([olefredrik](https://github.com/olefredrik))
 
-## [v1.7.0](https://github.com/olefredrik/FoundationPress/tree/v1.7.0) (2015-11-07)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v1.6.0...v1.7.0)
+## [v1.7.0](https://github.com/MEDIADUDES/FoundationPress/tree/v1.7.0) (2015-11-07)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v1.6.0...v1.7.0)
 
 **Fixed bugs:**
 
@@ -807,8 +931,8 @@
 - Feature/package [\#539](https://github.com/olefredrik/FoundationPress/pull/539) ([olefredrik](https://github.com/olefredrik))
 - Update changelog [\#536](https://github.com/olefredrik/FoundationPress/pull/536) ([olefredrik](https://github.com/olefredrik))
 
-## [v1.6.0](https://github.com/olefredrik/FoundationPress/tree/v1.6.0) (2015-11-01)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v1.5.1...v1.6.0)
+## [v1.6.0](https://github.com/MEDIADUDES/FoundationPress/tree/v1.6.0) (2015-11-01)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v1.5.1...v1.6.0)
 
 **Closed issues:**
 
@@ -837,8 +961,8 @@
 - Feature/documentation [\#509](https://github.com/olefredrik/FoundationPress/pull/509) ([olefredrik](https://github.com/olefredrik))
 - Reset changes in bower json [\#508](https://github.com/olefredrik/FoundationPress/pull/508) ([olefredrik](https://github.com/olefredrik))
 
-## [v1.5.1](https://github.com/olefredrik/FoundationPress/tree/v1.5.1) (2015-10-10)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v1.5.0...v1.5.1)
+## [v1.5.1](https://github.com/MEDIADUDES/FoundationPress/tree/v1.5.1) (2015-10-10)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v1.5.0...v1.5.1)
 
 **Fixed bugs:**
 
@@ -863,8 +987,8 @@
 - Feature/sticky footer [\#483](https://github.com/olefredrik/FoundationPress/pull/483) ([olefredrik](https://github.com/olefredrik))
 - Updated changelog [\#479](https://github.com/olefredrik/FoundationPress/pull/479) ([olefredrik](https://github.com/olefredrik))
 
-## [v1.5.0](https://github.com/olefredrik/FoundationPress/tree/v1.5.0) (2015-09-23)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v1.4.0...v1.5.0)
+## [v1.5.0](https://github.com/MEDIADUDES/FoundationPress/tree/v1.5.0) (2015-09-23)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v1.4.0...v1.5.0)
 
 **Fixed bugs:**
 
@@ -889,8 +1013,8 @@
 - Tweaked the visual apperance of the front template [\#463](https://github.com/olefredrik/FoundationPress/pull/463) ([olefredrik](https://github.com/olefredrik))
 - Updated changelog [\#458](https://github.com/olefredrik/FoundationPress/pull/458) ([olefredrik](https://github.com/olefredrik))
 
-## [v1.4.0](https://github.com/olefredrik/FoundationPress/tree/v1.4.0) (2015-09-07)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v1.3.0...v1.4.0)
+## [v1.4.0](https://github.com/MEDIADUDES/FoundationPress/tree/v1.4.0) (2015-09-07)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v1.3.0...v1.4.0)
 
 **Fixed bugs:**
 
@@ -910,8 +1034,8 @@
 - Changed wp\_register\_script to wp\_enqueue\_script [\#450](https://github.com/olefredrik/FoundationPress/pull/450) ([JeremyEnglert](https://github.com/JeremyEnglert))
 - Updated changelog [\#448](https://github.com/olefredrik/FoundationPress/pull/448) ([olefredrik](https://github.com/olefredrik))
 
-## [v1.3.0](https://github.com/olefredrik/FoundationPress/tree/v1.3.0) (2015-09-03)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v1.2.0...v1.3.0)
+## [v1.3.0](https://github.com/MEDIADUDES/FoundationPress/tree/v1.3.0) (2015-09-03)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v1.2.0...v1.3.0)
 
 **Fixed bugs:**
 
@@ -940,8 +1064,8 @@
 - Update and simplify the readme file [\#433](https://github.com/olefredrik/FoundationPress/pull/433) ([olefredrik](https://github.com/olefredrik))
 - Updated changelog [\#432](https://github.com/olefredrik/FoundationPress/pull/432) ([olefredrik](https://github.com/olefredrik))
 
-## [v1.2.0](https://github.com/olefredrik/FoundationPress/tree/v1.2.0) (2015-08-27)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v1.1.0...v1.2.0)
+## [v1.2.0](https://github.com/MEDIADUDES/FoundationPress/tree/v1.2.0) (2015-08-27)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v1.1.0...v1.2.0)
 
 **Closed issues:**
 
@@ -963,8 +1087,8 @@
 - Add info to package.json [\#418](https://github.com/olefredrik/FoundationPress/pull/418) ([noskov](https://github.com/noskov))
 - Updated changelog with v1.1.0 details [\#414](https://github.com/olefredrik/FoundationPress/pull/414) ([olefredrik](https://github.com/olefredrik))
 
-## [v1.1.0](https://github.com/olefredrik/FoundationPress/tree/v1.1.0) (2015-08-17)
-[Full Changelog](https://github.com/olefredrik/FoundationPress/compare/v1.0.0...v1.1.0)
+## [v1.1.0](https://github.com/MEDIADUDES/FoundationPress/tree/v1.1.0) (2015-08-17)
+[Full Changelog](https://github.com/MEDIADUDES/FoundationPress/compare/v1.0.0...v1.1.0)
 
 **Closed issues:**
 
@@ -985,7 +1109,7 @@
 - Added changelog [\#404](https://github.com/olefredrik/FoundationPress/pull/404) ([olefredrik](https://github.com/olefredrik))
 - check if function exists [\#389](https://github.com/olefredrik/FoundationPress/pull/389) ([Stevie-Ray](https://github.com/Stevie-Ray))
 
-## [v1.0.0](https://github.com/olefredrik/FoundationPress/tree/v1.0.0) (2015-08-05)
+## [v1.0.0](https://github.com/MEDIADUDES/FoundationPress/tree/v1.0.0) (2015-08-05)
 **Fixed bugs:**
 
 - Menu Icon not showing on mobile menu [\#300](https://github.com/olefredrik/FoundationPress/issues/300)
@@ -1341,7 +1465,3 @@
 - adding child theme override functionality [\#3](https://github.com/olefredrik/FoundationPress/pull/3) ([thetrickster](https://github.com/thetrickster))
 - missing '/' in wp\_enqueue\_script [\#2](https://github.com/olefredrik/FoundationPress/pull/2) ([azhsetiawan](https://github.com/azhsetiawan))
 - Fixed tiny typo in README [\#1](https://github.com/olefredrik/FoundationPress/pull/1) ([lukerollans](https://github.com/lukerollans))
-
-
-
-\* *This Change Log was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
