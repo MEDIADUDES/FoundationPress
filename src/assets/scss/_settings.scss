@@ -62,7 +62,6 @@
 //  56. Xy Grid
 
 @import '~foundation-sites/scss/util/util';
-@import 'global/colors';
 
 // 1. Global
 // ---------
@@ -528,7 +527,7 @@ $offcanvas-sizes: (
 $offcanvas-vertical-sizes: (
 	small: 250px,
 );
-$offcanvas-background: $dark-nav-color;
+$offcanvas-background: $dark-gray;
 $offcanvas-shadow: 0 0 10px rgba($black, 0.7);
 $offcanvas-inner-shadow-size: 20px;
 $offcanvas-inner-shadow-color: rgba($black, 0.25);
@@ -816,7 +815,7 @@ $thumbnail-radius: $global-radius;
 // 53. Title Bar
 // -------------
 
-$titlebar-background: $dark-nav-color;
+$titlebar-background: $dark-gray;
 $titlebar-color: $white;
 $titlebar-padding: 0.5rem;
 $titlebar-text-font-weight: bold;
