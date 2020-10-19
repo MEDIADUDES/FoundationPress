@@ -2,11 +2,19 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
-#### [v3.0.0](https://github.com/MEDIADUDES/FoundationPress/compare/v2.12.0...v3.0.0)
+#### [v3.1.0](https://github.com/MEDIADUDES/FoundationPress/compare/v3.0.0...v3.1.0)
+
+- Add wp_body_open function to header.php [`1b00152`](https://github.com/MEDIADUDES/FoundationPress/commit/1b001523017540d6c8390aa900b7099fc09b6a50)
+- Remove _colors.scss file [`4db9aaa`](https://github.com/MEDIADUDES/FoundationPress/commit/4db9aaabcef2e3509e95ca2123c4e7683b1095e1)
+
+### [v3.0.0](https://github.com/MEDIADUDES/FoundationPress/compare/v2.12.0...v3.0.0)
+
+> 17 October 2020
 
 - Bump mixin-deep from 1.3.1 to 1.3.2 [`#3`](https://github.com/MEDIADUDES/FoundationPress/pull/3)
 - Bump eslint-utils from 1.3.1 to 1.4.2 [`#2`](https://github.com/MEDIADUDES/FoundationPress/pull/2)
 - Add artfulchild functionality  [`#1`](https://github.com/MEDIADUDES/FoundationPress/pull/1)
+- Release 3.0.0 [`b4de402`](https://github.com/MEDIADUDES/FoundationPress/commit/b4de4025dfd549d7adff2abcd5487bd7cc4fad3d)
 - Sort changelog with date descending [`20d128f`](https://github.com/MEDIADUDES/FoundationPress/commit/20d128f17d481fb7d5b60c4f313b754ef9e6bd57)
 - Add autofix as npm script + to release-it hooks [`853ec63`](https://github.com/MEDIADUDES/FoundationPress/commit/853ec633aa0d3bc7f75ec3b9616589e63c2b7249)
 - Add prettier to autofix [`c91f1f9`](https://github.com/MEDIADUDES/FoundationPress/commit/c91f1f9d785aeab3fa760ee5aff0eb6f6c607c95)
