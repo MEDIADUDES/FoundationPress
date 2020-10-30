@@ -2,8 +2,15 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v3.1.1](https://github.com/MEDIADUDES/FoundationPress/compare/v3.1.0...v3.1.1)
+
+- Add WC theme support + fix WPML category bug [`2787075`](https://github.com/MEDIADUDES/FoundationPress/commit/2787075d2e9a6a5b2e6d639feadcb0dbfcce1a42)
+
 #### [v3.1.0](https://github.com/MEDIADUDES/FoundationPress/compare/v3.0.0...v3.1.0)
 
+> 19 October 2020
+
+- Release 3.1.0 [`6224aee`](https://github.com/MEDIADUDES/FoundationPress/commit/6224aee34fbc865ef57d0c4d390e983d96965489)
 - Add wp_body_open function to header.php [`1b00152`](https://github.com/MEDIADUDES/FoundationPress/commit/1b001523017540d6c8390aa900b7099fc09b6a50)
 - Remove _colors.scss file [`4db9aaa`](https://github.com/MEDIADUDES/FoundationPress/commit/4db9aaabcef2e3509e95ca2123c4e7683b1095e1)
 
