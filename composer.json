@@ -28,13 +28,11 @@
 		"classmap": ["inc/"]
 	},
 	"scripts": {
-		"post-install-cmd": [
+		"phpcs-config": [
 			"\"vendor/bin/phpcs\" --config-set installed_paths ../../wp-coding-standards/wpcs",
 			"\"vendor/bin/phpcs\" --config-set ignore_warnings_on_exit 1"
 		],
-		"post-update-cmd": [
-			"\"vendor/bin/phpcs\" --config-set installed_paths ../../wp-coding-standards/wpcs",
-			"\"vendor/bin/phpcs\" --config-set ignore_warnings_on_exit 1"
-		]
+		"post-install-cmd": ["@phpcs-config"],
+		"post-update-cmd": ["@phpcs-config"]
 	}
 }
