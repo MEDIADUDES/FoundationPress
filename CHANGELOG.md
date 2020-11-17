@@ -2,8 +2,20 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v3.2.0](https://github.com/MEDIADUDES/FoundationPress/compare/v3.1.1...v3.2.0)
+
+- Update the readme [`d4a4a0e`](https://github.com/MEDIADUDES/FoundationPress/commit/d4a4a0e9ebab4aa532f3e605a863f0e0c8a83c63)
+- Add files for single page styles [`5c1f1e5`](https://github.com/MEDIADUDES/FoundationPress/commit/5c1f1e5b6062ae153d45981de408b6ee7292e8bc)
+- Remove shared content, as it’s no longer useful [`5acbd9f`](https://github.com/MEDIADUDES/FoundationPress/commit/5acbd9f99e8785b31114b3c328a8cf919ee1c8f5)
+- Set FontAwesome registry only if secret is set [`6ad2d72`](https://github.com/MEDIADUDES/FoundationPress/commit/6ad2d72dd194022a3ae537bd7e2335e32529a95c)
+- Add GitHub Actions CD workflow [`e091b04`](https://github.com/MEDIADUDES/FoundationPress/commit/e091b0471768fe363ff345d1d41027c64e41bb2c)
+- Remove duplicate code in composer scripts [`4dca3af`](https://github.com/MEDIADUDES/FoundationPress/commit/4dca3af38e86ee7c7cc9e06327eed46888da2b05)
+
 #### [v3.1.1](https://github.com/MEDIADUDES/FoundationPress/compare/v3.1.0...v3.1.1)
 
+> 30 October 2020
+
+- Release 3.1.1 [`cc85621`](https://github.com/MEDIADUDES/FoundationPress/commit/cc85621f820b9e42bb826f56594b670ee6c464a2)
 - Add WC theme support + fix WPML category bug [`2787075`](https://github.com/MEDIADUDES/FoundationPress/commit/2787075d2e9a6a5b2e6d639feadcb0dbfcce1a42)
 
 #### [v3.1.0](https://github.com/MEDIADUDES/FoundationPress/compare/v3.0.0...v3.1.0)
