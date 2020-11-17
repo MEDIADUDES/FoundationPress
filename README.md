@@ -107,6 +107,53 @@ To update the `languages/FoundationPress.pot` file for translations install the 
 
 To update the `.mo` &  `.po` files for the different languages have a look at [Loco Translate](https://wordpress.org/plugins/loco-translate/).
 
+
+## Automated Deployment with GitHub Actions
+
+To see all workflows have a look at the `/.github/workflows/` folder.
+
+### Secrets / Environment Variables
+* `FONTAWESOME_NPM_AUTH_TOKEN`
+  Optionally, the FontAwesome Pro NPM Auth token. Get it in [your account](https://fontawesome.com/account).
+* `STAGING_DEPLOY_KEY` and `PROD_DEPLOY_KEY`
+  SSH key for destination server
+* `STAGING_SSH_USER_HOST` and `PROD_SSH_USER_HOST`
+  e.g. `user@example.com`
+* `STAGING_SSH_DEST_PATH` and `PROD_SSH_DEST_PATH`
+  e.g. `~/example.com/wp-content/themes/FoundationPress`
+* `STAGING_SSH_WP_ROOT` and `PROD_SSH_WP_ROOT`
+  Root directory where the WordPress files are located and WP CLI will be executed. e.g. `~/example.com`
+
+### Deploying to staging server
+1. Set all the `STAGING_`secrets mentioned above
+2. merge/push to branch `master` (manually or by pull request).
+
+You might want to customize the workflow job `stagingServerSetup` where you can specify what WP CLI commands should run afterwards.
+
+If deployed to staging server, we'll automatically:
+* install & activate [disable-emails](https://wordpress.org/plugins/disable-emails/)
+* install & activate [log-emails](https://wordpress.org/plugins/log-emails/)
+* deactivate [wp-mail-smtp](https://wordpress.org/plugins/wp-mail-smtp/)
+to prevent sending of emails to customers and store them in the database instead.
+
+If one of the following maintenance plugins are installed they are automatically activated, so that
+the staging site won't be accessible by the public:
+* [WP Maintenance Mode by Designmodo](https://wordpress.org/plugins/wp-maintenance-mode/)
+* [Coming Soon Page, Maintenance Mode & Landing Pages by SeedProd](https://wordpress.org/plugins/coming-soon/)
+  Note: this plugin is only activated. If the maintenance setting is disabled it still won't show the maintenance page.
+
+### Deploying to production server
+1. set all the `PROD_`secrets mentioned above
+2. create a `production` branch
+3. merge/push to it (manually or by pull request).
+
+You might want to customize the workflow job `productionServerSetup` where you can specify what WP CLI commands should run afterwards.
+
+
+### FontAwesome Pro
+If you're using FontAwesome Pro uncomment the `Add FontAwesome Pro NPM registry` step in `/.github/workflows/deployment.yml`.
+
+
 ## Local Development
 We recommend using one of the following setups for local WordPress development:
 

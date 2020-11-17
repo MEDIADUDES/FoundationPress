@@ -1,0 +1,274 @@
+name: Deployment
+
+on: [push, pull_request]
+
+env:
+  STAGING_BRANCH: 'refs/heads/master'
+  STAGING_DEPLOY_KEY: ${{secrets.STAGING_DEPLOY_KEY}}
+  STAGING_SSH_USER_HOST: ${{secrets.STAGING_SSH_USER_HOST}}
+  STAGING_SSH_DEST_PATH: ${{secrets.STAGING_SSH_DEST_PATH}}
+  STAGING_SSH_WP_ROOT: ${{secrets.STAGING_SSH_WP_ROOT}}
+
+  PROD_BRANCH: 'refs/heads/production'
+  PROD_DEPLOY_KEY: ${{secrets.PROD_DEPLOY_KEY}}
+  PROD_SSH_USER_HOST: ${{secrets.PROD_SSH_USER_HOST}}
+  PROD_SSH_DEST_PATH: ${{secrets.PROD_SSH_DEST_PATH}}
+  PROD_SSH_WP_ROOT: ${{secrets.PROD_SSH_WP_ROOT}}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set environment variables
+        run: |
+          if [[ ${{github.ref}} == $STAGING_BRANCH && \
+            ! -z $STAGING_DEPLOY_KEY && \
+            ! -z $STAGING_SSH_USER_HOST && \
+            ! -z $STAGING_SSH_DEST_PATH && \
+            ! -z $STAGING_SSH_WP_ROOT ]]
+          then
+            echo "DEPLOY_TO_STAGING=true" >> $GITHUB_ENV
+          else
+            echo "DEPLOY_TO_STAGING=false" >> $GITHUB_ENV
+          fi
+
+          if [[ ${{github.ref}} == $PROD_BRANCH && \
+            ! -z $PROD_DEPLOY_KEY && \
+            ! -z $PROD_SSH_USER_HOST && \
+            ! -z $PROD_SSH_DEST_PATH && \
+            ! -z $PROD_SSH_WP_ROOT ]]
+          then
+            echo "DEPLOY_TO_PROD=true" >> $GITHUB_ENV
+          else
+            echo "DEPLOY_TO_PROD=false" >> $GITHUB_ENV
+          fi
+
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1.4.4
+        with:
+          node-version: 14.x
+
+      - name: Add FontAwesome Pro NPM registry
+        run: |
+          npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+          npm config set "//npm.fontawesome.com/:_authToken" ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
+
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+      - uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Install Composer dependencies
+        run: |
+          composer install --no-interaction # dev dependencies for code checking
+
+      # Cache npm cache files
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # https://stackoverflow.com/questions/52499617/what-is-the-difference-between-npm-install-and-npm-ci
+      - name: Install NPM Production dependencies
+        if: github.event_name == 'push' && github.ref == env.PROD_BRANCH
+        run: npm ci
+
+      # Note: It is not recommended to cache node_modules, as it can break across Node versions
+      # and won't work with npm ci. Thus we only use it for not production builds..
+      - name: Cache node_modules
+        id: node-modules-cache
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+
+      # if not a production build we only install npm modules if node_modules is not cached.
+      - name: Install NPM dependencies
+        if: |
+          ! ( github.event_name == 'push' &&  github.ref == env.PROD_BRANCH ) &&
+          steps.node-modules-cache.outputs.cache-hit != 'true'
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Install composer production dependencies
+        if: github.event_name == 'push' && ( env.DEPLOY_TO_STAGING == 'true' || env.DEPLOY_TO_PROD == 'true' )
+        run: composer install --no-dev --no-scripts --no-interaction --optimize-autoloader
+
+      - name: "Set destination server & directory"
+        if: github.event_name == 'push' && ( env.DEPLOY_TO_STAGING == 'true' || env.DEPLOY_TO_PROD == 'true' )
+        run: |
+          echo "${{ github.ref }}"
+          if [[ "${{ github.ref }}" == "${{ env.STAGING_BRANCH }}" ]]; then
+            echo "DEST=${{ secrets.STAGING_SSH_USER_HOST }}:${{ secrets.STAGING_SSH_DEST_PATH }}" >> $GITHUB_ENV
+          elif [[ "${{ github.ref }}" == "${{ env.PROD_BRANCH }}" ]]; then
+            echo "DEST=${{ secrets.PROD_SSH_USER_HOST }}:${{ secrets.PROD_SSH_DEST_PATH }}" >> $GITHUB_ENV
+          fi
+
+      - name: Deploy to server
+        if: github.event_name == 'push' && ( env.DEPLOY_TO_STAGING == 'true' || env.DEPLOY_TO_PROD == 'true' )
+        run: |
+          if [[ "${{ github.ref }}" == "${{ env.STAGING_BRANCH }}" ]]; then
+            echo "${{ secrets.STAGING_DEPLOY_KEY }}" > deploy_key
+          elif [[ "${{ github.ref }}" == "${{ env.PROD_BRANCH }}" ]]; then
+            echo "${{ secrets.PROD_DEPLOY_KEY }}" > deploy_key
+          fi
+          chmod 600 ./deploy_key
+          rsync -chav --delete \
+            -e 'ssh -i ./deploy_key -o StrictHostKeyChecking=no' \
+            --exclude /deploy_key \
+            --exclude /.git/ \
+            --exclude /.github/ \
+            --exclude /node_modules/ \
+            --exclude /src/ \
+            --exclude /tasks/ \
+            --exclude /.package.json \
+            --exclude /.package-lock.json \
+            --exclude /.composer.json \
+            --exclude /.composer.lock \
+            --exclude /Gruntfile.js \
+            ./ $DEST
+
+  stagingServerSetup:
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set environment variables
+        run: |
+          if [[ ${{github.ref}} == $STAGING_BRANCH && \
+            ! -z $STAGING_DEPLOY_KEY && \
+            ! -z $STAGING_SSH_USER_HOST && \
+            ! -z $STAGING_SSH_DEST_PATH && \
+            ! -z $STAGING_SSH_WP_ROOT ]]
+          then
+            echo "DEPLOY_TO_STAGING=true" >> $GITHUB_ENV
+          else
+            echo "DEPLOY_TO_STAGING=false" >> $GITHUB_ENV
+          fi
+
+      - name: 'Connect'
+        if: env.DEPLOY_TO_STAGING == 'true'
+        run: |
+          echo "${{ secrets.STAGING_DEPLOY_KEY }}" > deploy_key
+          chmod 600 ./deploy_key
+          OUT=$(ssh ${{secrets.STAGING_SSH_USER_HOST}} -i ./deploy_key -o StrictHostKeyChecking=no <<'EOF'
+            echo "\n----- Working directory -----"
+            cd ${{secrets.STAGING_SSH_WP_ROOT}}
+            pwd
+
+            echo "\n----- Start WordPress CLI -----"
+            wp --info
+            # echo "\n-- Installed Plugins: --"
+            # wp plugin list
+
+            echo "\n-- Update options --"
+            wp option update blog_public 0 # no index
+
+            echo "\n-- Install & activate plugins --"
+            if ! wp plugin is-active disable-emails; then
+              wp plugin install disable-emails --activate
+            fi
+
+            if ! wp plugin is-active log-emails; then
+              wp plugin install log-emails --activate
+            fi
+
+            # no SMTP on staging site as we want to log mails in database
+            if wp plugin is-active wp-mail-smtp; then
+              echo deactivate wp-mail-smtp...
+              wp plugin deactivate wp-mail-smtp
+            fi
+
+            echo "\n-- Activate maintenance plugins --"
+            # Activate maintenance mode to hide the page publicly
+            if wp plugin is-installed wp-maintenance-mode; then
+              echo activate wp-maintenance-mode...
+              wp plugin activate wp-maintenance-mode
+              wp option patch update wpmm_settings general status 1
+            elif wp plugin is-installed coming-soon; then
+              echo activate coming-soon...
+              wp plugin activate coming-soon
+              # todo: activate maintenance mode
+            fi
+
+            echo "\n-- Caching Plugins --"
+            if wp plugin is-active wp-rocket; then
+              echo "\nInstall WP Rocket CLI"
+              if ! wp package list | grep "wp-media/wp-rocket-cli"; then
+                wp package install wp-media/wp-rocket-cli
+              fi
+
+              echo "\nRegenerate WP Rocket files to make sure they are up to date"
+              wp rocket regenerate --file=htaccess
+              wp rocket regenerate --file=advanced-cache
+              wp rocket regenerate --file=config
+
+              echo "\nClear caches"
+              wp rocket clean --confirm
+
+              # echo "\nPreload caches"
+              # wp rocket preload
+            fi
+          EOF
+          )
+          echo "${OUT}"
+
+  productionServerSetup:
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/production'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set environment variables
+        run: |
+          if [[ ${{github.ref}} == $PROD_BRANCH && \
+            ! -z $PROD_DEPLOY_KEY && \
+            ! -z $PROD_SSH_USER_HOST && \
+            ! -z $PROD_SSH_DEST_PATH && \
+            ! -z $PROD_SSH_WP_ROOT ]]
+          then
+            echo "DEPLOY_TO_PROD=true" >> $GITHUB_ENV
+          else
+            echo "DEPLOY_TO_PROD=false" >> $GITHUB_ENV
+          fi
+
+      - name: 'Connect'
+        if: env.DEPLOY_TO_PROD == 'true'
+        run: |
+          echo "${{ secrets.PROD_DEPLOY_KEY }}" > deploy_key
+          chmod 600 ./deploy_key
+          OUT=$(ssh ${{secrets.PROD_SSH_USER_HOST}} -i ./deploy_key -o StrictHostKeyChecking=no <<'EOF'
+            echo "\n----- Working directory -----"
+            cd ${{secrets.PROD_SSH_WP_ROOT}}
+            pwd
+
+            echo "\n----- Start WordPress CLI -----"
+            wp --info
+            # echo "\n-- Installed Plugins: --"
+            # wp plugin list
+
+            echo "\n-- Caching Plugins --"
+            if wp plugin is-active wp-rocket; then
+              echo "\nInstall WP Rocket CLI"
+              wp package install wp-media/wp-rocket-cli
+
+              echo "\nClear caches"
+              wp rocket clean --confirm
+
+              echo "\nPreload caches"
+              wp rocket preload
+            fi
+          EOF
+          )
+          echo "${OUT}"
+
