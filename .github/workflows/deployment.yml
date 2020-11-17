@@ -3,6 +3,8 @@ name: Deployment
 on: [push, pull_request]
 
 env:
+  FONTAWESOME_NPM_AUTH_TOKEN: ${{secrets.FONTAWESOME_NPM_AUTH_TOKEN}}
+
   STAGING_BRANCH: 'refs/heads/master'
   STAGING_DEPLOY_KEY: ${{secrets.STAGING_DEPLOY_KEY}}
   STAGING_SSH_USER_HOST: ${{secrets.STAGING_SSH_USER_HOST}}
@@ -50,9 +52,10 @@ jobs:
           node-version: 14.x
 
       - name: Add FontAwesome Pro NPM registry
+        if: env.FONTAWESOME_NPM_AUTH_TOKEN != null
         run: |
           npm config set "@fortawesome:registry" https://npm.fontawesome.com/
-          npm config set "//npm.fontawesome.com/:_authToken" ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
+          npm config set "//npm.fontawesome.com/:_authToken" $FONTAWESOME_NPM_AUTH_TOKEN
 
       - name: Get Composer Cache Directory
         id: composer-cache
