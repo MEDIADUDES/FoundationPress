@@ -79,6 +79,7 @@ The rest should be quite self explanatory. Feel free to ask if you feel stuck.
  * `src/assets/scss/mixins/*.scss`: Put all your custom SCSS mixins here.
  * `src/assets/scss/modules/*.scss`: Topbar, footer etc. This are more or less sections or combinations of different components and elements.
  * `src/assets/scss/templates/*.scss`: Page template styling. Styles for individual pages especially the ones in `/page-templates`.
+ * `src/assets/scss/pages/*.scss`: Places styles for single pages here. Make sure to use a identifier like .page-id-{ID}, .home, etc. Note: in gerneral it's not recommended. Better use a modifier class for the elements you want to change.
  * `src/assets/scss/_foundation.scss`: All Foundation inclues. Uncomment unused styles to reduce filessize.
  * `src/assets/scss/_settings.scss`: All Foundation component styles can be configured here.
  * `src/assets/scss/main.scss`: Entrypoint for main styles.
