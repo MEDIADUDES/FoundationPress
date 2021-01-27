@@ -2,8 +2,15 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v3.2.1](https://github.com/MEDIADUDES/FoundationPress/compare/v3.2.0...v3.2.1)
+
+- Fix phpcs error [`28f7ced`](https://github.com/MEDIADUDES/FoundationPress/commit/28f7cedef026822ecb7b1855edea1993d7a5ea76)
+
 #### [v3.2.0](https://github.com/MEDIADUDES/FoundationPress/compare/v3.1.1...v3.2.0)
 
+> 17 November 2020
+
+- Release 3.2.0 [`f6c1f32`](https://github.com/MEDIADUDES/FoundationPress/commit/f6c1f325549fa7c2220c4949676f747b45432520)
 - Update the readme [`d4a4a0e`](https://github.com/MEDIADUDES/FoundationPress/commit/d4a4a0e9ebab4aa532f3e605a863f0e0c8a83c63)
 - Add files for single page styles [`5c1f1e5`](https://github.com/MEDIADUDES/FoundationPress/commit/5c1f1e5b6062ae153d45981de408b6ee7292e8bc)
 - Remove shared content, as it’s no longer useful [`5acbd9f`](https://github.com/MEDIADUDES/FoundationPress/commit/5acbd9f99e8785b31114b3c328a8cf919ee1c8f5)
