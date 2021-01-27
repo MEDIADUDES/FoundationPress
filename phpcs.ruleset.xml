@@ -18,6 +18,7 @@
 		<exclude name="WordPress.Arrays.ArrayDeclarationSpacing.NoSpaceAfterArrayOpener" />
 		<exclude name="WordPress.Arrays.ArrayDeclarationSpacing.NoSpaceBeforeArrayCloser" />
 
+		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedClassFound" />
 		<exclude name="WordPress.PHP.DisallowShortTernary.Found" />
 		<exclude name="Generic.Arrays.DisallowShortArraySyntax" />
 	</rule>
