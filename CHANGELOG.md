@@ -2,8 +2,16 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v3.3.0](https://github.com/MEDIADUDES/FoundationPress/compare/v3.2.1...v3.3.0)
+
+- Drop support for old browsers (e.g. IE11) [`08f04c7`](https://github.com/MEDIADUDES/FoundationPress/commit/08f04c77158b351a9190d988c645ce28de82eb55)
+- Update dependencies [`a433240`](https://github.com/MEDIADUDES/FoundationPress/commit/a4332408beb5b3be908194440fdda259785dea8d)
+
 #### [v3.2.1](https://github.com/MEDIADUDES/FoundationPress/compare/v3.2.0...v3.2.1)
 
+> 28 January 2021
+
+- Release 3.2.1 [`a39dbba`](https://github.com/MEDIADUDES/FoundationPress/commit/a39dbba77c9ceeb0680351b0b4f221e46a293b54)
 - Fix phpcs error [`28f7ced`](https://github.com/MEDIADUDES/FoundationPress/commit/28f7cedef026822ecb7b1855edea1993d7a5ea76)
 
 #### [v3.2.0](https://github.com/MEDIADUDES/FoundationPress/compare/v3.1.1...v3.2.0)
