@@ -2,8 +2,16 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v3.3.1](https://github.com/MEDIADUDES/FoundationPress/compare/v3.3.0...v3.3.1)
+
+- Fix npm install fails [`35d2c3f`](https://github.com/MEDIADUDES/FoundationPress/commit/35d2c3ff42f41ec25d3a1fb81af290b46979fd3d)
+- Update setup node version in workflow [`e823a27`](https://github.com/MEDIADUDES/FoundationPress/commit/e823a27b8222ef9269051e17ccd2a3c10ee4ad7f)
+
 #### [v3.3.0](https://github.com/MEDIADUDES/FoundationPress/compare/v3.2.1...v3.3.0)
 
+> 7 May 2021
+
+- Release 3.3.0 [`074f6e4`](https://github.com/MEDIADUDES/FoundationPress/commit/074f6e4de936995aaa0239da3f9a28124aeb599f)
 - Drop support for old browsers (e.g. IE11) [`08f04c7`](https://github.com/MEDIADUDES/FoundationPress/commit/08f04c77158b351a9190d988c645ce28de82eb55)
 - Update dependencies [`a433240`](https://github.com/MEDIADUDES/FoundationPress/commit/a4332408beb5b3be908194440fdda259785dea8d)
 
