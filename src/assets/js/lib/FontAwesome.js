@@ -49,4 +49,4 @@ library.add(
 dom.i2svg();
 
 // use dom.watch if you plan to dynamically add <i> icon tag.
-// dom.watch();
+dom.watch();

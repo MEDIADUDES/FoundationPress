@@ -95,10 +95,6 @@ body {
 	list-style: none;
 }
 
-.accordion-content.accordion-content.accordion-content {
-	display: block;
-}
-
 /** === Fix ACF Blocks Alignment === **/
 .wp-block[data-type^='acf/'][data-align] {
 	height: auto;

@@ -17,10 +17,11 @@ class Block_Accordion extends Block {
 			[
 				'name'            => self::get_name(),
 				'title'           => __( 'Accordion', 'foundationpress' ),
-				'render_template' => 'template-parts/blocks/accordion.php',
+				'render_template' => 'template-parts/blocks/' . self::get_name() . '.php',
+				'enqueue_script'  => get_template_directory_uri() . '/dist/assets/js/blocks/' . self::get_name() . '.js',
 				'category'        => 'foundationpress',
 				'icon'            => 'editor-help',
-				'keywords'        => [ 'accordion', 'faq', 'akkordion' ],
+				'keywords'        => [ self::get_name(), 'faq', 'akkordion' ],
 				'supports'        => [
 					'align'  => false,
 					'anchor' => true,
