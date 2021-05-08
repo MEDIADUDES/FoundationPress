@@ -11,4 +11,6 @@ function addIconlistIcons() {
 	});
 }
 
-addIconlistIcons();
+jQuery(() => {
+	addIconlistIcons();
+});

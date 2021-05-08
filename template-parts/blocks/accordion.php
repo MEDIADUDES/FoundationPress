@@ -49,7 +49,7 @@ if ( true === $two_columns ) {
 	$secondhalf = array_slice( $accordion, ceil( $len / 2 ) );
 	$accordion  = [$firsthalf, $secondhalf];
 } else {
-	$accordion = [$accordion, []];
+	$accordion = [$accordion];
 }
 ?>
 

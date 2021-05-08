@@ -17,14 +17,16 @@ class Block_Button extends Block {
 			[
 				'name'            => self::get_name(),
 				'title'           => __( 'FP Button', 'foundationpress' ),
-				'render_template' => 'template-parts/blocks/button.php',
+				'render_template' => 'template-parts/blocks/' . self::get_name() . '.php',
+				'enqueue_style'   => get_template_directory_uri() . '/dist/assets/css/blocks/' . self::get_name() . '.css',
+				// 'enqueue_script'  => get_template_directory_uri() . '/dist/assets/js/blocks/' . self::get_name() . '.js',
 				'category'        => 'foundationpress',
 				'icon'            => 'shield-alt',
-				'keywords'        => [ 'button' ],
+				'keywords'        => [ self::get_name() ],
 				'supports'        => [
 					'align'      => true,
 					'anchor'     => true,
-					'classNames' => false,
+					'classNames' => true,
 				],
 			]
 		);

@@ -22,9 +22,17 @@ if ( ! function_exists( 'foundationpress_enqueue_scripts' ) ) :
 
 		// Enqueue the scripts.
 		wp_enqueue_script(
+			'foundationpress-scripts-runtime',
+			get_template_directory_uri() . '/dist/assets/js/runtime.js',
+			['jquery'],
+			filemtime( get_template_directory() . '/dist/assets/js/runtime.js' ),
+			true
+		);
+
+		wp_enqueue_script(
 			'foundationpress-scripts',
 			get_template_directory_uri() . '/dist/assets/js/app.js',
-			false,
+			['jquery'],
 			filemtime( get_template_directory() . '/dist/assets/js/app.js' ),
 			true
 		);
@@ -44,8 +52,25 @@ function fopr_admin_enqueue_scripts() {
 	wp_enqueue_style(
 		'foundationpress-admin-styles',
 		get_template_directory_uri() . '/dist/assets/css/admin.css',
-		false,
+		['jquery'],
 		filemtime( get_template_directory() . '/dist/assets/css/admin.css' )
+	);
+
+	// Enqueue the scripts.
+	wp_enqueue_script(
+		'foundationpress-scripts-runtime',
+		get_template_directory_uri() . '/dist/assets/js/runtime.js',
+		['jquery'],
+		filemtime( get_template_directory() . '/dist/assets/js/runtime.js' ),
+		true
+	);
+
+	wp_enqueue_script(
+		'foundationpress-scripts',
+		get_template_directory_uri() . '/dist/assets/js/app.js',
+		false,
+		filemtime( get_template_directory() . '/dist/assets/js/app.js' ),
+		true
 	);
 }
 add_action( 'admin_enqueue_scripts', 'fopr_admin_enqueue_scripts' );

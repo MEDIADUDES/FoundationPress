@@ -47,7 +47,7 @@ import { ResponsiveAccordionTabs } from 'foundation-sites/js/foundation.responsi
 require('motion-ui');
 require('what-input');
 
-Foundation.addToJquery($);
+Foundation.addToJquery(jQuery);
 
 // Add Foundation Utils to Foundation global namespace for backwards
 // compatibility.
@@ -68,8 +68,8 @@ Foundation.Timer = Timer;
 // Touch and Triggers previously were almost purely side effect driven,
 // so no // need to add it to Foundation, just init them.
 
-Touch.init($);
-Triggers.init($, Foundation);
+Touch.init(jQuery);
+Triggers.init(jQuery, Foundation);
 
 // both parameters are needed, otherwise webpack will remove the
 // plugin from the global namespace.
@@ -97,6 +97,6 @@ Foundation.plugin(Tabs, 'Tabs');
 Foundation.plugin(Toggler, 'Toggler');
 Foundation.plugin(Tooltip, 'Tooltip');
 
-$(() => $(document).foundation());
+jQuery(($) => $(document).foundation());
 
 export default Foundation;

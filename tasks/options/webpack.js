@@ -3,27 +3,72 @@ const path = require('path');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const glob = require('glob');
+
+const jsBlocks = glob.sync(`${path.resolve()}/src/assets/js/blocks/*.js`);
+const scssFiles = glob.sync(`${path.resolve()}/src/assets/scss/**/[!_]*.scss`);
+
+let entries = [`${path.resolve()}/<%= paths.js.src %>/app.js`];
+entries = entries.concat(jsBlocks, scssFiles);
+
+const isJSBlock = (filepath) => {
+	const regex = /\/js\/blocks\//g;
+	return filepath.match(regex) !== null;
+};
+
+const isSCSSFile = (filepath) => {
+	const regex = /\/scss\//g;
+	return filepath.match(regex) !== null;
+};
+
+// convert array to object with filenames as keys
+entries = entries.reduce((acc, filepath) => {
+	const filenameRegex = /([\w\d_-]*)\.?[^\\/]*$/i;
+	const name = filepath.match(filenameRegex)[1];
+
+	if (isJSBlock(filepath)) {
+		acc[name] = {
+			import: filepath,
+			filename: 'blocks/[name].js',
+			dependOn: 'app',
+		};
+	} else if (isSCSSFile(filepath)) {
+		const subfolderRegex = /\/scss\/([\w\d_-]*\/)?([\w\d_-]*)\.scss$/i;
+		const subfolder = filepath.match(subfolderRegex)[1];
+
+		acc[name] = {
+			import: filepath,
+			filename: `scss/${subfolder || ''}[name].js`,
+		};
+	} else {
+		acc[name] = filepath;
+	}
+
+	return acc;
+}, {});
 
 module.exports = {
 	build: {
 		mode: process.env.NODE_ENV === 'development' ? 'development' : 'production',
-		entry: {
-			app: `${path.resolve()}/<%= paths.js.src %>/app.js`,
-			main: `${path.resolve()}/<%= paths.sass.src %>/main.scss`,
-			editor: `${path.resolve()}/<%= paths.sass.src %>/editor.scss`,
-			admin: `${path.resolve()}/<%= paths.sass.src %>/admin.scss`,
-		},
+		entry: entries,
 		output: {
 			path: `${path.resolve()}/<%= paths.js.dest %>`,
 			filename: '[name].js',
 		},
+		optimization: {
+			runtimeChunk: 'single',
+		},
 		stats: {
 			colors: true,
+			errorDetails: true,
 		},
 		storeStatsTo: 'webpackStats',
 		progress: true,
 		failOnError: true,
 		watch: false,
+		externals: {
+			jquery: 'jQuery',
+		},
 		devtool:
 			process.env.NODE_ENV === 'development'
 				? 'inline-cheap-module-source-map' // fix FF wrong line numbers while developing
@@ -31,14 +76,16 @@ module.exports = {
 		plugins: [
 			new webpack.ProvidePlugin({
 				$: 'jquery',
-				jQuery: 'jquery',
-				'window.jQuery': 'jquery',
-				'window.$': 'jquery',
 			}),
 			new MiniCssExtractPlugin({
 				// Options similar to the same options in webpackOptions.output
 				// both options are optional
-				filename: '../css/[name].css',
+				filename: (pathData) => {
+					const filepath = pathData.chunk.filenameTemplate;
+					const subfolderRegex = /scss\/([\w\d_-]*\/)?([\w\d_\-[\]]*)\.js$/i;
+					const subfolder = filepath.match(subfolderRegex)[1];
+					return `../css/${subfolder || ''}[name].css`;
+				},
 			}),
 			new CopyWebpackPlugin({
 				patterns: [
