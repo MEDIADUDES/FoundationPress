@@ -2,8 +2,18 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v3.4.0](https://github.com/MEDIADUDES/FoundationPress/compare/v3.3.1...v3.4.0)
+
+- Load block assets as separate files [`fe473f2`](https://github.com/MEDIADUDES/FoundationPress/commit/fe473f20a94943d152b7e9328fb685663a2108f0)
+- Compile scss files without _ prefix as separate files [`39dd003`](https://github.com/MEDIADUDES/FoundationPress/commit/39dd0039e68eb0fe046c0add91b567ba7e1f09c4)
+- Performance improvement load blocks in own js file [`c4d1c36`](https://github.com/MEDIADUDES/FoundationPress/commit/c4d1c36eb5cdbbae5d964732de490606c6900f6a)
+- Remove legacy code [`f5ec461`](https://github.com/MEDIADUDES/FoundationPress/commit/f5ec461a12acf19bbd930cfe027329b5dcec9122)
+
 #### [v3.3.1](https://github.com/MEDIADUDES/FoundationPress/compare/v3.3.0...v3.3.1)
 
+> 7 May 2021
+
+- Release 3.3.1 [`282b291`](https://github.com/MEDIADUDES/FoundationPress/commit/282b2914d6766fedf0a9765fd0d6bb409fca2dc1)
 - Fix npm install fails [`35d2c3f`](https://github.com/MEDIADUDES/FoundationPress/commit/35d2c3ff42f41ec25d3a1fb81af290b46979fd3d)
 - Update setup node version in workflow [`e823a27`](https://github.com/MEDIADUDES/FoundationPress/commit/e823a27b8222ef9269051e17ccd2a3c10ee4ad7f)
 
