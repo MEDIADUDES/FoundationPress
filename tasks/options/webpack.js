@@ -5,34 +5,43 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const glob = require('glob');
 
-let entries = [
-	`${path.resolve()}/<%= paths.js.src %>/app.js`,
-	`${path.resolve()}/<%= paths.sass.src %>/main.scss`,
-	`${path.resolve()}/<%= paths.sass.src %>/editor.scss`,
-	`${path.resolve()}/<%= paths.sass.src %>/admin.scss`,
-];
+const jsBlocks = glob.sync(`${path.resolve()}/src/assets/js/blocks/*.js`);
+const scssFiles = glob.sync(`${path.resolve()}/src/assets/scss/**/[!_]*.scss`);
 
-const blocks = glob.sync(`${path.resolve()}/src/assets/js/blocks/*.js`);
-entries = entries.concat(blocks);
+let entries = [`${path.resolve()}/<%= paths.js.src %>/app.js`];
+entries = entries.concat(jsBlocks, scssFiles);
 
-const isBlock = (filePath) => {
+const isJSBlock = (filepath) => {
 	const regex = /\/js\/blocks\//g;
-	return filePath.match(regex) !== null;
+	return filepath.match(regex) !== null;
+};
+
+const isSCSSFile = (filepath) => {
+	const regex = /\/scss\//g;
+	return filepath.match(regex) !== null;
 };
 
 // convert array to object with filenames as keys
-entries = entries.reduce((acc, cur) => {
+entries = entries.reduce((acc, filepath) => {
 	const filenameRegex = /([\w\d_-]*)\.?[^\\/]*$/i;
-	const name = cur.match(filenameRegex)[1];
+	const name = filepath.match(filenameRegex)[1];
 
-	if (isBlock(cur)) {
+	if (isJSBlock(filepath)) {
 		acc[name] = {
-			import: cur,
+			import: filepath,
 			filename: 'blocks/[name].js',
 			dependOn: 'app',
 		};
+	} else if (isSCSSFile(filepath)) {
+		const subfolderRegex = /\/scss\/([\w\d_-]*\/)?([\w\d_-]*)\.scss$/i;
+		const subfolder = filepath.match(subfolderRegex)[1];
+
+		acc[name] = {
+			import: filepath,
+			filename: `scss/${subfolder || ''}[name].js`,
+		};
 	} else {
-		acc[name] = cur;
+		acc[name] = filepath;
 	}
 
 	return acc;
@@ -51,6 +60,7 @@ module.exports = {
 		},
 		stats: {
 			colors: true,
+			errorDetails: true,
 		},
 		storeStatsTo: 'webpackStats',
 		progress: true,
@@ -70,7 +80,12 @@ module.exports = {
 			new MiniCssExtractPlugin({
 				// Options similar to the same options in webpackOptions.output
 				// both options are optional
-				filename: '../css/[name].css',
+				filename: (pathData) => {
+					const filepath = pathData.chunk.filenameTemplate;
+					const subfolderRegex = /scss\/([\w\d_-]*\/)?([\w\d_\-[\]]*)\.js$/i;
+					const subfolder = filepath.match(subfolderRegex)[1];
+					return `../css/${subfolder || ''}[name].css`;
+				},
 			}),
 			new CopyWebpackPlugin({
 				patterns: [
