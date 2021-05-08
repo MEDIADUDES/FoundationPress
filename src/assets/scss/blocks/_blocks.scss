@@ -1,7 +1,9 @@
-// All styles regarding gutenberg blocks.
+/*
+ * Files inside this folder without the _ prefix will be compiled as separate files.
+ * Files with the _ prefix are seen as partials and need to be imported in other files.
+ */
 
-@import 'block-accordion';
-@import 'block-button';
+// All styles regrding blocks outside of this theme.
 
 // wordpress default block.
 .wp-block-columns {

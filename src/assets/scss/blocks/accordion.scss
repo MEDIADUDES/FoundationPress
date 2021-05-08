@@ -1,3 +1,5 @@
+@import 'imports';
+
 .b-accordion {
 	&__inner {
 		@include xy-grid();
