@@ -46,7 +46,9 @@ library.add(
 );
 
 // Kicks off the process of finding <i> tags and replacing with <svg>
-dom.i2svg();
+$('.site-header, .main-container, .footer').each((i, el) => {
+	dom.i2svg({ node: el });
+});
 
 // use dom.watch if you plan to dynamically add <i> icon tag.
-dom.watch();
+// dom.watch();
