@@ -2,8 +2,16 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v3.4.1](https://github.com/MEDIADUDES/FoundationPress/compare/v3.4.0...v3.4.1)
+
+- Fix font awesome plugin conflicts in wp-admin [`07e77f3`](https://github.com/MEDIADUDES/FoundationPress/commit/07e77f3428b1c62abcf4d99ee8cdb08996105347)
+- Fix webpack file name conflict [`eee6b45`](https://github.com/MEDIADUDES/FoundationPress/commit/eee6b459aa27e024a2f8895188d00558b5302a70)
+
 #### [v3.4.0](https://github.com/MEDIADUDES/FoundationPress/compare/v3.3.1...v3.4.0)
 
+> 8 May 2021
+
+- Release 3.4.0 [`e250c0b`](https://github.com/MEDIADUDES/FoundationPress/commit/e250c0b1ffb89505b18a63c142dac6666854f957)
 - Load block assets as separate files [`fe473f2`](https://github.com/MEDIADUDES/FoundationPress/commit/fe473f20a94943d152b7e9328fb685663a2108f0)
 - Compile scss files without _ prefix as separate files [`39dd003`](https://github.com/MEDIADUDES/FoundationPress/commit/39dd0039e68eb0fe046c0add91b567ba7e1f09c4)
 - Performance improvement load blocks in own js file [`c4d1c36`](https://github.com/MEDIADUDES/FoundationPress/commit/c4d1c36eb5cdbbae5d964732de490606c6900f6a)
