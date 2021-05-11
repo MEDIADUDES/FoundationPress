@@ -14,7 +14,7 @@
  * npm i -E @fortawesome/free-regular-svg-icons
  *
  * Access to the Pro packages requires you to configure the @fortawesome scope
- * to use teir Pro NPM registry.
+ * to use their Pro NPM registry.
  * @see https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers#installing-pro
  */
 
