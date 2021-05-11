@@ -27,18 +27,18 @@ entries = entries.reduce((acc, filepath) => {
 	const name = filepath.match(filenameRegex)[1];
 
 	if (isJSBlock(filepath)) {
-		acc[name] = {
+		acc[`jsblock_${name}`] = {
 			import: filepath,
-			filename: 'blocks/[name].js',
+			filename: `blocks/${name}.js`,
 			dependOn: 'app',
 		};
 	} else if (isSCSSFile(filepath)) {
 		const subfolderRegex = /\/scss\/([\w\d_-]*\/)?([\w\d_-]*)\.scss$/i;
 		const subfolder = filepath.match(subfolderRegex)[1];
 
-		acc[name] = {
+		acc[`scss_${name}`] = {
 			import: filepath,
-			filename: `scss/${subfolder || ''}[name].js`,
+			filename: `scss/${subfolder || ''}${name}.js`,
 		};
 	} else {
 		acc[name] = filepath;
@@ -84,7 +84,8 @@ module.exports = {
 					const filepath = pathData.chunk.filenameTemplate;
 					const subfolderRegex = /scss\/([\w\d_-]*\/)?([\w\d_\-[\]]*)\.js$/i;
 					const subfolder = filepath.match(subfolderRegex)[1];
-					return `../css/${subfolder || ''}[name].css`;
+					const filename = filepath.match(subfolderRegex)[2];
+					return `../css/${subfolder || ''}${filename}.css`;
 				},
 			}),
 			new CopyWebpackPlugin({
