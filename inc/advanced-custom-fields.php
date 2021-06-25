@@ -65,14 +65,16 @@ if ( defined( 'FP_ACF_SAVE_JSON' ) && FP_ACF_SAVE_JSON ) {
  * Add ACF option pages to the backend.
  */
 function foundationpress_add_option_pages() {
-	acf_add_options_page(
-		[
-			'page_title' => 'Theme Einstellungen',
-			'menu_title' => 'Theme Einstellungen',
-			'menu_slug'  => 'theme-settings',
-			'redirect'   => false,
-			'autoload'   => true,
-		]
-	);
+	if ( function_exists( 'acf_add_options_page' ) ) {
+		acf_add_options_page(
+			[
+				'page_title' => 'Theme Einstellungen',
+				'menu_title' => 'Theme Einstellungen',
+				'menu_slug'  => 'theme-settings',
+				'redirect'   => false,
+				'autoload'   => true,
+			]
+		);
+	}
 }
 add_action( 'acf/init', 'foundationpress_add_option_pages' );
