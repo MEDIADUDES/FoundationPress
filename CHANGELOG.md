@@ -2,8 +2,16 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v3.4.2](https://github.com/MEDIADUDES/FoundationPress/compare/v3.4.1...v3.4.2)
+
+- Fix #8 undefined acf function error [`#8`](https://github.com/MEDIADUDES/FoundationPress/issues/8)
+- Fix typo [`119f81f`](https://github.com/MEDIADUDES/FoundationPress/commit/119f81fc11a5e577d9199564955f1d3efa9ff881)
+
 #### [v3.4.1](https://github.com/MEDIADUDES/FoundationPress/compare/v3.4.0...v3.4.1)
 
+> 11 May 2021
+
+- Release 3.4.1 [`7d1d1d3`](https://github.com/MEDIADUDES/FoundationPress/commit/7d1d1d375d70f72b998d9c59658e900951b05125)
 - Fix font awesome plugin conflicts in wp-admin [`07e77f3`](https://github.com/MEDIADUDES/FoundationPress/commit/07e77f3428b1c62abcf4d99ee8cdb08996105347)
 - Fix webpack file name conflict [`eee6b45`](https://github.com/MEDIADUDES/FoundationPress/commit/eee6b459aa27e024a2f8895188d00558b5302a70)
 
