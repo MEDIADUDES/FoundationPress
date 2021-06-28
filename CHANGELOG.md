@@ -2,9 +2,16 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v3.4.3](https://github.com/MEDIADUDES/FoundationPress/compare/v3.4.2...v3.4.3)
+
+- Fix #9 undefined acf function error [`#9`](https://github.com/MEDIADUDES/FoundationPress/issues/9)
+
 #### [v3.4.2](https://github.com/MEDIADUDES/FoundationPress/compare/v3.4.1...v3.4.2)
 
+> 25 June 2021
+
 - Fix #8 undefined acf function error [`#8`](https://github.com/MEDIADUDES/FoundationPress/issues/8)
+- Release 3.4.2 [`e2685bb`](https://github.com/MEDIADUDES/FoundationPress/commit/e2685bbc2f604c03c438d5f1596298955d8e6204)
 - Fix typo [`119f81f`](https://github.com/MEDIADUDES/FoundationPress/commit/119f81fc11a5e577d9199564955f1d3efa9ff881)
 
 #### [v3.4.1](https://github.com/MEDIADUDES/FoundationPress/compare/v3.4.0...v3.4.1)
