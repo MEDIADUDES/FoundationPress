@@ -45,9 +45,15 @@ if ( ! function_exists( 'foundationpress_gutenberg_support' ) ) :
 	add_action( 'after_setup_theme', 'foundationpress_gutenberg_support' );
 endif;
 
-function foundationpress_block_categories( $categories, $post ) {
+/**
+ * Adding a new (custom) block category.
+ *
+ * @param   array                   $block_categories      Array of categories for block types.
+ * @param   WP_Block_Editor_Context $block_editor_context  The current block editor context.
+ */
+function foundationpress_block_categories( $block_categories, $block_editor_context ) {
 	return array_merge(
-		$categories,
+		$block_categories,
 		[
 			[
 				'slug'  => 'foundationpress',
@@ -57,4 +63,4 @@ function foundationpress_block_categories( $categories, $post ) {
 		]
 	);
 }
-add_filter( 'block_categories', 'foundationpress_block_categories', 0, 2 );
+add_filter( 'block_categories_all', 'foundationpress_block_categories', 0, 2 );
