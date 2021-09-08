@@ -2,9 +2,16 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v3.4.4](https://github.com/MEDIADUDES/FoundationPress/compare/v3.4.3...v3.4.4)
+
+- Fix block_categories deprecation warning [`#12`](https://github.com/MEDIADUDES/FoundationPress/issues/12)
+
 #### [v3.4.3](https://github.com/MEDIADUDES/FoundationPress/compare/v3.4.2...v3.4.3)
 
+> 28 June 2021
+
 - Fix #9 undefined acf function error [`#9`](https://github.com/MEDIADUDES/FoundationPress/issues/9)
+- Release 3.4.3 [`457ea95`](https://github.com/MEDIADUDES/FoundationPress/commit/457ea950a442761f0d7d8d7ef0fe600d88beb1f8)
 
 #### [v3.4.2](https://github.com/MEDIADUDES/FoundationPress/compare/v3.4.1...v3.4.2)
 
