@@ -2,9 +2,18 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v3.4.5](https://github.com/MEDIADUDES/FoundationPress/compare/v3.4.4...v3.4.5)
+
+- Fix wp admin password input box hidden [`#14`](https://github.com/MEDIADUDES/FoundationPress/issues/14)
+- Update package lock [`cf91368`](https://github.com/MEDIADUDES/FoundationPress/commit/cf913685317c7a0714ddaa7dee859f319f4891ad)
+- Update release-it version [`b01c44a`](https://github.com/MEDIADUDES/FoundationPress/commit/b01c44a34c023520ee230d4efd8921c2d291d3ae)
+
 #### [v3.4.4](https://github.com/MEDIADUDES/FoundationPress/compare/v3.4.3...v3.4.4)
 
+> 8 September 2021
+
 - Fix block_categories deprecation warning [`#12`](https://github.com/MEDIADUDES/FoundationPress/issues/12)
+- Release 3.4.4 [`7a97bc9`](https://github.com/MEDIADUDES/FoundationPress/commit/7a97bc93cc5283847b9851564646de6b7e3397ff)
 
 #### [v3.4.3](https://github.com/MEDIADUDES/FoundationPress/compare/v3.4.2...v3.4.3)
 

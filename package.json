@@ -1,7 +1,7 @@
 {
 	"name": "@mediadudes/foundationpress",
 	"title": "FoundationPress",
-	"version": "3.4.4",
+	"version": "3.4.5",
 	"description": "FoundationPress is a WordPress starter theme based on Foundation 6 by Zurb (forked from https://github.com/olefredrik/FoundationPress)",
 	"homepage": "https://github.com/MEDIADUDES/FoundationPress",
 	"license": "MIT",
