@@ -11,3 +11,9 @@
 .full-width {
 	@include full-width;
 }
+
+/* fix recaptcha position in reveals */
+.is-reveal-open .recaptcha-wrapper {
+	position: fixed !important;
+	z-index: 99999;
+}
