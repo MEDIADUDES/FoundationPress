@@ -2,9 +2,16 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [v3.4.6](https://github.com/MEDIADUDES/FoundationPress/compare/v3.4.5...v3.4.6)
+
+- Fix reCaptcha position in reveals [`c2e6797`](https://github.com/MEDIADUDES/FoundationPress/commit/c2e67972ae2c92b40fcd6c05761015d276925651)
+
 #### [v3.4.5](https://github.com/MEDIADUDES/FoundationPress/compare/v3.4.4...v3.4.5)
 
+> 18 October 2021
+
 - Fix wp admin password input box hidden [`#14`](https://github.com/MEDIADUDES/FoundationPress/issues/14)
+- Release 3.4.5 [`d17575d`](https://github.com/MEDIADUDES/FoundationPress/commit/d17575d47494adc842607ac1fb63b3a32e85bfc4)
 - Update package lock [`cf91368`](https://github.com/MEDIADUDES/FoundationPress/commit/cf913685317c7a0714ddaa7dee859f319f4891ad)
 - Update release-it version [`b01c44a`](https://github.com/MEDIADUDES/FoundationPress/commit/b01c44a34c023520ee230d4efd8921c2d291d3ae)
 
